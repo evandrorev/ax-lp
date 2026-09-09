@@ -7,6 +7,31 @@
 (function () {
   'use strict';
 
+  /* ------------------------------------------------- destinos de compra ---
+     Cole aqui a URL de checkout de cada agente e a da revenda. Enquanto um
+     valor ficar vazio, o botão correspondente segue rolando até a seção —
+     nada quebra. Assim que a URL entra, o botão passa a abrir o checkout.
+     ---------------------------------------------------------------------- */
+
+  var LINKS = {
+    oscar: '',
+    scout: '',
+    combat: '',
+    revenda: ''
+  };
+
+  function iniciarDestinos() {
+    [].slice.call(document.querySelectorAll('[data-buy]')).forEach(function (a) {
+      var url = LINKS[a.getAttribute('data-buy')];
+      if (!url) return;
+      a.href = url;
+      if (/^https?:/i.test(url)) {
+        a.target = '_blank';
+        a.rel = 'noopener';
+      }
+    });
+  }
+
   var reduzMovimento =
     window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -234,6 +259,7 @@
 
   /* ------------------------------------------------------------ boot ---- */
 
+  iniciarDestinos();
   iniciarDigitacao();
   iniciarCampo();
   iniciarSimulador();
