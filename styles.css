@@ -1269,8 +1269,17 @@ h1, h2, h3, .display {
 
 .voices { border-top: 1px solid var(--line-06); }
 
+.voices__head { padding-top: 96px; }
+
+.voices__head p + p {
+  margin-top: 10px;
+  max-width: 52ch;
+  color: var(--fg-50);
+}
+
 .voices__grid {
-  padding-top: 96px;
+  padding-top: 40px;
+  padding-bottom: 96px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 48px;
@@ -1319,12 +1328,6 @@ h1, h2, h3, .display {
 .voice__by b { font-weight: 700; }
 .voice__by span { color: var(--fg-50); }
 .voice__by em { font-style: normal; color: var(--al); font-weight: 700; }
-
-.voices__fine {
-  padding-bottom: 32px;
-  font-size: 12px;
-  color: var(--fg-35);
-}
 
 /* ---------------------------------------------------------------- faq --- */
 
