@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AX — um especialista para cada assunto</title>
+<meta name="description" content="Três agentes de IA especializados: Oscar (filmes e séries), Scout (futebol) e Combat (MMA, UFC e boxe). R$ 30/mês por agente, com programa de revenda por créditos.">
+<meta name="theme-color" content="#08090A">
+<meta property="og:title" content="AX — um especialista para cada assunto">
+<meta property="og:description" content="Uma IA que só entende de uma coisa e responde como quem acompanha aquilo há anos.">
+<meta property="og:type" content="website">
+<link rel="icon" href="./assets/ax-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+<!-- NAV: uma linha, âncoras à esquerda, ações à direita -->
+<header class="nav">
+  <div class="wrap nav__inner">
+    <a href="#topo" class="nav__logo" aria-label="AX — início"><img src="./assets/ax-logo.png" alt="AX" width="40" height="40"></a>
+    <nav class="nav__links" aria-label="Seções">
+      <a href="#oscar" class="t-oscar">Oscar</a>
+      <a href="#scout" class="t-scout">Scout</a>
+      <a href="#combat" class="t-combat">Combat</a>
+      <a href="#planos">Planos</a>
+      <a href="#revenda">Revenda</a>
+      <a href="#faq">Dúvidas</a>
+    </nav>
+    <a href="#planos" class="nav__cta">Assinar</a>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO: centrado, três conversas ao vivo lado a lado -->
+<section id="topo" class="hero">
+  <div class="glow hero__glow"></div>
+  <div class="wrap hero__inner">
+    <p class="eyebrow hero__eyebrow">Três especialistas · Um assunto cada · Português, no seu nível</p>
+    <h1>Um especialista à sua disposição, <span>24 horas por dia.</span></h1>
+    <p class="hero__sub">Uma IA que só entende de uma coisa — filmes e séries, futebol ou luta — e responde como quem acompanha aquilo há anos. Sem lista, sem grito, sem esperar o grupo acordar.</p>
+    <div class="hero__actions">
+      <a href="#planos" class="btn-light">Ver os planos</a>
+      <a href="#oscar" class="btn-ghost">Conhecer os agentes ↓</a>
+    </div>
+  </div>
+  <div class="wrap hero__cards">
+
+    <a href="#oscar" class="chat t-oscar">
+      <div class="chat__head">
+        <div class="chat__name"><span class="chat__spark" aria-hidden="true">✦</span><span>AX Oscar</span></div>
+        <span class="chat__role">entretenimento</span>
+      </div>
+      <div class="chat__body">
+        <p class="chat__you">terminei uma série que me destruiu e não quero nada barulhento agora</p>
+        <p class="chat__them"><span data-typing>Então você quer o mesmo ritmo, não o mesmo gênero. Me diz: o que te incomodaria mais hoje, um filme triste ou um filme longo?</span><span class="chat__cursor" aria-hidden="true">▍</span></p>
+      </div>
+    </a>
+
+    <a href="#scout" class="chat t-scout">
+      <div class="chat__head">
+        <div class="chat__name"><span class="chat__spark" aria-hidden="true">✦</span><span>AX Scout</span></div>
+        <span class="chat__role">futebol</span>
+      </div>
+      <div class="chat__body">
+        <p class="chat__you">como funciona a fase de grupos da Copa? quantos se classificam?</p>
+        <p class="chat__them"><span data-typing>São 12 grupos de 4. Passam os dois primeiros de cada grupo mais os 8 melhores terceiros — 32 times no mata-mata. Quer que eu monte o caminho possível da Seleção até a final?</span><span class="chat__cursor" aria-hidden="true">▍</span></p>
+      </div>
+    </a>
+
+    <a href="#combat" class="chat t-combat">
+      <div class="chat__head">
+        <div class="chat__name"><span class="chat__spark" aria-hidden="true">✦</span><span>AX Combat</span></div>
+        <span class="chat__role">esportes de combate</span>
+      </div>
+      <div class="chat__body">
+        <p class="chat__you">por que o canhoto deu tanto trabalho hoje?</p>
+        <p class="chat__them"><span data-typing>Porque contra um canhoto o pé da frente muda de lado, e quem manda é quem pisa por fora do pé do outro. Repare: toda vez que ele circulou pra própria direita, tomou.</span><span class="chat__cursor" aria-hidden="true">▍</span></p>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- FAIXA MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Final explicado</span><span style="color:#FF8095">✦</span><span>Por que o técnico mudou no intervalo</span><span style="color:#5DE3A5">✦</span><span>O que abriu a guarda</span><span style="color:#B99BFF">✦</span><span>Por onde começar em anime</span><span style="color:#FF8095">✦</span><span>O que é xG</span><span style="color:#5DE3A5">✦</span><span>Vale acordar pro card?</span><span style="color:#B99BFF">✦</span>
+    <span>Final explicado</span><span style="color:#FF8095">✦</span><span>Por que o técnico mudou no intervalo</span><span style="color:#5DE3A5">✦</span><span>O que abriu a guarda</span><span style="color:#B99BFF">✦</span><span>Por onde começar em anime</span><span style="color:#FF8095">✦</span><span>O que é xG</span><span style="color:#5DE3A5">✦</span><span>Vale acordar pro card?</span><span style="color:#B99BFF">✦</span>
+  </div>
+</div>
+
+<!-- OSCAR: número gigante à esquerda, "pergunte assim" e sem/com à direita -->
+<section id="oscar" class="agent t-oscar">
+  <div class="glow agent__glow--right"></div>
+  <div class="wrap agent__inner">
+    <div class="agent__intro">
+      <div class="agent__id">
+        <span class="agent__num">01</span>
+        <div>
+          <div class="agent__name">AX Oscar</div>
+          <div class="agent__scope">Filmes · Séries · Animes · Doramas · Documentários</div>
+        </div>
+      </div>
+      <h2>Você não precisa de mais catálogo. Precisa de alguém que assistiu.</h2>
+      <p class="agent__lead">Terça, 23h. A série acabou e ninguém do grupo viu. O Oscar viu. Ele pergunta o que você sentiu antes de indicar, explica o final que ficou aberto e acha o próximo a partir do que você já amou — em filme, série, anime ou dorama.</p>
+      <div class="agent__cta">
+        <a href="#planos" class="btn-agent">Ativar o Oscar · R$ 30/mês</a>
+        <span class="agent__note">cancela quando quiser</span>
+      </div>
+    </div>
+
+    <div class="agent__panels">
+      <div class="uses">
+        <div class="glow uses__glow--left"></div>
+        <div class="uses__head">
+          <div class="uses__label">Pergunte assim</div>
+          <div class="uses__hint">e ele já sabe o que fazer</div>
+        </div>
+        <div class="uses__list">
+          <div class="uses__row"><div class="uses__q">“um filme bom pra hoje à noite, até 1h40”</div><div class="uses__tag">indicação</div></div>
+          <div class="uses__row"><div class="uses__q">“gostei muito dessa série. o que vejo depois?”</div><div class="uses__tag">parecido</div></div>
+          <div class="uses__row"><div class="uses__q">“não entendi o final. me explica?”</div><div class="uses__tag">final explicado</div></div>
+          <div class="uses__row"><div class="uses__q">“vale a pena continuar na 2ª temporada?”</div><div class="uses__tag">vale ou não</div></div>
+          <div class="uses__row"><div class="uses__q">“quero começar em anime. por onde?”</div><div class="uses__tag">porta de entrada</div></div>
+        </div>
+        <div class="uses__foot">Filme, série, anime, dorama ou documentário. Sem spoiler, a não ser que você peça.</div>
+      </div>
+
+      <div class="compare">
+        <div class="compare__head"><span>Sem o Oscar</span><span>Com o Oscar</span></div>
+        <div class="compare__row"><span>40 minutos rolando três aplicativos.</span><span>Uma pergunta, duas opções e o motivo de cada.</span></div>
+        <div class="compare__row"><span>Vídeo de 20 min "final explicado" com spoiler de outra série.</span><span>As leituras possíveis e as pistas na ordem em que aparecem.</span></div>
+        <div class="compare__row"><span>"Quero começar em anime" e 300 episódios de sugestão.</span><span>A porta certa, a partir de uma série que você já gostou.</span></div>
+        <div class="compare__row"><span>O algoritmo devolvendo o mesmo de sempre.</span><span>Indicação que parte do que você sentiu, não do que clicou.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCOUT: invertido, campo animado -->
+<section id="scout" class="agent t-scout">
+  <div class="glow agent__glow--left"></div>
+  <div class="wrap agent__inner">
+    <div class="agent__panels">
+      <div class="field" id="campo">
+        <svg viewBox="0 0 360 240" role="img" aria-label="Campo de futebol com a formação tática trocando de linha de quatro para linha de três">
+          <rect x="8" y="8" width="344" height="224" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1"></rect>
+          <line x1="180" y1="8" x2="180" y2="232" stroke="rgba(255,255,255,0.14)" stroke-width="1"></line>
+          <circle cx="180" cy="120" r="30" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1"></circle>
+          <rect x="8" y="70" width="50" height="100" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1"></rect>
+          <rect x="302" y="70" width="50" height="100" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1"></rect>
+          <g id="jogadores">
+            <circle class="player" cx="30" cy="120" r="9"></circle>
+            <circle class="player" cx="100" cy="40" r="9"></circle>
+            <circle class="player" cx="100" cy="95" r="9"></circle>
+            <circle class="player" cx="100" cy="145" r="9"></circle>
+            <circle class="player" cx="100" cy="200" r="9"></circle>
+            <circle class="player" cx="190" cy="40" r="9"></circle>
+            <circle class="player" cx="190" cy="95" r="9"></circle>
+            <circle class="player" cx="190" cy="145" r="9"></circle>
+            <circle class="player" cx="190" cy="200" r="9"></circle>
+            <circle class="player" cx="280" cy="90" r="9"></circle>
+            <circle class="player" cx="280" cy="150" r="9"></circle>
+          </g>
+        </svg>
+        <div class="field__foot">
+          <span class="field__label" id="formacao">Linha de quatro — campo largo</span>
+          <button type="button" class="field__replay" id="replay">Ver a troca de novo</button>
+        </div>
+      </div>
+
+      <div class="compare">
+        <div class="compare__head"><span>Sem o Scout</span><span>Com o Scout</span></div>
+        <div class="compare__row"><span>"Faltou vontade" e a mesma discussão de sempre.</span><span>Três coisas concretas para observar quando rever o jogo.</span></div>
+        <div class="compare__row"><span>O narrador cita xG e você finge que sabe.</span><span>Você sabe o que é — e quando ele importa.</span></div>
+        <div class="compare__row"><span>Análise no grupo vira briga de rival.</span><span>Um interlocutor que não torce e responde às 2h.</span></div>
+      </div>
+    </div>
+
+    <div class="agent__intro">
+      <div class="agent__id">
+        <span class="agent__num">02</span>
+        <div>
+          <div class="agent__name">AX Scout</div>
+          <div class="agent__scope">Partidas · Tática · Estatística · Mercado</div>
+        </div>
+      </div>
+      <h2>Seu time perdeu. "Faltou vontade" não é uma explicação.</h2>
+      <p class="agent__lead">Domingo, 18h20. Seu time perdeu com 64% de posse e 17 finalizações e o programa de debate está gritando. O Scout não torce para ninguém: explica o bloco baixo, traduz o número e lê a mudança do intervalo — e faz o mesmo com o time do seu amigo.</p>
+      <div class="agent__cta">
+        <a href="#planos" class="btn-agent">Ativar o Scout · R$ 30/mês</a>
+        <span class="agent__note">análise, não palpite</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMBAT -->
+<section id="combat" class="agent t-combat">
+  <div class="glow agent__glow--combat"></div>
+  <div class="wrap agent__inner">
+    <div class="agent__intro">
+      <div class="agent__id">
+        <span class="agent__num">03</span>
+        <div>
+          <div class="agent__name">AX Combat</div>
+          <div class="agent__scope">MMA · UFC · Boxe · Artes marciais</div>
+        </div>
+      </div>
+      <h2>O card acabou às 3h. Ele ainda está acordado.</h2>
+      <p class="agent__lead">Sábado, 3h07. A luta acabou por finalização em quatro segundos e você rebobinou três vezes. O Combat é o córner que senta na sua frente entre um round e outro: explica a técnica, compara estilos, levanta cartel e ensina o fundamento que o professor não teve tempo de explicar.</p>
+      <div class="agent__cta">
+        <a href="#planos" class="btn-agent">Ativar o Combat · R$ 30/mês</a>
+        <span class="agent__note">sem palpite, sem aposta</span>
+      </div>
+    </div>
+
+    <div class="agent__panels">
+      <div class="uses">
+        <div class="glow uses__glow--right"></div>
+        <div class="uses__head">
+          <div class="uses__label">Pergunte assim</div>
+          <div class="uses__hint">e ele já sabe o que fazer</div>
+        </div>
+        <div class="uses__list">
+          <div class="uses__row"><div class="uses__q">“o que aconteceu naquela finalização? não entendi”</div><div class="uses__tag">técnica explicada</div></div>
+          <div class="uses__row"><div class="uses__q">“vale a pena acordar pro card de sábado?”</div><div class="uses__tag">card do fim de semana</div></div>
+          <div class="uses__row"><div class="uses__q">“quem leva: o wrestler ou o striker?”</div><div class="uses__tag">confronto de estilos</div></div>
+          <div class="uses__row"><div class="uses__q">“quantas lutas ele já perdeu e pra quem?”</div><div class="uses__tag">cartel e trajetória</div></div>
+          <div class="uses__row"><div class="uses__q">“comecei no jiu-jitsu. o que é passagem de guarda?”</div><div class="uses__tag">pra quem treina</div></div>
+        </div>
+        <div class="uses__foot">MMA, UFC, boxe, jiu-jitsu, muay thai, judô e karatê. Análise e técnica — nunca palpite de aposta.</div>
+      </div>
+
+      <div class="compare">
+        <div class="compare__head"><span>Sem o Combat</span><span>Com o Combat</span></div>
+        <div class="compare__row"><span>Rebobinar o round três vezes sem entender.</span><span>Uma pergunta e a sequência inteira explicada.</span></div>
+        <div class="compare__row"><span>40 minutos em seis abas em inglês pra ver um cartel.</span><span>Uma mensagem.</span></div>
+        <div class="compare__row"><span>3h07, mensagem no grupo, resposta às 11h.</span><span>3h07, resposta na hora.</span></div>
+        <div class="compare__row"><span>"Foi roubo" contra "não foi roubo".</span><span>Critério de round e histórico na mão.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANOS: lista horizontal, um agente por linha -->
+<section id="planos" class="plans">
+  <div class="wrap plans__inner">
+    <div class="plans__head">
+      <h2>Um preço. Escolha só o assunto.</h2>
+      <p>Cada agente é uma assinatura de R$ 30 por mês, independente. Acesso liberado em minutos, cancela quando quiser. Assine um, dois ou os três.</p>
+    </div>
+    <div class="plans__list">
+
+      <div class="plan t-oscar">
+        <div class="plan__id">
+          <span class="plan__num">01</span>
+          <div class="plan__title">
+            <div class="plan__name">Oscar</div>
+            <div class="plan__tagline">o amigo que assistiu e sabe falar sobre</div>
+          </div>
+        </div>
+        <ul class="plan__features">
+          <li>Recomendação a partir do que você sentiu</li>
+          <li>Final explicado, com as pistas em ordem</li>
+          <li>Anime e dorama pela porta certa</li>
+          <li>Conversas ilimitadas, 24h</li>
+        </ul>
+        <div class="plan__buy">
+          <div class="plan__price"><b>R$ 30</b><span>/mês</span></div>
+          <a href="#oscar" class="plan__cta">Ativar o Oscar</a>
+        </div>
+      </div>
+
+      <div class="plan t-scout">
+        <div class="plan__id">
+          <span class="plan__num">02</span>
+          <div class="plan__title">
+            <div class="plan__name">Scout</div>
+            <div class="plan__tagline">o analista que não torce pra ninguém</div>
+          </div>
+        </div>
+        <ul class="plan__features">
+          <li>A derrota explicada em três pontos</li>
+          <li>xG e estatística avançada traduzidos</li>
+          <li>Leitura tática, elenco e mercado</li>
+          <li>Conversas ilimitadas, 24h</li>
+        </ul>
+        <div class="plan__buy">
+          <div class="plan__price"><b>R$ 30</b><span>/mês</span></div>
+          <a href="#scout" class="plan__cta">Ativar o Scout</a>
+        </div>
+      </div>
+
+      <div class="plan t-combat">
+        <div class="plan__id">
+          <span class="plan__num">03</span>
+          <div class="plan__title">
+            <div class="plan__name">Combat</div>
+            <div class="plan__tagline">o córner que explica entre um round e outro</div>
+          </div>
+        </div>
+        <ul class="plan__features">
+          <li>A técnica que decidiu a luta, passo a passo</li>
+          <li>Cartel, trajetória e rivalidades</li>
+          <li>Vale acordar pro card? Qual luta ver?</li>
+          <li>Conversas ilimitadas, 24h</li>
+        </ul>
+        <div class="plan__buy">
+          <div class="plan__price"><b>R$ 30</b><span>/mês</span></div>
+          <a href="#combat" class="plan__cta">Ativar o Combat</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- REVENDA -->
+<section id="revenda" class="resale">
+  <div class="glow resale__glow"></div>
+  <div class="wrap resale__inner">
+    <div class="resale__top">
+      <div class="resale__pitch">
+        <div class="resale__eyebrow">Para quem tem audiência · Planos Elite</div>
+        <h2>Seu público já pergunta. Agora ele pode assinar com você.</h2>
+        <p>Existem dois caminhos na AX: assinar um agente para usar, ou comprar créditos para revendê-lo. Cada crédito ativa um mês de assinatura de um cliente seu. A assinatura ao cliente final custa R$ 30 por mês; no atacado o crédito sai a partir de R$ 4,00, conforme o agente e o volume. A diferença é sua.</p>
+        <ol class="steps">
+          <li><b>1</b><span>Compre os créditos. Cada um ativa um mês de um cliente.</span></li>
+          <li><b>2</b><span>Ative o cliente. Ele recebe o acesso em minutos.</span></li>
+          <li><b>3</b><span>Cobre como quiser e fique com a diferença.</span></li>
+        </ol>
+        <p class="resale__fit"><strong>Funciona para</strong> quem já responde as mesmas perguntas todo dia, de graça: página de cinema, canal de torcida, grupo de card, dono de academia. <strong>Não funciona para</strong> quem espera que o produto se venda sozinho ou quer vender palpite de aposta.</p>
+      </div>
+
+      <div class="sim t-oscar" id="simulador">
+        <div class="sim__eyebrow">Faça a conta</div>
+        <div class="sim__tabs" role="tablist" aria-label="Agente do simulador">
+          <button type="button" class="sim__tab" role="tab" data-sim="0" aria-selected="true">Oscar</button>
+          <button type="button" class="sim__tab" role="tab" data-sim="1" aria-selected="false">Scout</button>
+          <button type="button" class="sim__tab" role="tab" data-sim="2" aria-selected="false">Combat</button>
+        </div>
+        <div class="sim__row">
+          <label for="creditos">Quantos créditos você compra?</label>
+          <span class="sim__count" id="sim-count">30 créditos</span>
+        </div>
+        <input id="creditos" type="range" min="5" max="10000" step="1" value="30" aria-describedby="sim-count">
+        <dl class="sim__grid">
+          <div class="sim__cell"><dt>Investimento</dt><dd id="sim-investimento">R$ 225</dd></div>
+          <div class="sim__cell"><dt>Faturamento mensal</dt><dd id="sim-faturamento">R$ 900</dd></div>
+          <div class="sim__cell sim__cell--big"><dt>Margem mensal</dt><dd id="sim-margem">R$ 675</dd></div>
+          <div class="sim__cell sim__cell--big"><dt>Em 12 meses</dt><dd id="sim-margem12">R$ 8.100</dd></div>
+        </dl>
+        <p class="sim__fine">Projeção, não promessa. Depende do seu público e do seu esforço de venda. Faixa aplicada: <span id="sim-faixa">30 – 99 créditos</span> — crédito a <span id="sim-custo">R$ 7,50</span>. Preço sugerido ao cliente final: R$ 30/mês.</p>
+        <a href="#faq" class="sim__cta" id="sim-cta">Quero revender o Oscar →</a>
+      </div>
+    </div>
+
+    <div id="tabelas" class="tables">
+      <div class="tables__head">
+        <div class="tables__headline">
+          <div class="tables__badge"><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>Tabela de atacado</div>
+          <h3>Cada agente tem a sua <span>tabela de atacado.</span></h3>
+          <p class="tables__lead">Compre em maior quantidade, pague menos por crédito e aumente sua margem.</p>
+        </div>
+        <div class="tables__copy">
+          <p>O valor mostrado é o preço unitário do crédito dentro daquela faixa de quantidade. Um crédito = um mês de assinatura de um cliente. Quanto maior o pedido, menor o unitário — e maior a sua margem sobre os R$ 30.</p>
+          <div class="perks">
+            <div class="perk"><span class="perk__icon perk__icon--green" aria-hidden="true">⚡</span><div><b>Mais lucro</b><span>em grandes volumes</span></div></div>
+            <div class="perk"><span class="perk__icon perk__icon--cyan" aria-hidden="true">●●</span><div><b>Atenda mais clientes</b><span>com melhor preço</span></div></div>
+            <div class="perk"><span class="perk__icon perk__icon--violet" aria-hidden="true"><span class="bars bars--lg"><i></i><i></i><i></i></span></span><div><b>Escale seu negócio</b><span>com previsibilidade</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Faixas e preços: mesma fonte de dados usada pelo simulador (app.js → TABELAS). -->
+      <div class="tables__grid">
+
+        <div class="ptable t-oscar">
+          <div class="ptable__head"><img src="./assets/card-oscar.png" alt="AX Oscar — margem até 87%" loading="lazy"></div>
+          <div class="ptable__body">
+            <div class="ptable__cols"><span>Créditos</span><span>Unitário</span><span>Sua margem</span></div>
+            <div class="ptable__rows">
+              <div class="ptable__row"><span>5 – 9</span><span>R$ 10,00</span><span class="ptable__margin">R$ 20,00 <small>67%</small></span></div>
+              <div class="ptable__row ptable__row--best"><span>10 – 29</span><span>R$ 8,00</span><span class="ptable__margin">R$ 22,00 <small>73%</small></span></div>
+              <div class="ptable__row"><span>30 – 99</span><span>R$ 7,50</span><span class="ptable__margin">R$ 22,50 <small>75%</small></span></div>
+              <div class="ptable__row"><span>100 – 249</span><span>R$ 6,00</span><span class="ptable__margin">R$ 24,00 <small>80%</small></span></div>
+              <div class="ptable__row"><span>250 – 499</span><span>R$ 5,50</span><span class="ptable__margin">R$ 24,50 <small>82%</small></span></div>
+              <div class="ptable__row"><span>500 – 999</span><span>R$ 5,00</span><span class="ptable__margin">R$ 25,00 <small>83%</small></span></div>
+              <div class="ptable__row"><span>1.000 – 2.499</span><span>R$ 4,50</span><span class="ptable__margin">R$ 25,50 <small>85%</small></span></div>
+              <div class="ptable__row"><span>2.500 – 10.000</span><span>R$ 4,00</span><span class="ptable__margin">R$ 26,00 <small>87%</small></span></div>
+            </div>
+          </div>
+          <div class="ptable__note"><i aria-hidden="true">✦</i><p>A tabela mais escalonada da linha: começa em 5 créditos e chega ao menor unitário da AX. Boa para quem quer testar pequeno e para quem opera em grande volume.</p></div>
+        </div>
+
+        <div class="ptable t-scout">
+          <div class="ptable__head"><img src="./assets/card-scout.png" alt="AX Scout — margem até 82%" loading="lazy"></div>
+          <div class="ptable__body">
+            <div class="ptable__cols"><span>Créditos</span><span>Unitário</span><span>Sua margem</span></div>
+            <div class="ptable__rows">
+              <div class="ptable__row"><span>10 – 29</span><span>R$ 11,00</span><span class="ptable__margin">R$ 19,00 <small>63%</small></span></div>
+              <div class="ptable__row"><span>30 – 49</span><span>R$ 10,00</span><span class="ptable__margin">R$ 20,00 <small>67%</small></span></div>
+              <div class="ptable__row ptable__row--best"><span>50 – 99</span><span>R$ 8,00</span><span class="ptable__margin">R$ 22,00 <small>73%</small></span></div>
+              <div class="ptable__row"><span>100 – 499</span><span>R$ 7,00</span><span class="ptable__margin">R$ 23,00 <small>77%</small></span></div>
+              <div class="ptable__row"><span>500 – 999</span><span>R$ 6,00</span><span class="ptable__margin">R$ 24,00 <small>80%</small></span></div>
+              <div class="ptable__row"><span>1.000 – 5.000</span><span>R$ 5,50</span><span class="ptable__margin">R$ 24,50 <small>82%</small></span></div>
+            </div>
+          </div>
+          <div class="ptable__note"><i aria-hidden="true">✦</i><p>Pedido mínimo de 10 créditos. Audiência de torcida é grande e conversa todos os dias do ano, o que ajuda a girar o estoque de crédito.</p></div>
+        </div>
+
+        <div class="ptable t-combat">
+          <div class="ptable__head"><img src="./assets/card-combat.png" alt="AX Combat — margem até 80%" class="is-combat" loading="lazy"></div>
+          <div class="ptable__body">
+            <div class="ptable__cols"><span>Créditos</span><span>Unitário</span><span>Sua margem</span></div>
+            <div class="ptable__rows">
+              <div class="ptable__row"><span>10 – 49</span><span>R$ 12,00</span><span class="ptable__margin">R$ 18,00 <small>60%</small></span></div>
+              <div class="ptable__row"><span>50 – 99</span><span>R$ 10,00</span><span class="ptable__margin">R$ 20,00 <small>67%</small></span></div>
+              <div class="ptable__row ptable__row--best"><span>100 – 499</span><span>R$ 8,00</span><span class="ptable__margin">R$ 22,00 <small>73%</small></span></div>
+              <div class="ptable__row"><span>500 – 999</span><span>R$ 7,00</span><span class="ptable__margin">R$ 23,00 <small>77%</small></span></div>
+              <div class="ptable__row"><span>1.000 – 5.000</span><span>R$ 6,00</span><span class="ptable__margin">R$ 24,00 <small>80%</small></span></div>
+            </div>
+          </div>
+          <div class="ptable__note"><i aria-hidden="true">✦</i><p>Pedido mínimo de 10 créditos. Funciona bem em academia, onde o aluno já paga mensalidade, e em grupo de card, com pico a cada evento.</p></div>
+        </div>
+
+      </div>
+
+      <div class="tables__rule">
+        <span aria-hidden="true"></span>
+        <b>Três agentes. Um mesmo objetivo: mais resultados para você.</b>
+        <span aria-hidden="true"></span>
+      </div>
+
+      <div class="tables__fine">Margem calculada sobre o preço sugerido de R$ 30 por cliente/mês. Você pode cobrar mais ou menos que isso — a margem acompanha o seu preço.</div>
+
+      <div class="resale__faq">
+        <div><b>Assinar não é pré-requisito</b><p>A AX vende a assinatura direto ao cliente final e vende créditos a quem quer revender. Você pode ter sido assinante e virado parceiro depois, ou entrar direto na revenda por reconhecer a demanda no seu público.</p></div>
+        <div><b>O que fica do nosso lado</b><p>IA, infraestrutura, manutenção e evolução do agente. Do seu lado ficam a audiência, o preço que você cobra e o relacionamento com o cliente.</p></div>
+        <div><b>Sem meta mínima</b><p>Comece pela menor faixa do agente que combina com o seu público, teste com gente real e só aumente o pedido depois de vender.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOZES: citações curtas em faixa, sem cards -->
+<section id="vozes" class="voices">
+  <div class="wrap voices__grid">
+    <div class="voice t-oscar">
+      <blockquote>“Falei "terminei e fiquei com um vazio" e ele devolveu duas opções com o motivo de cada. Acertou na primeira.”</blockquote>
+      <div class="voice__by">
+        <span class="voice__avatar" aria-hidden="true">M</span>
+        <div><b>Marina</b> <span>· São Paulo · assina o </span><em>Oscar</em></div>
+      </div>
+    </div>
+    <div class="voice t-scout">
+      <blockquote>“Perdemos com 64% de posse e no grupo era só xingamento. Ele explicou o bloco baixo em três linhas. Agora sou eu que explico.”</blockquote>
+      <div class="voice__by">
+        <span class="voice__avatar" aria-hidden="true">P</span>
+        <div><b>Pedro</b> <span>· Belo Horizonte · assina o </span><em>Scout</em></div>
+      </div>
+    </div>
+    <div class="voice t-combat">
+      <blockquote>“Comecei no jiu-jitsu e tinha termo que eu fingia entender. Pergunto às 3h depois do card e ele responde na hora.”</blockquote>
+      <div class="voice__by">
+        <span class="voice__avatar" aria-hidden="true">Y</span>
+        <div><b>Yasmin</b> <span>· Recife · assina o </span><em>Combat</em></div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap voices__fine">Relatos ilustrativos — substituir por assinantes reais antes de publicar.</div>
+</section>
+
+<!-- FAQ: grade aberta, sem sanfona -->
+<section id="faq" class="faq">
+  <div class="wrap faq__inner">
+    <h2>O que perguntam antes da primeira mensagem.</h2>
+    <dl class="faq__grid">
+      <div class="faq__item"><dt>Como eu converso com o agente?</dt><dd>Assim que a assinatura é confirmada você recebe seu link de acesso. Abre no celular ou no computador e já começa a conversar, do jeito que fala com um amigo.</dd></div>
+      <div class="faq__item"><dt>É uma IA genérica com nome bonito?</dt><dd>Não. Cada agente domina um único assunto e responde no nível de quem acompanha aquilo há anos. Pergunte de futebol pro Oscar e ele te manda pro Scout.</dd></div>
+      <div class="faq__item"><dt>O Oscar dá spoiler?</dt><dd>Só se você pedir. Ele pergunta até onde você viu antes de explicar qualquer coisa.</dd></div>
+      <div class="faq__item"><dt>O Scout ou o Combat dão palpite de aposta?</dt><dd>Não, e não vão dar. Eles analisam o esporte: tática, técnica, estatística, história. Prognóstico e cota estão fora do produto.</dd></div>
+      <div class="faq__item"><dt>Posso assinar mais de um agente?</dt><dd>Sim. Cada agente é uma assinatura de R$ 30/mês, independente das outras.</dd></div>
+      <div class="faq__item"><dt>Posso cancelar?</dt><dd>Quando quiser, sem burocracia. Você mantém o acesso até o fim do período pago.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta">
+  <div class="glow cta__glow"></div>
+  <div class="wrap cta__inner">
+    <div class="cta__text">
+      <img src="./assets/ax-logo.png" alt="AX" width="72" height="72">
+      <h2>Sobre o que você quer conversar hoje?</h2>
+      <span>R$ 30/mês · acesso em minutos · cancela quando quiser</span>
+    </div>
+    <div class="cta__picks">
+      <a href="#oscar" class="cta__pick t-oscar"><b>Oscar</b><span>Filmes, séries, animes →</span></a>
+      <a href="#scout" class="cta__pick t-scout"><b>Scout</b><span>Futebol →</span></a>
+      <a href="#combat" class="cta__pick t-combat"><b>Combat</b><span>MMA, UFC, boxe →</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div class="footer__brand"><img src="./assets/ax-logo.png" alt="AX" width="26" height="26"><span>AX — um especialista para cada assunto</span></div>
+    <div class="footer__links">
+      <a href="#oscar">Oscar</a>
+      <a href="#scout">Scout</a>
+      <a href="#combat">Combat</a>
+      <a href="#planos">Planos</a>
+      <a href="#revenda">Revenda</a>
+    </div>
+  </div>
+</footer>
+
+<script src="./app.js" defer></script>
+</body>
+</html>
