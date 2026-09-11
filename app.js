@@ -8,27 +8,37 @@
   'use strict';
 
   /* ------------------------------------------------- destinos de compra ---
-     Cole aqui a URL de checkout de cada agente e a da revenda. Enquanto um
-     valor ficar vazio, o botão correspondente segue rolando até a seção —
-     nada quebra. Assim que a URL entra, o botão passa a abrir o checkout.
+     Checkout de cada agente, nas duas pontas: quem assina para usar
+     (cliente) e quem compra crédito para revender (revenda). Um valor vazio
+     faz o botão manter a âncora atual, sem quebrar nada.
      ---------------------------------------------------------------------- */
 
   var LINKS = {
-    oscar: '',
-    scout: '',
-    combat: '',
-    revenda: ''
+    cliente: {
+      oscar: 'http://licence.agentxlink.com/checkout/ax-oscar/client',
+      scout: 'http://licence.agentxlink.com/checkout/ax-scout/client',
+      combat: 'http://licence.agentxlink.com/checkout/ax-combat/client'
+    },
+    revenda: {
+      oscar: 'http://licence.agentxlink.com/checkout/ax-oscar/reseller',
+      scout: 'http://licence.agentxlink.com/checkout/ax-scout/reseller',
+      combat: 'http://licence.agentxlink.com/checkout/ax-combat/reseller'
+    }
   };
+
+  /* Aponta um link para a URL indicada; externo abre em nova aba. */
+  function apontar(a, url) {
+    if (!a || !url) return;
+    a.href = url;
+    if (/^https?:/i.test(url)) {
+      a.target = '_blank';
+      a.rel = 'noopener';
+    }
+  }
 
   function iniciarDestinos() {
     [].slice.call(document.querySelectorAll('[data-buy]')).forEach(function (a) {
-      var url = LINKS[a.getAttribute('data-buy')];
-      if (!url) return;
-      a.href = url;
-      if (/^https?:/i.test(url)) {
-        a.target = '_blank';
-        a.rel = 'noopener';
-      }
+      apontar(a, LINKS.cliente[a.getAttribute('data-buy')]);
     });
   }
 
@@ -146,6 +156,7 @@
   var TABELAS = [
     {
       nome: 'Oscar',
+      chave: 'oscar',
       tema: 't-oscar',
       faixas: [
         [5, 9, 10], [10, 29, 8], [30, 99, 7.5], [100, 249, 6],
@@ -154,6 +165,7 @@
     },
     {
       nome: 'Scout',
+      chave: 'scout',
       tema: 't-scout',
       faixas: [
         [10, 29, 11], [30, 49, 10], [50, 99, 8],
@@ -162,6 +174,7 @@
     },
     {
       nome: 'Combat',
+      chave: 'combat',
       tema: 't-combat',
       faixas: [
         [10, 49, 12], [50, 99, 10], [100, 499, 8],
@@ -240,6 +253,7 @@
         inteiro.format(faixa[0]) + ' – ' + inteiro.format(faixa[1]) + ' créditos';
       saida.custo.textContent = moeda.format(custo);
       saida.cta.textContent = 'Quero revender o ' + tabela.nome + ' →';
+      apontar(saida.cta, LINKS.revenda[tabela.chave]);
     }
 
     abas.forEach(function (aba, i) {
