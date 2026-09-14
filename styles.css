@@ -878,158 +878,6 @@ h1, h2, h3, .display {
 
 /* Simulador */
 
-.sim {
-  background: var(--bg);
-  border: 1px solid var(--a-88);
-  border-radius: 20px;
-  padding: 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-  box-shadow: 0 0 60px -30px var(--a-aa);
-  transition: border-color 220ms, box-shadow 220ms;
-}
-
-.sim__eyebrow {
-  font-size: 12px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--al);
-  font-weight: 700;
-}
-
-.sim__tabs {
-  display: flex;
-  gap: 6px;
-  padding: 5px;
-  border: 1px solid var(--line-10);
-  border-radius: 12px;
-  flex-wrap: wrap;
-}
-
-.sim__tab {
-  border: none;
-  background: transparent;
-  color: var(--fg-65);
-  font-weight: 700;
-  font-size: 14px;
-  padding: 10px 18px;
-  border-radius: 9px;
-  cursor: pointer;
-  transition: all 200ms;
-}
-.sim__tab[aria-selected='true'] { background: var(--a); color: #fff; }
-
-.sim__lista {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-/* Cada faixa da tabela de atacado é um link para o checkout. */
-.simlinha {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 14px;
-  padding: 14px 16px;
-  border: 1px solid var(--line-10);
-  border-radius: 12px;
-  background: var(--a-14);
-  transition: border-color 180ms, background 180ms, transform 180ms;
-}
-
-.simlinha:hover,
-.simlinha:focus-visible {
-  border-color: var(--a-aa);
-  background: var(--a-22);
-  color: var(--fg);
-  transform: translateX(3px);
-}
-
-.simlinha__qtd {
-  display: flex;
-  flex-direction: column;
-  font-size: 14px;
-  color: var(--fg-65);
-  min-width: 0;
-}
-
-.simlinha__qtd b {
-  font-family: var(--display);
-  font-size: 21px;
-  font-weight: 800;
-  color: var(--fg);
-  font-variant-numeric: tabular-nums;
-}
-
-.simlinha__unit {
-  font-size: 12px;
-  color: var(--al);
-  font-weight: 700;
-  font-variant-numeric: tabular-nums;
-}
-
-.simlinha__num {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  min-width: 0;
-}
-
-.simlinha__num span {
-  font-size: 11px;
-  letter-spacing: 0.04em;
-  color: var(--fg-45);
-}
-
-.simlinha__num b {
-  font-size: 16px;
-  font-weight: 700;
-  font-variant-numeric: tabular-nums;
-}
-
-.simlinha__num--destaque b {
-  font-family: var(--display);
-  font-size: 19px;
-  font-weight: 800;
-  color: var(--al);
-}
-
-.simlinha__seta {
-  font-size: 17px;
-  color: var(--al);
-  opacity: 0.5;
-  transition: opacity 180ms;
-}
-.simlinha:hover .simlinha__seta { opacity: 1; }
-
-@media (max-width: 560px) {
-  .simlinha {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 10px 14px;
-  }
-  .simlinha__seta { display: none; }
-}
-
-.sim__fine {
-  font-size: 13px;
-  line-height: 1.55;
-  color: var(--fg-50);
-  margin: 0;
-}
-
-.sim__cta {
-  display: flex;
-  justify-content: center;
-  padding: 16px;
-  border-radius: 12px;
-  background: var(--a);
-  color: #fff;
-  font-weight: 800;
-}
-.sim__cta:hover { color: #fff; filter: brightness(1.12); }
-
 /* Tabelas de atacado */
 
 .tables {
@@ -1195,6 +1043,7 @@ h1, h2, h3, .display {
 
 .ptable__row {
   position: relative;
+  transition: background 180ms, border-color 180ms;
   align-items: center;
   padding: 12px;
   border-radius: 10px;
@@ -1205,7 +1054,14 @@ h1, h2, h3, .display {
   color: var(--fg);
 }
 
-.ptable__row > span:nth-child(1) { white-space: nowrap; color: var(--fg-85); }
+.ptable__row:hover,
+.ptable__row:focus-visible {
+  background: var(--a-22);
+  border-color: var(--a-aa);
+  color: var(--fg);
+}
+
+.ptable__row > span:nth-child(1) { white-space: nowrap; color: var(--fg-85); font-weight: 700; }
 .ptable__row > span:nth-child(2) { font-weight: 700; white-space: nowrap; }
 
 .ptable__margin {

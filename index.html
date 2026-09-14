@@ -337,18 +337,6 @@
         <p class="resale__fit"><strong>Funciona para</strong> quem já responde as mesmas perguntas todo dia, de graça: página de cinema, canal de torcida, grupo de card, dono de academia. <strong>Não funciona para</strong> quem espera que o produto se venda sozinho ou quer vender palpite de aposta.</p>
       </div>
 
-      <div class="sim t-oscar" id="simulador">
-        <div class="sim__eyebrow">Escolha sua faixa</div>
-        <div class="sim__tabs" role="tablist" aria-label="Agente">
-          <button type="button" class="sim__tab" role="tab" data-sim="0" aria-selected="true">Oscar</button>
-          <button type="button" class="sim__tab" role="tab" data-sim="1" aria-selected="false">Scout</button>
-          <button type="button" class="sim__tab" role="tab" data-sim="2" aria-selected="false">Combat</button>
-        </div>
-        <!-- Linhas montadas pelo app.js a partir de TABELAS: cada faixa vira um
-             link para o checkout com a quantidade já no endereço. -->
-        <div class="sim__lista" id="sim-lista"></div>
-        <p class="sim__fine">Clique na faixa para ir direto ao pedido. Margem calculada sobre o preço sugerido de R$ 30/mês por cliente — você pode cobrar mais ou menos, e ela acompanha o seu preço. Projeção, não promessa.</p>
-      </div>
     </div>
 
     <div id="tabelas" class="tables">
@@ -374,17 +362,8 @@
         <div class="ptable t-oscar">
           <div class="ptable__head"><img src="./assets/card-oscar.webp" alt="AX Oscar — margem até 87%" loading="lazy"></div>
           <div class="ptable__body">
-            <div class="ptable__cols"><span>Créditos</span><span>Unitário</span><span>Sua margem</span></div>
-            <div class="ptable__rows">
-              <div class="ptable__row"><span>5 – 9</span><span>R$ 10,00</span><span class="ptable__margin">R$ 20,00 <small>67%</small></span></div>
-              <div class="ptable__row ptable__row--best"><span>10 – 29</span><span>R$ 8,00</span><span class="ptable__margin">R$ 22,00 <small>73%</small></span></div>
-              <div class="ptable__row"><span>30 – 99</span><span>R$ 7,50</span><span class="ptable__margin">R$ 22,50 <small>75%</small></span></div>
-              <div class="ptable__row"><span>100 – 249</span><span>R$ 6,00</span><span class="ptable__margin">R$ 24,00 <small>80%</small></span></div>
-              <div class="ptable__row"><span>250 – 499</span><span>R$ 5,50</span><span class="ptable__margin">R$ 24,50 <small>82%</small></span></div>
-              <div class="ptable__row"><span>500 – 999</span><span>R$ 5,00</span><span class="ptable__margin">R$ 25,00 <small>83%</small></span></div>
-              <div class="ptable__row"><span>1.000 – 2.499</span><span>R$ 4,50</span><span class="ptable__margin">R$ 25,50 <small>85%</small></span></div>
-              <div class="ptable__row"><span>2.500 – 10.000</span><span>R$ 4,00</span><span class="ptable__margin">R$ 26,00 <small>87%</small></span></div>
-            </div>
+            <div class="ptable__cols"><span>Créditos</span><span>Unitário</span><span>Margem/mês</span></div>
+            <div class="ptable__rows" data-tabela="oscar"></div>
           </div>
           <div class="ptable__note"><i aria-hidden="true">✦</i><p>A tabela mais escalonada da linha: começa em 5 créditos e chega ao menor unitário da AX. Boa para quem quer testar pequeno e para quem opera em grande volume.</p></div>
         </div>
@@ -392,15 +371,8 @@
         <div class="ptable t-scout">
           <div class="ptable__head"><img src="./assets/card-scout.webp" alt="AX Scout — margem até 82%" loading="lazy"></div>
           <div class="ptable__body">
-            <div class="ptable__cols"><span>Créditos</span><span>Unitário</span><span>Sua margem</span></div>
-            <div class="ptable__rows">
-              <div class="ptable__row"><span>10 – 29</span><span>R$ 11,00</span><span class="ptable__margin">R$ 19,00 <small>63%</small></span></div>
-              <div class="ptable__row"><span>30 – 49</span><span>R$ 10,00</span><span class="ptable__margin">R$ 20,00 <small>67%</small></span></div>
-              <div class="ptable__row ptable__row--best"><span>50 – 99</span><span>R$ 8,00</span><span class="ptable__margin">R$ 22,00 <small>73%</small></span></div>
-              <div class="ptable__row"><span>100 – 499</span><span>R$ 7,00</span><span class="ptable__margin">R$ 23,00 <small>77%</small></span></div>
-              <div class="ptable__row"><span>500 – 999</span><span>R$ 6,00</span><span class="ptable__margin">R$ 24,00 <small>80%</small></span></div>
-              <div class="ptable__row"><span>1.000 – 5.000</span><span>R$ 5,50</span><span class="ptable__margin">R$ 24,50 <small>82%</small></span></div>
-            </div>
+            <div class="ptable__cols"><span>Créditos</span><span>Unitário</span><span>Margem/mês</span></div>
+            <div class="ptable__rows" data-tabela="scout"></div>
           </div>
           <div class="ptable__note"><i aria-hidden="true">✦</i><p>Pedido mínimo de 10 créditos. Audiência de torcida é grande e conversa todos os dias do ano, o que ajuda a girar o estoque de crédito.</p></div>
         </div>
@@ -408,14 +380,8 @@
         <div class="ptable t-combat">
           <div class="ptable__head"><img src="./assets/card-combat.webp" alt="AX Combat — margem até 80%" class="is-combat" loading="lazy"></div>
           <div class="ptable__body">
-            <div class="ptable__cols"><span>Créditos</span><span>Unitário</span><span>Sua margem</span></div>
-            <div class="ptable__rows">
-              <div class="ptable__row"><span>10 – 49</span><span>R$ 12,00</span><span class="ptable__margin">R$ 18,00 <small>60%</small></span></div>
-              <div class="ptable__row"><span>50 – 99</span><span>R$ 10,00</span><span class="ptable__margin">R$ 20,00 <small>67%</small></span></div>
-              <div class="ptable__row ptable__row--best"><span>100 – 499</span><span>R$ 8,00</span><span class="ptable__margin">R$ 22,00 <small>73%</small></span></div>
-              <div class="ptable__row"><span>500 – 999</span><span>R$ 7,00</span><span class="ptable__margin">R$ 23,00 <small>77%</small></span></div>
-              <div class="ptable__row"><span>1.000 – 5.000</span><span>R$ 6,00</span><span class="ptable__margin">R$ 24,00 <small>80%</small></span></div>
-            </div>
+            <div class="ptable__cols"><span>Créditos</span><span>Unitário</span><span>Margem/mês</span></div>
+            <div class="ptable__rows" data-tabela="combat"></div>
           </div>
           <div class="ptable__note"><i aria-hidden="true">✦</i><p>Pedido mínimo de 10 créditos. Funciona bem em academia, onde o aluno já paga mensalidade, e em grupo de card, com pico a cada evento.</p></div>
         </div>

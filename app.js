@@ -156,6 +156,7 @@
   var TABELAS = [
     {
       nome: 'Oscar',
+      destaque: 1,
       chave: 'oscar',
       tema: 't-oscar',
       faixas: [
@@ -165,6 +166,7 @@
     },
     {
       nome: 'Scout',
+      destaque: 2,
       chave: 'scout',
       tema: 't-scout',
       faixas: [
@@ -174,6 +176,7 @@
     },
     {
       nome: 'Combat',
+      destaque: 2,
       chave: 'combat',
       tema: 't-combat',
       faixas: [
@@ -197,66 +200,51 @@
   });
   var inteiro = new Intl.NumberFormat('pt-BR');
 
-  function iniciarSimulador() {
-    var caixa = document.getElementById('simulador');
-    var lista = document.getElementById('sim-lista');
-    if (!caixa || !lista) return;
+  /* Cada faixa da tabela de atacado vira um link para o checkout com a
+     quantidade daquela faixa. Os precos vem de TABELAS, entao nao existe
+     copia deles no HTML para sair do ar de sincronia. */
+  function iniciarTabelas() {
+    var alvos = [].slice.call(document.querySelectorAll('[data-tabela]'));
+    if (!alvos.length) return;
 
-    var abas = [].slice.call(caixa.querySelectorAll('.sim__tab'));
-    var selecionado = 0;
-
-    function linha(faixa, base) {
-      var n = faixa[0];
-      var custo = faixa[2];
-      var margem = (PRECO_CLIENTE_FINAL - custo) * n;
-
-      var a = document.createElement('a');
-      a.className = 'simlinha';
-      if (base) {
-        a.href = base + '?quantity=' + n;
-        a.target = '_blank';
-        a.rel = 'noopener';
-      } else {
-        a.href = '#tabelas';
+    alvos.forEach(function (alvo) {
+      var chave = alvo.getAttribute('data-tabela');
+      var tabela = null;
+      for (var i = 0; i < TABELAS.length; i++) {
+        if (TABELAS[i].chave === chave) tabela = TABELAS[i];
       }
-      a.setAttribute(
-        'aria-label',
-        'Comprar ' + inteiro.format(n) + ' créditos a ' + moeda.format(custo) + ' cada'
-      );
-      a.innerHTML =
-        '<span class="simlinha__qtd"><b>' + inteiro.format(n) + '</b> créditos' +
-        '<span class="simlinha__unit">' + moeda.format(custo) + ' cada</span></span>' +
-        '<span class="simlinha__num"><span>Você investe</span><b>' +
-        moedaCheia.format(n * custo) + '</b></span>' +
-        '<span class="simlinha__num simlinha__num--destaque"><span>Sua margem/mês</span><b>' +
-        moedaCheia.format(margem) + '</b></span>' +
-        '<span class="simlinha__seta" aria-hidden="true">→</span>';
-      return a;
-    }
+      if (!tabela) return;
 
-    function render() {
-      var tabela = TABELAS[selecionado];
-      var base = LINKS.revenda[tabela.chave];
+      var base = LINKS.revenda[chave];
 
-      caixa.className = 'sim ' + tabela.tema;
-      abas.forEach(function (aba, i) {
-        aba.setAttribute('aria-selected', String(i === selecionado));
-      });
+      tabela.faixas.forEach(function (faixa, i) {
+        var n = faixa[0];
+        var custo = faixa[2];
+        var margemUnitaria = PRECO_CLIENTE_FINAL - custo;
+        var pct = Math.round((margemUnitaria / PRECO_CLIENTE_FINAL) * 100);
 
-      lista.innerHTML = '';
-      tabela.faixas.forEach(function (faixa) {
-        lista.appendChild(linha(faixa, base));
-      });
-    }
-
-    abas.forEach(function (aba, i) {
-      aba.addEventListener('click', function () {
-        selecionado = i;
-        render();
+        var a = document.createElement('a');
+        a.className = 'ptable__row' + (i === tabela.destaque ? ' ptable__row--best' : '');
+        if (base) {
+          a.href = base + '?quantity=' + n;
+          a.target = '_blank';
+          a.rel = 'noopener';
+        } else {
+          a.href = '#planos';
+        }
+        a.setAttribute(
+          'aria-label',
+          'Comprar ' + inteiro.format(n) + ' créditos do ' + tabela.nome +
+            ' a ' + moeda.format(custo) + ' cada'
+        );
+        a.innerHTML =
+          '<span>' + inteiro.format(n) + '</span>' +
+          '<span>' + moeda.format(custo) + '</span>' +
+          '<span class="ptable__margin">' + moedaCheia.format(n * margemUnitaria) +
+          ' <small>' + pct + '%</small></span>';
+        alvo.appendChild(a);
       });
     });
-
-    render();
   }
 
   /* ------------------------------------------------------------ boot ---- */
@@ -264,5 +252,5 @@
   iniciarDestinos();
   iniciarDigitacao();
   iniciarCampo();
-  iniciarSimulador();
+  iniciarTabelas();
 })();
