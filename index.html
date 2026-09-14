@@ -338,25 +338,16 @@
       </div>
 
       <div class="sim t-oscar" id="simulador">
-        <div class="sim__eyebrow">Faça a conta</div>
-        <div class="sim__tabs" role="tablist" aria-label="Agente do simulador">
+        <div class="sim__eyebrow">Escolha sua faixa</div>
+        <div class="sim__tabs" role="tablist" aria-label="Agente">
           <button type="button" class="sim__tab" role="tab" data-sim="0" aria-selected="true">Oscar</button>
           <button type="button" class="sim__tab" role="tab" data-sim="1" aria-selected="false">Scout</button>
           <button type="button" class="sim__tab" role="tab" data-sim="2" aria-selected="false">Combat</button>
         </div>
-        <div class="sim__row">
-          <label for="creditos">Quantos créditos você compra?</label>
-          <span class="sim__count" id="sim-count">30 créditos</span>
-        </div>
-        <input id="creditos" type="range" min="5" max="10000" step="1" value="30" aria-describedby="sim-count">
-        <dl class="sim__grid">
-          <div class="sim__cell"><dt>Investimento</dt><dd id="sim-investimento">R$ 225</dd></div>
-          <div class="sim__cell"><dt>Faturamento mensal</dt><dd id="sim-faturamento">R$ 900</dd></div>
-          <div class="sim__cell sim__cell--big"><dt>Margem mensal</dt><dd id="sim-margem">R$ 675</dd></div>
-          <div class="sim__cell sim__cell--big"><dt>Em 12 meses</dt><dd id="sim-margem12">R$ 8.100</dd></div>
-        </dl>
-        <p class="sim__fine">Projeção, não promessa. Depende do seu público e do seu esforço de venda. Faixa aplicada: <span id="sim-faixa">30 – 99 créditos</span> — crédito a <span id="sim-custo">R$ 7,50</span>. Preço sugerido ao cliente final: R$ 30/mês.</p>
-        <a href="#faq" class="sim__cta" id="sim-cta" data-buy="revenda">Quero revender o Oscar →</a>
+        <!-- Linhas montadas pelo app.js a partir de TABELAS: cada faixa vira um
+             link para o checkout com a quantidade já no endereço. -->
+        <div class="sim__lista" id="sim-lista"></div>
+        <p class="sim__fine">Clique na faixa para ir direto ao pedido. Margem calculada sobre o preço sugerido de R$ 30/mês por cliente — você pode cobrar mais ou menos, e ela acompanha o seu preço. Projeção, não promessa.</p>
       </div>
     </div>
 

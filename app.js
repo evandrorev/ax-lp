@@ -199,83 +199,54 @@
 
   function iniciarSimulador() {
     var caixa = document.getElementById('simulador');
-    var slider = document.getElementById('creditos');
-    if (!caixa || !slider) return;
+    var lista = document.getElementById('sim-lista');
+    if (!caixa || !lista) return;
 
     var abas = [].slice.call(caixa.querySelectorAll('.sim__tab'));
-    var saida = {
-      contagem: document.getElementById('sim-count'),
-      investimento: document.getElementById('sim-investimento'),
-      faturamento: document.getElementById('sim-faturamento'),
-      margem: document.getElementById('sim-margem'),
-      margem12: document.getElementById('sim-margem12'),
-      faixa: document.getElementById('sim-faixa'),
-      custo: document.getElementById('sim-custo'),
-      cta: document.getElementById('sim-cta')
-    };
-
     var selecionado = 0;
-    var creditos = 30;
 
-    /* As paradas do slider sao os degraus da tabela de atacado: o inicio de
-       cada faixa, mais o teto da ultima. Assim a alavanca nao anda de um em
-       um — ela pula direto para o proximo preco unitario. */
-    function paradasDe(tabela) {
-      var paradas = [];
-      for (var i = 0; i < tabela.faixas.length; i++) paradas.push(tabela.faixas[i][0]);
-      paradas.push(tabela.faixas[tabela.faixas.length - 1][1]);
-      return paradas;
-    }
+    function linha(faixa, base) {
+      var n = faixa[0];
+      var custo = faixa[2];
+      var margem = (PRECO_CLIENTE_FINAL - custo) * n;
 
-    /* Ao trocar de agente as paradas mudam; mantem a posicao mais parecida. */
-    function indiceMaisProximo(paradas, n) {
-      var melhor = 0;
-      for (var i = 1; i < paradas.length; i++) {
-        if (Math.abs(paradas[i] - n) < Math.abs(paradas[melhor] - n)) melhor = i;
+      var a = document.createElement('a');
+      a.className = 'simlinha';
+      if (base) {
+        a.href = base + '?quantity=' + n;
+        a.target = '_blank';
+        a.rel = 'noopener';
+      } else {
+        a.href = '#tabelas';
       }
-      return melhor;
-    }
-
-    function faixaDe(tabela, n) {
-      for (var i = 0; i < tabela.faixas.length; i++) {
-        if (n >= tabela.faixas[i][0] && n <= tabela.faixas[i][1]) return tabela.faixas[i];
-      }
-      return tabela.faixas[tabela.faixas.length - 1];
+      a.setAttribute(
+        'aria-label',
+        'Comprar ' + inteiro.format(n) + ' créditos a ' + moeda.format(custo) + ' cada'
+      );
+      a.innerHTML =
+        '<span class="simlinha__qtd"><b>' + inteiro.format(n) + '</b> créditos' +
+        '<span class="simlinha__unit">' + moeda.format(custo) + ' cada</span></span>' +
+        '<span class="simlinha__num"><span>Você investe</span><b>' +
+        moedaCheia.format(n * custo) + '</b></span>' +
+        '<span class="simlinha__num simlinha__num--destaque"><span>Sua margem/mês</span><b>' +
+        moedaCheia.format(margem) + '</b></span>' +
+        '<span class="simlinha__seta" aria-hidden="true">→</span>';
+      return a;
     }
 
     function render() {
       var tabela = TABELAS[selecionado];
-      var paradas = paradasDe(tabela);
-      var indice = indiceMaisProximo(paradas, creditos);
-      var n = paradas[indice];
-      creditos = n;
-      var faixa = faixaDe(tabela, n);
-      var custo = faixa[2];
-      var margemUnitaria = PRECO_CLIENTE_FINAL - custo;
+      var base = LINKS.revenda[tabela.chave];
 
       caixa.className = 'sim ' + tabela.tema;
       abas.forEach(function (aba, i) {
         aba.setAttribute('aria-selected', String(i === selecionado));
       });
 
-      slider.min = '0';
-      slider.max = String(paradas.length - 1);
-      slider.step = '1';
-      slider.value = String(indice);
-      slider.setAttribute('aria-valuetext', inteiro.format(n) + ' créditos');
-
-      saida.contagem.textContent =
-        inteiro.format(n) + (n === 1 ? ' crédito' : ' créditos');
-      saida.investimento.textContent = moedaCheia.format(n * custo);
-      saida.faturamento.textContent = moedaCheia.format(n * PRECO_CLIENTE_FINAL);
-      saida.margem.textContent = moedaCheia.format(n * margemUnitaria);
-      saida.margem12.textContent = moedaCheia.format(n * margemUnitaria * 12);
-      saida.faixa.textContent =
-        inteiro.format(faixa[0]) + ' – ' + inteiro.format(faixa[1]) + ' créditos';
-      saida.custo.textContent = moeda.format(custo);
-      saida.cta.textContent = 'Quero revender o ' + tabela.nome + ' →';
-      var checkout = LINKS.revenda[tabela.chave];
-      apontar(saida.cta, checkout ? checkout + '?quantity=' + n : '');
+      lista.innerHTML = '';
+      tabela.faixas.forEach(function (faixa) {
+        lista.appendChild(linha(faixa, base));
+      });
     }
 
     abas.forEach(function (aba, i) {
@@ -283,12 +254,6 @@
         selecionado = i;
         render();
       });
-    });
-
-    slider.addEventListener('input', function () {
-      var paradas = paradasDe(TABELAS[selecionado]);
-      creditos = paradas[Number(slider.value)] || paradas[0];
-      render();
     });
 
     render();
