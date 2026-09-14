@@ -215,7 +215,26 @@
     };
 
     var selecionado = 0;
-    var creditos = Number(slider.value) || 30;
+    var creditos = 30;
+
+    /* As paradas do slider sao os degraus da tabela de atacado: o inicio de
+       cada faixa, mais o teto da ultima. Assim a alavanca nao anda de um em
+       um — ela pula direto para o proximo preco unitario. */
+    function paradasDe(tabela) {
+      var paradas = [];
+      for (var i = 0; i < tabela.faixas.length; i++) paradas.push(tabela.faixas[i][0]);
+      paradas.push(tabela.faixas[tabela.faixas.length - 1][1]);
+      return paradas;
+    }
+
+    /* Ao trocar de agente as paradas mudam; mantem a posicao mais parecida. */
+    function indiceMaisProximo(paradas, n) {
+      var melhor = 0;
+      for (var i = 1; i < paradas.length; i++) {
+        if (Math.abs(paradas[i] - n) < Math.abs(paradas[melhor] - n)) melhor = i;
+      }
+      return melhor;
+    }
 
     function faixaDe(tabela, n) {
       for (var i = 0; i < tabela.faixas.length; i++) {
@@ -226,9 +245,9 @@
 
     function render() {
       var tabela = TABELAS[selecionado];
-      var min = tabela.faixas[0][0];
-      var max = tabela.faixas[tabela.faixas.length - 1][1];
-      var n = Math.min(Math.max(creditos, min), max);
+      var paradas = paradasDe(tabela);
+      var indice = indiceMaisProximo(paradas, creditos);
+      var n = paradas[indice];
       creditos = n;
       var faixa = faixaDe(tabela, n);
       var custo = faixa[2];
@@ -239,9 +258,11 @@
         aba.setAttribute('aria-selected', String(i === selecionado));
       });
 
-      slider.min = String(min);
-      slider.max = String(max);
-      slider.value = String(n);
+      slider.min = '0';
+      slider.max = String(paradas.length - 1);
+      slider.step = '1';
+      slider.value = String(indice);
+      slider.setAttribute('aria-valuetext', inteiro.format(n) + ' créditos');
 
       saida.contagem.textContent =
         inteiro.format(n) + (n === 1 ? ' crédito' : ' créditos');
@@ -253,7 +274,8 @@
         inteiro.format(faixa[0]) + ' – ' + inteiro.format(faixa[1]) + ' créditos';
       saida.custo.textContent = moeda.format(custo);
       saida.cta.textContent = 'Quero revender o ' + tabela.nome + ' →';
-      apontar(saida.cta, LINKS.revenda[tabela.chave]);
+      var checkout = LINKS.revenda[tabela.chave];
+      apontar(saida.cta, checkout ? checkout + '?quantity=' + n : '');
     }
 
     abas.forEach(function (aba, i) {
@@ -264,7 +286,8 @@
     });
 
     slider.addEventListener('input', function () {
-      creditos = Number(slider.value);
+      var paradas = paradasDe(TABELAS[selecionado]);
+      creditos = paradas[Number(slider.value)] || paradas[0];
       render();
     });
 
