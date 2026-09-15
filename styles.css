@@ -1027,6 +1027,16 @@ h1, h2, h3, .display {
   padding: 12px 12px 14px;
 }
 
+.ptable__titulo span {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+  letter-spacing: 0;
+  text-transform: none;
+  font-weight: 500;
+  color: var(--fg-45);
+}
+
 /* Grade de faixas: cada bloco é a quantidade e o preço do crédito nela,
    e o bloco inteiro leva ao checkout daquela quantidade. */
 .ptable__rows {
@@ -1050,13 +1060,33 @@ h1, h2, h3, .display {
   transition: background 180ms, border-color 180ms, transform 180ms;
 }
 
-.ptable__row:hover,
-.ptable__row:focus-visible {
+.ptable__row:hover {
   background: var(--a-33);
   border-color: var(--a-aa);
   color: var(--fg);
   transform: translateY(-2px);
 }
+
+/* Foco de teclado na cor do agente: o anel azul padrão do navegador
+   parecia uma faixa já escolhida. */
+.ptable__row:focus-visible {
+  outline: 2px solid var(--al);
+  outline-offset: 2px;
+}
+
+.ptable__cta {
+  display: flex;
+  justify-content: center;
+  margin: 0 14px 14px;
+  padding: 15px;
+  border-radius: 12px;
+  background: var(--a);
+  color: #fff;
+  font-weight: 800;
+  font-size: 15px;
+  transition: filter 180ms;
+}
+.ptable__cta:hover { color: #fff; filter: brightness(1.15); }
 
 .ptable__qtd {
   font-family: var(--display);
@@ -1080,13 +1110,6 @@ h1, h2, h3, .display {
 
 /* Faixa ímpar sobrando: ocupa a linha inteira em vez de ficar órfã. */
 .ptable__row:last-child:nth-child(odd) { grid-column: 1 / -1; }
-
-/* A faixa de melhor relação ganha peso, sem virar outro componente. */
-.ptable__row--best {
-  border-color: var(--a);
-  background: var(--a-22);
-  box-shadow: 0 0 24px -12px var(--a-aa);
-}
 
 @media (max-width: 420px) {
   .ptable__rows { grid-template-columns: repeat(2, minmax(0, 1fr)); }

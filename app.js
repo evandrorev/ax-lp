@@ -156,7 +156,6 @@
   var TABELAS = [
     {
       nome: 'Oscar',
-      destaque: 1,
       chave: 'oscar',
       tema: 't-oscar',
       faixas: [
@@ -166,7 +165,6 @@
     },
     {
       nome: 'Scout',
-      destaque: 2,
       chave: 'scout',
       tema: 't-scout',
       faixas: [
@@ -176,7 +174,6 @@
     },
     {
       nome: 'Combat',
-      destaque: 2,
       chave: 'combat',
       tema: 't-combat',
       faixas: [
@@ -217,14 +214,17 @@
 
       var base = LINKS.revenda[chave];
 
-      tabela.faixas.forEach(function (faixa, i) {
+      var botao = document.querySelector('[data-comprar="' + chave + '"]');
+      if (botao && base) apontar(botao, base);
+
+      tabela.faixas.forEach(function (faixa) {
         var n = faixa[0];
         var custo = faixa[2];
         var margemUnitaria = PRECO_CLIENTE_FINAL - custo;
         var pct = Math.round((margemUnitaria / PRECO_CLIENTE_FINAL) * 100);
 
         var a = document.createElement('a');
-        a.className = 'ptable__row' + (i === tabela.destaque ? ' ptable__row--best' : '');
+        a.className = 'ptable__row';
         if (base) {
           a.href = base + '?quantity=' + n;
           a.target = '_blank';
