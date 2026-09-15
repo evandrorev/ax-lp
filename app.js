@@ -238,10 +238,10 @@
             ' a ' + moeda.format(custo) + ' cada'
         );
         a.innerHTML =
-          '<span>' + inteiro.format(n) + '</span>' +
-          '<span>' + moeda.format(custo) + '</span>' +
-          '<span class="ptable__margin">' + moedaCheia.format(n * margemUnitaria) +
-          ' <small>' + pct + '%</small></span>';
+          '<span class="ptable__qtd">' + inteiro.format(n) + ' créditos</span>' +
+          '<span class="ptable__preco">' + moeda.format(custo) + ' cada</span>' +
+          '<span class="ptable__margin">+' + moedaCheia.format(n * margemUnitaria) +
+          '/mês · ' + pct + '%</span>';
         alvo.appendChild(a);
       });
     });

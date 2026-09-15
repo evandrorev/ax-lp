@@ -1017,79 +1017,81 @@ h1, h2, h3, .display {
 
 .ptable__body { padding: 14px 14px 0; }
 
-.ptable__cols,
-.ptable__row {
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.8fr) minmax(0, 1fr);
-  gap: 10px;
-}
-
-.ptable__cols {
-  font-size: 11px;
-  letter-spacing: 0.08em;
+.ptable__titulo {
+  font-size: 12px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--fg-70);
+  color: var(--fg-60);
   font-weight: 700;
-  padding: 10px 12px 12px;
+  text-align: center;
+  padding: 12px 12px 14px;
 }
-.ptable__cols span { white-space: nowrap; }
-.ptable__cols span:last-child { text-align: right; }
 
+/* Grade de faixas: cada bloco é a quantidade e o preço do crédito nela,
+   e o bloco inteiro leva ao checkout daquela quantidade. */
 .ptable__rows {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.ptable__row {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-}
-
-.ptable__row {
-  position: relative;
-  transition: background 180ms, border-color 180ms;
   align-items: center;
-  padding: 12px;
-  border-radius: 10px;
-  font-size: 13px;
-  font-variant-numeric: tabular-nums;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  gap: 2px;
+  padding: 13px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--a-33);
+  background: var(--a-14);
   color: var(--fg);
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  transition: background 180ms, border-color 180ms, transform 180ms;
 }
 
 .ptable__row:hover,
 .ptable__row:focus-visible {
-  background: var(--a-22);
+  background: var(--a-33);
   border-color: var(--a-aa);
   color: var(--fg);
+  transform: translateY(-2px);
 }
 
-.ptable__row > span:nth-child(1) { white-space: nowrap; color: var(--fg-85); font-weight: 700; }
-.ptable__row > span:nth-child(2) { font-weight: 700; white-space: nowrap; }
+.ptable__qtd {
+  font-family: var(--display);
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--al);
+  line-height: 1.1;
+}
+
+.ptable__preco {
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+}
 
 .ptable__margin {
-  font-weight: 700;
-  color: var(--al);
+  font-size: 11px;
+  color: var(--fg-50);
   white-space: nowrap;
-  text-align: right;
-}
-.ptable__margin small {
-  font-size: 12px;
-  font-weight: 600;
-  opacity: 0.75;
 }
 
+/* Faixa ímpar sobrando: ocupa a linha inteira em vez de ficar órfã. */
+.ptable__row:last-child:nth-child(odd) { grid-column: 1 / -1; }
+
+/* A faixa de melhor relação ganha peso, sem virar outro componente. */
 .ptable__row--best {
-  background: linear-gradient(90deg, var(--a-cc), var(--a-33));
   border-color: var(--a);
+  background: var(--a-22);
+  box-shadow: 0 0 24px -12px var(--a-aa);
 }
-.ptable__row--best .ptable__margin { color: #fff; }
-.ptable__row--best::before {
-  content: '';
-  position: absolute;
-  left: -1px;
-  top: 6px;
-  bottom: 6px;
-  width: 4px;
-  border-radius: 0 3px 3px 0;
-  background: var(--al);
+
+@media (max-width: 420px) {
+  .ptable__rows { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ptable__qtd { font-size: 15px; }
+  .ptable__preco { font-size: 14px; }
 }
 
 .ptable__note {
