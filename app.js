@@ -15,14 +15,14 @@
 
   var LINKS = {
     cliente: {
-      oscar: 'http://licence.agentxlink.com/checkout/ax-oscar/client',
-      scout: 'http://licence.agentxlink.com/checkout/ax-scout/client',
-      combat: 'http://licence.agentxlink.com/checkout/ax-combat/client'
+      oscar: 'https://licence.agentxlink.com/checkout/ax-oscar/client',
+      scout: 'https://licence.agentxlink.com/checkout/ax-scout/client',
+      combat: 'https://licence.agentxlink.com/checkout/ax-combat/client'
     },
     revenda: {
-      oscar: 'http://licence.agentxlink.com/checkout/ax-oscar/reseller',
-      scout: 'http://licence.agentxlink.com/checkout/ax-scout/reseller',
-      combat: 'http://licence.agentxlink.com/checkout/ax-combat/reseller'
+      oscar: 'https://licence.agentxlink.com/checkout/ax-oscar/reseller',
+      scout: 'https://licence.agentxlink.com/checkout/ax-scout/reseller',
+      combat: 'https://licence.agentxlink.com/checkout/ax-combat/reseller'
     }
   };
 
