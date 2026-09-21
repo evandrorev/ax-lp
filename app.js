@@ -146,7 +146,7 @@
     scout:   { texto: 'Assinar por R$ 30', href: '#planos' },
     combat:  { texto: 'Assinar por R$ 30', href: '#planos' },
     planos:  { texto: 'Assinar por R$ 30', href: '#planos' },
-    revenda: { texto: 'Área do parceiro',  href: '#revenda' },
+    revenda: { texto: 'Ver preços de revenda', href: '#revenda' },
     faq:     { texto: 'Assinar por R$ 30', href: '#planos' }
   };
   var CTA_PADRAO = { texto: 'Assinar', href: '#planos' };
