@@ -1,16 +1,20 @@
 /* ==========================================================================
-   AX — Landing page
-   Três comportamentos: digitação das conversas do hero, troca de formação
-   no campo do Scout e o simulador de revenda.
+   AX — landing page
+   Dois comportamentos: montar as faixas de revenda a partir de uma tabela
+   única e manter a barra de cima acompanhando a seção visível.
    ========================================================================== */
 
 (function () {
   'use strict';
 
+  /* Preço da assinatura ao cliente final. A margem do revendedor é a
+     diferença entre ele e o custo do crédito na faixa escolhida. */
+  var PRECO_CLIENTE_FINAL = 30;
+
   /* ------------------------------------------------- destinos de compra ---
      Checkout de cada agente, nas duas pontas: quem assina para usar
-     (cliente) e quem compra crédito para revender (revenda). Um valor vazio
-     faz o botão manter a âncora atual, sem quebrar nada.
+     (client) e quem compra crédito para revender (reseller). Na revenda a
+     quantidade vai na URL, para o sistema reconhecer a faixa escolhida.
      ---------------------------------------------------------------------- */
 
   var LINKS = {
@@ -26,7 +30,8 @@
     }
   };
 
-  /* Aponta um link para a URL indicada; externo abre em nova aba. */
+  /* Aponta um link para a URL indicada; externo abre em nova aba. Sem URL,
+     o link mantém a âncora que já está no HTML e nada quebra. */
   function apontar(a, url) {
     if (!a || !url) return;
     a.href = url;
@@ -42,122 +47,16 @@
     });
   }
 
-  var reduzMovimento =
-    window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* ------------------------------------------------------------ preços ---
+     Cada faixa é [quantidade inicial, quantidade final, custo do crédito].
+     Fonte única: o HTML não repete nenhum preço, então tela e checkout não
+     têm como sair de sincronia.
+     ---------------------------------------------------------------------- */
 
-  /* ------------------------------------------- digitação das conversas --- */
-
-  function iniciarDigitacao() {
-    var alvos = [].slice.call(document.querySelectorAll('[data-typing]'));
-    if (!alvos.length) return;
-
-    var textos = alvos.map(function (el) {
-      return el.textContent;
-    });
-    var total = Math.max.apply(
-      null,
-      textos.map(function (t) {
-        return t.length;
-      })
-    );
-
-    function desenhar(n) {
-      alvos.forEach(function (el, i) {
-        el.textContent = textos[i].slice(0, n);
-        var cursor = el.parentNode.querySelector('.chat__cursor');
-        if (cursor) cursor.hidden = n >= textos[i].length;
-      });
-    }
-
-    if (reduzMovimento) {
-      desenhar(total);
-      return;
-    }
-
-    var digitados = 0;
-    desenhar(0);
-    var timer = setInterval(function () {
-      digitados = Math.min(total, digitados + 2);
-      desenhar(digitados);
-      if (digitados >= total) clearInterval(timer);
-    }, 22);
-  }
-
-  /* ------------------------------------------- campo tático do Scout ----- */
-
-  var FORMACOES = {
-    // Linha de quatro — campo largo
-    0: [
-      [30, 120], [100, 40], [100, 95], [100, 145], [100, 200],
-      [190, 40], [190, 95], [190, 145], [190, 200], [280, 90], [280, 150]
-    ],
-    // Linha de três com alas — ataca por dentro
-    1: [
-      [30, 120], [100, 70], [100, 120], [100, 170], [170, 25], [170, 215],
-      [200, 80], [200, 120], [200, 160], [290, 90], [290, 150]
-    ]
-  };
-
-  var ROTULOS = {
-    0: 'Linha de quatro — campo largo',
-    1: 'Linha de três com alas — ataca por dentro'
-  };
-
-  function iniciarCampo() {
-    var campo = document.getElementById('campo');
-    var rotulo = document.getElementById('formacao');
-    var replay = document.getElementById('replay');
-    if (!campo) return;
-
-    var jogadores = [].slice.call(campo.querySelectorAll('.player'));
-
-    function aplicar(indice) {
-      var pos = FORMACOES[indice];
-      jogadores.forEach(function (circulo, i) {
-        if (!pos[i]) return;
-        circulo.setAttribute('cx', pos[i][0]);
-        circulo.setAttribute('cy', pos[i][1]);
-      });
-      if (rotulo) rotulo.textContent = ROTULOS[indice];
-    }
-
-    if (replay) {
-      replay.addEventListener('click', function () {
-        aplicar(0);
-        setTimeout(function () {
-          aplicar(1);
-        }, 700);
-      });
-    }
-
-    if (!('IntersectionObserver' in window)) return;
-
-    var observer = new IntersectionObserver(
-      function (entradas) {
-        entradas.forEach(function (entrada) {
-          if (!entrada.isIntersecting) return;
-          observer.disconnect();
-          setTimeout(function () {
-            aplicar(1);
-          }, 600);
-        });
-      },
-      { threshold: 0.3 }
-    );
-    observer.observe(campo);
-  }
-
-  /* --------------------------------------------- simulador de revenda ---- */
-
-  var PRECO_CLIENTE_FINAL = 30;
-
-  // Faixas de atacado: [quantidade mínima, quantidade máxima, preço unitário].
-  // Mesmos valores impressos nas tabelas do index.html.
   var TABELAS = [
     {
       nome: 'Oscar',
       chave: 'oscar',
-      tema: 't-oscar',
       faixas: [
         [5, 9, 10], [10, 29, 8], [30, 99, 7.5], [100, 249, 6],
         [250, 499, 5.5], [500, 999, 5], [1000, 2499, 4.5], [2500, 10000, 4]
@@ -166,7 +65,6 @@
     {
       nome: 'Scout',
       chave: 'scout',
-      tema: 't-scout',
       faixas: [
         [10, 29, 11], [30, 49, 10], [50, 99, 8],
         [100, 499, 7], [500, 999, 6], [1000, 5000, 5.5]
@@ -175,7 +73,6 @@
     {
       nome: 'Combat',
       chave: 'combat',
-      tema: 't-combat',
       faixas: [
         [10, 49, 12], [50, 99, 10], [100, 499, 8],
         [500, 999, 7], [1000, 5000, 6]
@@ -184,44 +81,26 @@
   ];
 
   var moeda = new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL',
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2
-  });
-  var moedaCheia = new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL',
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0
+    style: 'currency', currency: 'BRL',
+    minimumFractionDigits: 2, maximumFractionDigits: 2
   });
   var inteiro = new Intl.NumberFormat('pt-BR');
 
-  /* Cada faixa da tabela de atacado vira um link para o checkout com a
-     quantidade daquela faixa. Os precos vem de TABELAS, entao nao existe
-     copia deles no HTML para sair do ar de sincronia. */
+  function margemPct(custo) {
+    return Math.round(((PRECO_CLIENTE_FINAL - custo) / PRECO_CLIENTE_FINAL) * 100);
+  }
+
   function iniciarTabelas() {
-    var alvos = [].slice.call(document.querySelectorAll('[data-tabela]'));
-    if (!alvos.length) return;
+    TABELAS.forEach(function (tabela) {
+      var alvo = document.querySelector('[data-tabela="' + tabela.chave + '"]');
+      if (!alvo) return;
 
-    alvos.forEach(function (alvo) {
-      var chave = alvo.getAttribute('data-tabela');
-      var tabela = null;
-      for (var i = 0; i < TABELAS.length; i++) {
-        if (TABELAS[i].chave === chave) tabela = TABELAS[i];
-      }
-      if (!tabela) return;
-
-      var base = LINKS.revenda[chave];
-
-      var botao = document.querySelector('[data-comprar="' + chave + '"]');
-      if (botao && base) apontar(botao, base);
+      var base = LINKS.revenda[tabela.chave];
+      apontar(document.querySelector('[data-comprar="' + tabela.chave + '"]'), base);
 
       tabela.faixas.forEach(function (faixa) {
         var n = faixa[0];
         var custo = faixa[2];
-        var margemUnitaria = PRECO_CLIENTE_FINAL - custo;
-        var pct = Math.round((margemUnitaria / PRECO_CLIENTE_FINAL) * 100);
 
         var a = document.createElement('a');
         a.className = 'ptable__row';
@@ -239,18 +118,83 @@
         );
         a.innerHTML =
           '<span class="ptable__qtd">' + inteiro.format(n) + ' créditos</span>' +
-          '<span class="ptable__preco">' + moeda.format(custo) + ' cada</span>' +
-          '<span class="ptable__margin">+' + moedaCheia.format(n * margemUnitaria) +
-          '/mês · ' + pct + '%</span>';
+          '<span class="ptable__preco">' + moeda.format(custo) + '</span>';
         alvo.appendChild(a);
       });
+
+      /* Uma linha de resumo no lugar de repetir a margem em cada faixa. */
+      var resumo = document.querySelector('[data-margem="' + tabela.chave + '"]');
+      if (resumo) {
+        var custos = tabela.faixas.map(function (f) { return f[2]; });
+        var menor = margemPct(Math.max.apply(null, custos));
+        var maior = margemPct(Math.min.apply(null, custos));
+        resumo.innerHTML =
+          'Preço por crédito. Cada crédito ativa um mês de um cliente seu, que paga ' +
+          '<b>' + moeda.format(PRECO_CLIENTE_FINAL) + '/mês</b>. Sua margem vai de ' +
+          '<b>' + menor + '%</b> a <b>' + maior + '%</b>.';
+      }
     });
+  }
+
+  /* --------------------------------------------------- barra de cima -----
+     O item da seção visível fica marcado e o botão da direita muda de
+     conversa: na revenda ele fala com o parceiro, não com o assinante.
+     ---------------------------------------------------------------------- */
+
+  var CTA_POR_SECAO = {
+    oscar:   { texto: 'Assinar por R$ 30', href: '#planos' },
+    scout:   { texto: 'Assinar por R$ 30', href: '#planos' },
+    combat:  { texto: 'Assinar por R$ 30', href: '#planos' },
+    planos:  { texto: 'Assinar por R$ 30', href: '#planos' },
+    revenda: { texto: 'Área do parceiro',  href: '#revenda' },
+    faq:     { texto: 'Assinar por R$ 30', href: '#planos' }
+  };
+  var CTA_PADRAO = { texto: 'Assinar', href: '#planos' };
+
+  function iniciarBarra() {
+    var barra = document.getElementById('nav');
+    var cta = document.getElementById('nav-cta');
+    var ctaTexto = document.getElementById('nav-cta-texto');
+    var itens = [].slice.call(document.querySelectorAll('[data-spy]'));
+    var secoes = [].slice.call(document.querySelectorAll('[data-secao]'));
+    if (!barra || !itens.length) return;
+
+    var atual = null;
+
+    function marcar(chave) {
+      if (chave === atual) return;
+      atual = chave;
+
+      itens.forEach(function (a) {
+        a.classList.toggle('is-active', a.getAttribute('data-spy') === chave);
+      });
+
+      var conf = CTA_POR_SECAO[chave] || CTA_PADRAO;
+      if (ctaTexto) ctaTexto.textContent = conf.texto;
+      if (cta) cta.href = conf.href;
+    }
+
+    function aoRolar() {
+      barra.classList.toggle('is-stuck', window.scrollY > 8);
+
+      /* Vale a seção que cruza a linha logo abaixo da barra. */
+      var linha = barra.offsetHeight + 40;
+      var visivel = null;
+      secoes.forEach(function (s) {
+        var caixa = s.getBoundingClientRect();
+        if (caixa.top <= linha && caixa.bottom > linha) visivel = s.getAttribute('data-secao');
+      });
+      marcar(visivel);
+    }
+
+    window.addEventListener('scroll', aoRolar, { passive: true });
+    window.addEventListener('resize', aoRolar);
+    aoRolar();
   }
 
   /* ------------------------------------------------------------ boot ---- */
 
   iniciarDestinos();
-  iniciarDigitacao();
-  iniciarCampo();
   iniciarTabelas();
+  iniciarBarra();
 })();
