@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AX — um especialista para cada assunto</title>
 <meta name="description" content="Três agentes de IA especializados: Oscar (filmes e séries), Scout (futebol) e Combat (MMA, UFC e boxe). R$ 30/mês por agente, com programa de revenda por créditos.">
-<meta name="theme-color" content="#050709">
+<meta name="theme-color" content="#08090A">
 <meta property="og:title" content="AX — um especialista para cada assunto">
 <meta property="og:description" content="Uma IA que só entende de uma coisa e responde como quem acompanha aquilo há anos.">
 <meta property="og:type" content="website">
@@ -17,492 +17,456 @@
 </head>
 <body>
 
-<!-- Biblioteca de ícones. Cada um é desenhado uma vez e reaproveitado com <use>. -->
-<svg class="sprite" aria-hidden="true" focusable="false"><defs>
-  <g id="i-bolt"><path d="M13 2 4.5 13.5H11l-1 8.5 8.5-11.5H12z"/></g>
-  <g id="i-clock"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.2l3.4 2"/></g>
-  <g id="i-shield"><path d="M12 3 5 6v5.5c0 4.3 2.9 8.1 7 9.5 4.1-1.4 7-5.2 7-9.5V6z"/></g>
-  <g id="i-spark"><path d="M12 3c.6 4.3 1.7 5.4 6 6-4.3.6-5.4 1.7-6 6-.6-4.3-1.7-5.4-6-6 4.3-.6 5.4-1.7 6-6z"/></g>
-  <g id="i-ball"><circle cx="12" cy="12" r="9"/><path d="m12 7.6 3.6 2.6-1.4 4.3H9.8L8.4 10.2z"/><path d="M12 3v4.6M19.6 10.2l-4 .1M17.1 19l-2.9-4M6.9 19l2.9-4M4.4 10.2l4 .1"/></g>
-  <g id="i-fist"><path d="M6.5 9.2A5.2 5.2 0 0 1 11.7 4h1.6a5.2 5.2 0 0 1 5.2 5.2v3.4a2.8 2.8 0 0 1-2.8 2.8H9.3a2.8 2.8 0 0 1-2.8-2.8z"/><path d="M6.5 11.4h-.9a2.1 2.1 0 0 1 0-4.2h.9"/><path d="M8.6 15.4v1.8a2.4 2.4 0 0 0 2.4 2.4h3a2.4 2.4 0 0 0 2.4-2.4v-1.8"/></g>
-  <g id="i-arrow"><path d="M5 12h13M13 6.5 18.5 12 13 17.5"/></g>
-  <g id="i-coins"><ellipse cx="12" cy="6.5" rx="7" ry="3"/><path d="M5 6.5v5c0 1.7 3.1 3 7 3s7-1.3 7-3v-5M5 11.5v5c0 1.7 3.1 3 7 3s7-1.3 7-3v-5"/></g>
-  <g id="i-bars"><path d="M5 20v-5M11 20V8M17 20v-9"/></g>
-  <g id="i-users"><circle cx="9" cy="8.5" r="3"/><path d="M3.5 19.5a5.5 5.5 0 0 1 11 0M16 5.8a3 3 0 0 1 0 5.4M17.5 19.5a5.5 5.5 0 0 0-2.2-4.4"/></g>
-  <g id="i-infinity"><path d="M8.2 9.3a3.8 3.8 0 1 0 0 5.4L15.8 9.3a3.8 3.8 0 1 1 0 5.4z"/></g>
-  <g id="i-headset"><path d="M4.5 14v-2a7.5 7.5 0 0 1 15 0v2"/><rect x="2.8" y="13.4" width="3.6" height="5.4" rx="1.6"/><rect x="17.6" y="13.4" width="3.6" height="5.4" rx="1.6"/><path d="M19.5 18.8v.4a2.6 2.6 0 0 1-2.6 2.6H13"/></g>
-  <g id="i-clap"><rect x="3" y="8.2" width="18" height="12.3" rx="2"/><path d="M3 8.2 4.6 3.9h14.8L21 8.2"/><path d="M9.3 4 7.6 8.2M15 4l-1.7 4.2"/></g>
-  <g id="i-clip"><path d="M17 8.5 10.3 15.2a2.3 2.3 0 0 0 3.2 3.2l6.8-6.8a4.4 4.4 0 0 0-6.2-6.2L6.8 12.7a6.4 6.4 0 0 0 9 9l5.4-5.4"/></g>
-  <g id="i-send"><path d="M20 12 4 5l2.6 7L4 19z"/></g>
-  <g id="i-chat"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></g>
-  <g id="i-lock"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></g>
-</defs></svg>
-
-<!-- Barra fixa. O item ativo e o botão da direita acompanham a seção visível. -->
-<header class="nav" id="nav">
+<!-- NAV: uma linha, âncoras à esquerda, ações à direita -->
+<header class="nav">
   <div class="wrap nav__inner">
-    <a href="#topo" class="brand" aria-label="AX — início">
-      <img src="./assets/ax-logo.png" alt="" width="52" height="52">
-      <span class="brand__claim">Inteligência<br>especializada<br>sempre com você</span>
-    </a>
+    <a href="#topo" class="nav__logo" aria-label="AX — início"><img src="./assets/ax-logo.png" alt="AX" width="40" height="40"></a>
     <nav class="nav__links" aria-label="Seções">
-      <a href="#oscar"  class="t-oscar"  data-spy="oscar">Oscar</a>
-      <a href="#scout"  class="t-scout"  data-spy="scout">Scout</a>
-      <a href="#combat" class="t-combat" data-spy="combat">Combat</a>
-      <a href="#planos"  data-spy="planos">Planos</a>
-      <a href="#revenda" data-spy="revenda">Revenda</a>
-      <a href="#faq"     data-spy="faq">Dúvidas</a>
+      <a href="#oscar" class="t-oscar">Oscar</a>
+      <a href="#scout" class="t-scout">Scout</a>
+      <a href="#combat" class="t-combat">Combat</a>
+      <a href="#planos">Planos</a>
+      <a href="#revenda">Revenda</a>
+      <a href="#faq">Dúvidas</a>
     </nav>
-    <a href="#planos" class="nav__cta" id="nav-cta">
-      <span id="nav-cta-texto">Assinar</span>
-      <svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg>
-    </a>
+    <a href="#planos" class="nav__cta">Assinar</a>
   </div>
 </header>
 
 <main>
 
-<!-- ======================================================== HERO ======== -->
+<!-- HERO: centrado, três conversas ao vivo lado a lado -->
 <section id="topo" class="hero">
-  <div class="glow glow--hero"></div>
-  <p class="rail rail--top" aria-hidden="true">Conhecimento que te acompanha</p>
-  <p class="rail rail--bottom" aria-hidden="true">Paixão também é informação</p>
-
+  <div class="glow hero__glow"></div>
   <div class="wrap hero__inner">
-    <div class="hero__text">
-      <p class="eyebrow">Mais que IA. Especialistas reais.</p>
-      <h1>IA especializada para aquilo que <span class="grad">você realmente gosta.</span></h1>
-      <p class="lede">Acesse especialistas em entretenimento, futebol e lutas, disponíveis 24 horas por dia, prontos para responder, analisar e conversar com você.</p>
-      <div class="actions">
-        <a href="#oscar" class="btn btn--light">Conhecer especialistas <svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
-        <a href="#planos" class="btn btn--ghost">Ver planos <svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
-      </div>
-      <ul class="traits">
-        <li><svg viewBox="0 0 24 24"><use href="#i-bolt"/></svg><span>Respostas<br>em segundos</span></li>
-        <li><svg viewBox="0 0 24 24"><use href="#i-clock"/></svg><span>Disponível<br>24 horas</span></li>
-        <li><svg viewBox="0 0 24 24"><use href="#i-shield"/></svg><span>Informações<br>confiáveis</span></li>
-      </ul>
-    </div>
-
-    <!-- A janela do produto, inclinada. É HTML, não imagem: fica nítida em
-         qualquer tela e não pesa no carregamento. -->
-    <div class="hero__stage" aria-hidden="true">
-      <p class="app__note">Sempre aprendendo<br>para você ir além</p>
-      <span class="app__me">E</span>
-      <div class="app">
-        <aside class="app__side">
-          <img src="./assets/ax-logo.png" alt="" width="34" height="34" class="app__logo">
-          <span class="app__new"><svg viewBox="0 0 24 24"><use href="#i-chat"/></svg>Novo chat</span>
-          <span class="app__item"><svg viewBox="0 0 24 24"><use href="#i-users"/></svg>Especialistas</span>
-          <span class="app__item"><svg viewBox="0 0 24 24"><use href="#i-clock"/></svg>Histórico</span>
-          <span class="app__item"><svg viewBox="0 0 24 24"><use href="#i-spark"/></svg>Favoritos</span>
-          <p class="app__label">Seus agentes</p>
-          <span class="app__agent t-oscar"><i></i>AX Oscar</span>
-          <span class="app__agent t-scout"><i></i>AX Scout</span>
-          <span class="app__agent t-combat"><i></i>AX Combat</span>
-        </aside>
-        <div class="app__main">
-          <div class="app__head">
-            <span class="app__mark t-oscar"><svg viewBox="0 0 24 24"><use href="#i-spark"/></svg></span>
-            <div><b>AX Oscar</b><em>Entretenimento</em></div>
-          </div>
-          <div class="app__msg app__msg--me">Quais são as melhores séries para maratonar em 2026?<time>10:24</time></div>
-          <div class="app__reply">
-            <span class="app__mark t-oscar"><svg viewBox="0 0 24 24"><use href="#i-spark"/></svg></span>
-            <div>
-              <p>Aqui estão algumas das séries mais comentadas e bem avaliadas para maratonar em 2026:</p>
-              <ol>
-                <li><i>Silo</i> (Apple TV+) – ficção científica envolvente</li>
-                <li><i>The Last of Us</i> (HBO) – drama e emoção</li>
-                <li><i>Fallout</i> (Prime Video) – aventura e mundo imersivo</li>
-                <li><i>Black Mirror</i> – tecnologia e dilemas reais</li>
-                <li><i>O Problema dos 3 Corpos</i> (Netflix) – ficção científica épica</li>
-              </ol>
-              <p>Se quiser, posso montar uma lista personalizada de acordo com o seu estilo. 🎬</p>
-            </div>
-          </div>
-          <div class="app__bar"><svg viewBox="0 0 24 24"><use href="#i-clip"/></svg><span>Pergunte ao AX Oscar…</span><b><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></b></div>
-        </div>
-      </div>
+    <p class="eyebrow hero__eyebrow">Três especialistas · Um assunto cada · Português, no seu nível</p>
+    <h1>Um especialista à sua disposição, <span>24 horas por dia.</span></h1>
+    <p class="hero__sub">Uma IA que só entende de uma coisa — filmes e séries, futebol ou luta — e responde como quem acompanha aquilo há anos. Sem lista, sem grito, sem esperar o grupo acordar.</p>
+    <div class="hero__actions">
+      <a href="#planos" class="btn-light">Ver os planos</a>
+      <a href="#oscar" class="btn-ghost">Conhecer os agentes ↓</a>
     </div>
   </div>
-
-  <!-- Três portas de entrada, uma por agente. -->
   <div class="wrap hero__cards">
-    <a href="#oscar" class="door t-oscar">
-      <span class="door__icon"><svg viewBox="0 0 24 24"><use href="#i-spark"/></svg></span>
-      <span class="door__id"><b>AX Oscar</b><em>Entretenimento</em></span>
-      <span class="door__go"><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></span>
-      <span class="door__ask">Quais são os lançamentos de filmes este mês?<time>10:24</time></span>
-      <span class="door__tags">Filmes · Séries · Curiosidades · Recomendações</span>
+
+    <a href="#oscar" class="chat t-oscar">
+      <div class="chat__head">
+        <div class="chat__name"><span class="chat__spark" aria-hidden="true">✦</span><span>AX Oscar</span></div>
+        <span class="chat__role">entretenimento</span>
+      </div>
+      <div class="chat__body">
+        <p class="chat__you">terminei uma série que me destruiu e não quero nada barulhento agora</p>
+        <p class="chat__them"><span data-typing>Então você quer o mesmo ritmo, não o mesmo gênero. Me diz: o que te incomodaria mais hoje, um filme triste ou um filme longo?</span><span class="chat__cursor" aria-hidden="true">▍</span></p>
+      </div>
     </a>
-    <a href="#scout" class="door t-scout">
-      <span class="door__icon"><svg viewBox="0 0 24 24"><use href="#i-ball"/></svg></span>
-      <span class="door__id"><b>AX Scout</b><em>Futebol</em></span>
-      <span class="door__go"><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></span>
-      <span class="door__ask">Quais são os destaques da próxima rodada da Champions?<time>10:24</time></span>
-      <span class="door__tags">Análises · Estatísticas · Táticas · Mercado</span>
+
+    <a href="#scout" class="chat t-scout">
+      <div class="chat__head">
+        <div class="chat__name"><span class="chat__spark" aria-hidden="true">✦</span><span>AX Scout</span></div>
+        <span class="chat__role">futebol</span>
+      </div>
+      <div class="chat__body">
+        <p class="chat__you">como funciona a fase de grupos da Copa? quantos se classificam?</p>
+        <p class="chat__them"><span data-typing>São 12 grupos de 4. Passam os dois primeiros de cada grupo mais os 8 melhores terceiros — 32 times no mata-mata. Quer que eu monte o caminho possível da Seleção até a final?</span><span class="chat__cursor" aria-hidden="true">▍</span></p>
+      </div>
     </a>
-    <a href="#combat" class="door t-combat">
-      <span class="door__icon"><svg viewBox="0 0 24 24"><use href="#i-fist"/></svg></span>
-      <span class="door__id"><b>AX Combat</b><em>Esportes de combate</em></span>
-      <span class="door__go"><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></span>
-      <span class="door__ask">Qual é a análise da luta principal deste final de semana?<time>10:24</time></span>
-      <span class="door__tags">Análises · Lutadores · Eventos · Estratégias</span>
+
+    <a href="#combat" class="chat t-combat">
+      <div class="chat__head">
+        <div class="chat__name"><span class="chat__spark" aria-hidden="true">✦</span><span>AX Combat</span></div>
+        <span class="chat__role">esportes de combate</span>
+      </div>
+      <div class="chat__body">
+        <p class="chat__you">por que o canhoto deu tanto trabalho hoje?</p>
+        <p class="chat__them"><span data-typing>Porque contra um canhoto o pé da frente muda de lado, e quem manda é quem pisa por fora do pé do outro. Repare: toda vez que ele circulou pra própria direita, tomou.</span><span class="chat__cursor" aria-hidden="true">▍</span></p>
+      </div>
     </a>
+
   </div>
 </section>
 
-<!-- ====================================================== OSCAR ========= -->
-<section id="oscar" class="agent t-oscar" data-secao="oscar">
-  <div class="glow glow--agent"></div>
-  <div class="wrap agent__inner">
-    <div class="agent__text">
-      <div class="pills">
-        <span class="pill pill--live"><i></i>AX Oscar</span>
-        <span class="pill">Filmes · Séries · Animes · Doramas · Documentários</span>
-      </div>
-      <h2>Tudo sobre o que você assiste, <span class="tint">quando você quiser.</span></h2>
-      <p class="lede">O AX Oscar é o seu especialista em filmes e séries. Ele responde, indica, analisa e conversa com você sobre lançamentos, clássicos, curiosidades, teorias e muito mais — em qualquer hora do dia.</p>
-      <div class="actions">
-        <a href="#planos" class="btn btn--tint" data-buy="oscar">Assinar o Oscar por R$ 30/mês <svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
-        <a href="#planos" class="btn btn--ghost">Ver planos</a>
-      </div>
-      <ul class="traits">
-        <li><svg viewBox="0 0 24 24"><use href="#i-bolt"/></svg><span>Respostas<br>em segundos</span></li>
-        <li><svg viewBox="0 0 24 24"><use href="#i-clock"/></svg><span>Disponível<br>24 horas</span></li>
-        <li><svg viewBox="0 0 24 24"><use href="#i-shield"/></svg><span>Sem spoilers<br>(se você preferir)</span></li>
-      </ul>
-    </div>
+<!-- FAIXA MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Final explicado</span><span style="color:#FF8095">✦</span><span>Por que o técnico mudou no intervalo</span><span style="color:#5DE3A5">✦</span><span>O que abriu a guarda</span><span style="color:#B99BFF">✦</span><span>Por onde começar em anime</span><span style="color:#FF8095">✦</span><span>O que é xG</span><span style="color:#5DE3A5">✦</span><span>Vale acordar pro card?</span><span style="color:#B99BFF">✦</span>
+    <span>Final explicado</span><span style="color:#FF8095">✦</span><span>Por que o técnico mudou no intervalo</span><span style="color:#5DE3A5">✦</span><span>O que abriu a guarda</span><span style="color:#B99BFF">✦</span><span>Por onde começar em anime</span><span style="color:#FF8095">✦</span><span>O que é xG</span><span style="color:#5DE3A5">✦</span><span>Vale acordar pro card?</span><span style="color:#B99BFF">✦</span>
+  </div>
+</div>
 
-    <div class="chat" aria-hidden="true">
-      <div class="chat__top">
-        <span class="chat__avatar"><svg viewBox="0 0 24 24"><use href="#i-clap"/></svg></span>
-        <span class="chat__who"><b>AX Oscar</b><em><i></i>Online agora</em></span>
-        <span class="chat__role">Especialista em filmes e séries</span>
-        <span class="chat__more">⋮</span>
-      </div>
-      <div class="chat__thread">
-        <p class="bubble bubble--me">Qual a melhor série pra assistir hoje à noite?<time>20:14</time></p>
-        <div class="chat__reply">
-          <span class="chat__avatar chat__avatar--sm"><svg viewBox="0 0 24 24"><use href="#i-clap"/></svg></span>
-          <div class="bubble">
-            <p>Depende do que você está procurando!<br>Aqui vão algumas ótimas opções de acordo com o seu perfil:</p>
-            <ol>
-              <li><b>Fallout</b> (Prime Video) – aventura e mundo imersivo</li>
-              <li><b>The Last of Us</b> (HBO) – drama e emoção</li>
-              <li><b>Dark</b> (Netflix) – mistério e viagem no tempo</li>
-              <li><b>O Problema dos 3 Corpos</b> (Netflix) – ficção científica</li>
-              <li><b>Better Call Saul</b> (Netflix) – roteiro impecável</li>
-            </ol>
-            <p>Se quiser, posso te dar mais opções específicas com base no seu gosto. O que você prefere ver hoje? 🍿</p>
-            <time>20:14</time>
-          </div>
+<!-- OSCAR: número gigante à esquerda, "pergunte assim" e sem/com à direita -->
+<section id="oscar" class="agent t-oscar">
+  <div class="glow agent__glow--right"></div>
+  <div class="wrap agent__inner">
+    <div class="agent__intro">
+      <div class="agent__id">
+        <span class="agent__num">01</span>
+        <div>
+          <div class="agent__name">AX Oscar</div>
+          <div class="agent__scope">Filmes · Séries · Animes · Doramas · Documentários</div>
         </div>
       </div>
-      <div class="chat__chips"><span>Lançamentos</span><span>Séries parecidas</span><span>Filmes por gênero</span><span>Detalhes da trama</span></div>
-      <div class="chat__bar"><svg viewBox="0 0 24 24"><use href="#i-clip"/></svg><span>Digite sua pergunta…</span><b><svg viewBox="0 0 24 24"><use href="#i-send"/></svg></b></div>
+      <h2>Você não precisa de mais catálogo. Precisa de alguém que assistiu.</h2>
+      <p class="agent__lead">Terça, 23h. A série acabou e ninguém do grupo viu. O Oscar viu. Ele pergunta o que você sentiu antes de indicar, explica o final que ficou aberto e acha o próximo a partir do que você já amou — em filme, série, anime ou dorama.</p>
+      <div class="agent__cta">
+        <a href="#planos" class="btn-agent">Ativar o Oscar · R$ 30/mês</a>
+        <span class="agent__note">cancela quando quiser</span>
+      </div>
+    </div>
+
+    <div class="agent__panels">
+      <div class="uses">
+        <div class="glow uses__glow--left"></div>
+        <div class="uses__head">
+          <div class="uses__label">Pergunte assim</div>
+          <div class="uses__hint">e ele já sabe o que fazer</div>
+        </div>
+        <div class="uses__list">
+          <div class="uses__row"><div class="uses__q">“um filme bom pra hoje à noite, até 1h40”</div><div class="uses__tag">indicação</div></div>
+          <div class="uses__row"><div class="uses__q">“gostei muito dessa série. o que vejo depois?”</div><div class="uses__tag">parecido</div></div>
+          <div class="uses__row"><div class="uses__q">“não entendi o final. me explica?”</div><div class="uses__tag">final explicado</div></div>
+          <div class="uses__row"><div class="uses__q">“vale a pena continuar na 2ª temporada?”</div><div class="uses__tag">vale ou não</div></div>
+          <div class="uses__row"><div class="uses__q">“quero começar em anime. por onde?”</div><div class="uses__tag">porta de entrada</div></div>
+        </div>
+        <div class="uses__foot">Filme, série, anime, dorama ou documentário. Sem spoiler, a não ser que você peça.</div>
+      </div>
+
+      <div class="compare">
+        <div class="compare__head"><span>Sem o Oscar</span><span>Com o Oscar</span></div>
+        <div class="compare__row"><span>40 minutos rolando três aplicativos.</span><span>Uma pergunta, duas opções e o motivo de cada.</span></div>
+        <div class="compare__row"><span>Vídeo de 20 min "final explicado" com spoiler de outra série.</span><span>As leituras possíveis e as pistas na ordem em que aparecem.</span></div>
+        <div class="compare__row"><span>"Quero começar em anime" e 300 episódios de sugestão.</span><span>A porta certa, a partir de uma série que você já gostou.</span></div>
+        <div class="compare__row"><span>O algoritmo devolvendo o mesmo de sempre.</span><span>Indicação que parte do que você sentiu, não do que clicou.</span></div>
+      </div>
     </div>
   </div>
-  <div class="wrap agent__foot"><span class="agent__motto">Histórias que te acompanham.</span><span class="agent__sign">AX Oscar · faz parte do seu dia.</span></div>
 </section>
 
-<!-- ====================================================== SCOUT ========= -->
-<section id="scout" class="agent t-scout" data-secao="scout">
-  <div class="glow glow--agent"></div>
+<!-- SCOUT: invertido, campo animado -->
+<section id="scout" class="agent t-scout">
+  <div class="glow agent__glow--left"></div>
   <div class="wrap agent__inner">
-    <div class="agent__text">
-      <div class="pills">
-        <span class="pill pill--live"><i></i>AX Scout</span>
-        <span class="pill">Futebol · Análises · Estatísticas · Táticas · Mercado</span>
-      </div>
-      <h2>Mais futebol. Mais informação, <span class="tint">melhores decisões.</span></h2>
-      <p class="lede">O AX Scout analisa jogos, times, jogadores e competições. Ele traz estatísticas, táticas, análises e insights em tempo real para você acompanhar o futebol de um jeito mais inteligente.</p>
-      <div class="actions">
-        <a href="#planos" class="btn btn--tint" data-buy="scout">Assinar o Scout por R$ 30/mês <svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
-        <a href="#planos" class="btn btn--ghost">Ver planos</a>
-      </div>
-      <ul class="traits">
-        <li><svg viewBox="0 0 24 24"><use href="#i-bolt"/></svg><span>Respostas<br>em segundos</span></li>
-        <li><svg viewBox="0 0 24 24"><use href="#i-clock"/></svg><span>Disponível<br>24 horas</span></li>
-        <li><svg viewBox="0 0 24 24"><use href="#i-shield"/></svg><span>Análises confiáveis<br>e atualizadas</span></li>
-      </ul>
-    </div>
-
-    <div class="chat" aria-hidden="true">
-      <div class="chat__top">
-        <span class="chat__avatar"><svg viewBox="0 0 24 24"><use href="#i-ball"/></svg></span>
-        <span class="chat__who"><b>AX Scout</b><em><i></i>Online agora</em></span>
-        <span class="chat__role">Seu analista de futebol 24/7</span>
-        <span class="chat__more">⋮</span>
-      </div>
-      <div class="chat__thread">
-        <p class="bubble bubble--me">Quais são os jogos de hoje na Champions?<time>20:14</time></p>
-        <div class="chat__reply">
-          <span class="chat__avatar chat__avatar--sm"><svg viewBox="0 0 24 24"><use href="#i-ball"/></svg></span>
-          <div class="bubble">
-            <p>Claro! Hoje temos os seguintes jogos da<br>Champions League:</p>
-            <ul class="jogos">
-              <li><time>16:00</time><span>Real Madrid x Manchester City</span></li>
-              <li><time>16:00</time><span>Bayern de Munique x Arsenal</span></li>
-              <li><time>19:00</time><span>Barcelona x PSG</span></li>
-              <li><time>19:00</time><span>Borussia Dortmund x Atlético de Madrid</span></li>
-            </ul>
-            <p>Se quiser, posso te trazer as prováveis escalações, estatísticas, análises e palpites de cada jogo.<br>Qual deles você quer analisar primeiro?</p>
-            <time>20:14</time>
-          </div>
+    <div class="agent__panels">
+      <div class="field" id="campo">
+        <svg viewBox="0 0 360 240" role="img" aria-label="Campo de futebol com a formação tática trocando de linha de quatro para linha de três">
+          <rect x="8" y="8" width="344" height="224" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1"></rect>
+          <line x1="180" y1="8" x2="180" y2="232" stroke="rgba(255,255,255,0.14)" stroke-width="1"></line>
+          <circle cx="180" cy="120" r="30" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1"></circle>
+          <rect x="8" y="70" width="50" height="100" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1"></rect>
+          <rect x="302" y="70" width="50" height="100" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1"></rect>
+          <g id="jogadores">
+            <circle class="player" cx="30" cy="120" r="9"></circle>
+            <circle class="player" cx="100" cy="40" r="9"></circle>
+            <circle class="player" cx="100" cy="95" r="9"></circle>
+            <circle class="player" cx="100" cy="145" r="9"></circle>
+            <circle class="player" cx="100" cy="200" r="9"></circle>
+            <circle class="player" cx="190" cy="40" r="9"></circle>
+            <circle class="player" cx="190" cy="95" r="9"></circle>
+            <circle class="player" cx="190" cy="145" r="9"></circle>
+            <circle class="player" cx="190" cy="200" r="9"></circle>
+            <circle class="player" cx="280" cy="90" r="9"></circle>
+            <circle class="player" cx="280" cy="150" r="9"></circle>
+          </g>
+        </svg>
+        <div class="field__foot">
+          <span class="field__label" id="formacao">Linha de quatro — campo largo</span>
+          <button type="button" class="field__replay" id="replay">Ver a troca de novo</button>
         </div>
       </div>
-      <div class="chat__chips"><span>Jogos de hoje</span><span>Classificação</span><span>Análise de jogo</span><span>Mercado da bola</span></div>
-      <div class="chat__bar"><svg viewBox="0 0 24 24"><use href="#i-clip"/></svg><span>Digite sua pergunta…</span><b><svg viewBox="0 0 24 24"><use href="#i-send"/></svg></b></div>
-    </div>
-  </div>
-  <div class="wrap agent__foot"><span class="agent__motto">Futebol em outro nível.</span><span class="agent__sign">AX Scout · faz parte do seu dia.</span></div>
-</section>
 
-<!-- ===================================================== COMBAT ========= -->
-<section id="combat" class="agent t-combat" data-secao="combat">
-  <div class="glow glow--agent"></div>
-  <div class="wrap agent__inner">
-    <div class="agent__text">
-      <div class="pills">
-        <span class="pill pill--live"><i></i>AX Combat</span>
-        <span class="pill">Lutas · Eventos · Lutadores · Estratégias · Análises</span>
+      <div class="compare">
+        <div class="compare__head"><span>Sem o Scout</span><span>Com o Scout</span></div>
+        <div class="compare__row"><span>"Faltou vontade" e a mesma discussão de sempre.</span><span>Três coisas concretas para observar quando rever o jogo.</span></div>
+        <div class="compare__row"><span>O narrador cita xG e você finge que sabe.</span><span>Você sabe o que é — e quando ele importa.</span></div>
+        <div class="compare__row"><span>Análise no grupo vira briga de rival.</span><span>Um interlocutor que não torce e responde às 2h.</span></div>
       </div>
-      <h2>Lutas em outro nível. <span class="tint">Informação que te coloca mais perto da ação.</span></h2>
-      <p class="lede">O AX Combat traz análises, notícias, eventos, lutadores e estratégias do mundo das lutas. UFC, boxe, MMA, Jiu-Jitsu e muito mais — tudo em um só lugar, com respostas rápidas e precisas.</p>
-      <div class="actions">
-        <a href="#planos" class="btn btn--tint" data-buy="combat">Assinar o Combat por R$ 30/mês <svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
-        <a href="#planos" class="btn btn--ghost">Ver planos</a>
-      </div>
-      <ul class="traits">
-        <li><svg viewBox="0 0 24 24"><use href="#i-bolt"/></svg><span>Respostas<br>em segundos</span></li>
-        <li><svg viewBox="0 0 24 24"><use href="#i-clock"/></svg><span>Disponível<br>24 horas</span></li>
-        <li><svg viewBox="0 0 24 24"><use href="#i-shield"/></svg><span>Conteúdo confiável<br>e atualizado</span></li>
-      </ul>
     </div>
 
-    <div class="chat" aria-hidden="true">
-      <div class="chat__top">
-        <span class="chat__avatar"><svg viewBox="0 0 24 24"><use href="#i-fist"/></svg></span>
-        <span class="chat__who"><b>AX Combat</b><em><i></i>Online agora</em></span>
-        <span class="chat__role">Especialista em lutas 24/7</span>
-        <span class="chat__more">⋮</span>
-      </div>
-      <div class="chat__thread">
-        <p class="bubble bubble--me">Qual a análise da luta principal do UFC deste final de semana?<time>20:14</time></p>
-        <div class="chat__reply">
-          <span class="chat__avatar chat__avatar--sm"><svg viewBox="0 0 24 24"><use href="#i-fist"/></svg></span>
-          <div class="bubble">
-            <p>Aqui está a análise da luta principal do UFC deste final de semana:</p>
-            <p><b>Lutadores:</b> Alex Pereira vs. Jamahal Hill<br><b>Categoria:</b> Meio-pesado (93 kg)</p>
-            <p><b>Análise:</b></p>
-            <ul>
-              <li><b>Alex Pereira:</b> excelente no striking, alto poder de nocaute, defesa de quedas evoluiu.</li>
-              <li><b>Jamahal Hill:</b> forte no jogo de média distância, bom volume de golpes e resistência.</li>
-            </ul>
-            <p><b>Palpite:</b> luta equilibrada, mas Pereira leva vantagem se mantiver a distância e evitar a grade. Probabilidade estimada: Pereira 60% / Hill 40%.</p>
-            <time>20:14</time>
-          </div>
+    <div class="agent__intro">
+      <div class="agent__id">
+        <span class="agent__num">02</span>
+        <div>
+          <div class="agent__name">AX Scout</div>
+          <div class="agent__scope">Partidas · Tática · Estatística · Mercado</div>
         </div>
       </div>
-      <div class="chat__chips"><span>Próximos eventos</span><span>Perfil de lutadores</span><span>Análise de luta</span><span>Rankings</span></div>
-      <div class="chat__bar"><svg viewBox="0 0 24 24"><use href="#i-clip"/></svg><span>Digite sua pergunta…</span><b><svg viewBox="0 0 24 24"><use href="#i-send"/></svg></b></div>
+      <h2>Seu time perdeu. "Faltou vontade" não é uma explicação.</h2>
+      <p class="agent__lead">Domingo, 18h20. Seu time perdeu com 64% de posse e 17 finalizações e o programa de debate está gritando. O Scout não torce para ninguém: explica o bloco baixo, traduz o número e lê a mudança do intervalo — e faz o mesmo com o time do seu amigo.</p>
+      <div class="agent__cta">
+        <a href="#planos" class="btn-agent">Ativar o Scout · R$ 30/mês</a>
+        <span class="agent__note">análise, não palpite</span>
+      </div>
     </div>
   </div>
-  <div class="wrap agent__foot"><span class="agent__motto">Lutas que movem o mundo.</span><span class="agent__sign">AX Combat · disciplina. informação. evolução.</span></div>
 </section>
 
-<!-- ====================================================== PLANOS ======== -->
-<section id="planos" class="plans" data-secao="planos">
-  <div class="glow glow--plans"></div>
-  <div class="wrap">
-    <header class="head">
-      <p class="eyebrow">Para assinar e usar</p>
-      <h2>Um preço, três especialistas. <span class="mute">Escolha o seu.</span></h2>
-      <p class="lede lede--center">Cada agente é uma assinatura independente de R$ 30 por mês. Conversas ilimitadas, acesso em minutos, cancela quando quiser.</p>
-    </header>
+<!-- COMBAT -->
+<section id="combat" class="agent t-combat">
+  <div class="glow agent__glow--combat"></div>
+  <div class="wrap agent__inner">
+    <div class="agent__intro">
+      <div class="agent__id">
+        <span class="agent__num">03</span>
+        <div>
+          <div class="agent__name">AX Combat</div>
+          <div class="agent__scope">MMA · UFC · Boxe · Artes marciais</div>
+        </div>
+      </div>
+      <h2>O card acabou às 3h. Ele ainda está acordado.</h2>
+      <p class="agent__lead">Sábado, 3h07. A luta acabou por finalização em quatro segundos e você rebobinou três vezes. O Combat é o córner que senta na sua frente entre um round e outro: explica a técnica, compara estilos, levanta cartel e ensina o fundamento que o professor não teve tempo de explicar.</p>
+      <div class="agent__cta">
+        <a href="#planos" class="btn-agent">Ativar o Combat · R$ 30/mês</a>
+        <span class="agent__note">sem palpite, sem aposta</span>
+      </div>
+    </div>
 
-    <div class="plans__grid">
-      <article class="plan t-oscar">
-        <header class="plan__top">
-          <span class="plan__icon"><svg viewBox="0 0 24 24"><use href="#i-spark"/></svg></span>
-          <span class="plan__name">Oscar</span>
-          <span class="badge">Entretenimento</span>
-        </header>
-        <p class="plan__tagline">O amigo que assistiu e sabe falar sobre.</p>
+    <div class="agent__panels">
+      <div class="uses">
+        <div class="glow uses__glow--right"></div>
+        <div class="uses__head">
+          <div class="uses__label">Pergunte assim</div>
+          <div class="uses__hint">e ele já sabe o que fazer</div>
+        </div>
+        <div class="uses__list">
+          <div class="uses__row"><div class="uses__q">“o que aconteceu naquela finalização? não entendi”</div><div class="uses__tag">técnica explicada</div></div>
+          <div class="uses__row"><div class="uses__q">“vale a pena acordar pro card de sábado?”</div><div class="uses__tag">card do fim de semana</div></div>
+          <div class="uses__row"><div class="uses__q">“quem leva: o wrestler ou o striker?”</div><div class="uses__tag">confronto de estilos</div></div>
+          <div class="uses__row"><div class="uses__q">“quantas lutas ele já perdeu e pra quem?”</div><div class="uses__tag">cartel e trajetória</div></div>
+          <div class="uses__row"><div class="uses__q">“comecei no jiu-jitsu. o que é passagem de guarda?”</div><div class="uses__tag">pra quem treina</div></div>
+        </div>
+        <div class="uses__foot">MMA, UFC, boxe, jiu-jitsu, muay thai, judô e karatê. Análise e técnica — nunca palpite de aposta.</div>
+      </div>
+
+      <div class="compare">
+        <div class="compare__head"><span>Sem o Combat</span><span>Com o Combat</span></div>
+        <div class="compare__row"><span>Rebobinar o round três vezes sem entender.</span><span>Uma pergunta e a sequência inteira explicada.</span></div>
+        <div class="compare__row"><span>40 minutos em seis abas em inglês pra ver um cartel.</span><span>Uma mensagem.</span></div>
+        <div class="compare__row"><span>3h07, mensagem no grupo, resposta às 11h.</span><span>3h07, resposta na hora.</span></div>
+        <div class="compare__row"><span>"Foi roubo" contra "não foi roubo".</span><span>Critério de round e histórico na mão.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANOS: lista horizontal, um agente por linha -->
+<section id="planos" class="plans">
+  <div class="wrap plans__inner">
+    <div class="plans__head">
+      <h2>Um preço. Escolha só o assunto.</h2>
+      <p>Cada agente é uma assinatura de R$ 30 por mês, independente. Acesso liberado em minutos, cancela quando quiser. Assine um, dois ou os três.</p>
+    </div>
+    <div class="plans__list">
+
+      <div class="plan t-oscar">
+        <div class="plan__id">
+          <span class="plan__num">01</span>
+          <div class="plan__title">
+            <div class="plan__name">Oscar</div>
+            <div class="plan__tagline">o amigo que assistiu e sabe falar sobre</div>
+          </div>
+        </div>
         <ul class="plan__features">
           <li>Recomendação a partir do que você sentiu</li>
           <li>Final explicado, com as pistas em ordem</li>
           <li>Anime e dorama pela porta certa</li>
           <li>Conversas ilimitadas, 24h</li>
         </ul>
-        <p class="plan__price"><b>R$ 30</b><span>/mês</span></p>
-        <a href="#oscar" class="btn btn--tint btn--full" data-buy="oscar">Ativar o Oscar <svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
-      </article>
+        <div class="plan__buy">
+          <div class="plan__price"><b>R$ 30</b><span>/mês</span></div>
+          <a href="#oscar" class="plan__cta" data-buy="oscar">Ativar o Oscar</a>
+        </div>
+      </div>
 
-      <article class="plan t-scout">
-        <header class="plan__top">
-          <span class="plan__icon"><svg viewBox="0 0 24 24"><use href="#i-ball"/></svg></span>
-          <span class="plan__name">Scout</span>
-          <span class="badge">Futebol</span>
-        </header>
-        <p class="plan__tagline">O analista que não torce pra ninguém.</p>
+      <div class="plan t-scout">
+        <div class="plan__id">
+          <span class="plan__num">02</span>
+          <div class="plan__title">
+            <div class="plan__name">Scout</div>
+            <div class="plan__tagline">o analista que não torce pra ninguém</div>
+          </div>
+        </div>
         <ul class="plan__features">
           <li>A derrota explicada em três pontos</li>
           <li>xG e estatística avançada traduzidos</li>
           <li>Leitura tática, elenco e mercado</li>
           <li>Conversas ilimitadas, 24h</li>
         </ul>
-        <p class="plan__price"><b>R$ 30</b><span>/mês</span></p>
-        <a href="#scout" class="btn btn--tint btn--full" data-buy="scout">Ativar o Scout <svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
-      </article>
+        <div class="plan__buy">
+          <div class="plan__price"><b>R$ 30</b><span>/mês</span></div>
+          <a href="#scout" class="plan__cta" data-buy="scout">Ativar o Scout</a>
+        </div>
+      </div>
 
-      <article class="plan t-combat">
-        <header class="plan__top">
-          <span class="plan__icon"><svg viewBox="0 0 24 24"><use href="#i-fist"/></svg></span>
-          <span class="plan__name">Combat</span>
-          <span class="badge">Lutas</span>
-        </header>
-        <p class="plan__tagline">O córner que explica entre um round e outro.</p>
+      <div class="plan t-combat">
+        <div class="plan__id">
+          <span class="plan__num">03</span>
+          <div class="plan__title">
+            <div class="plan__name">Combat</div>
+            <div class="plan__tagline">o córner que explica entre um round e outro</div>
+          </div>
+        </div>
         <ul class="plan__features">
           <li>A técnica que decidiu a luta, passo a passo</li>
           <li>Cartel, trajetória e rivalidades</li>
           <li>Vale acordar pro card? Qual luta ver?</li>
           <li>Conversas ilimitadas, 24h</li>
         </ul>
-        <p class="plan__price"><b>R$ 30</b><span>/mês</span></p>
-        <a href="#combat" class="btn btn--tint btn--full" data-buy="combat">Ativar o Combat <svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
-      </article>
+        <div class="plan__buy">
+          <div class="plan__price"><b>R$ 30</b><span>/mês</span></div>
+          <a href="#combat" class="plan__cta" data-buy="combat">Ativar o Combat</a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- ===================================================== REVENDA ======== -->
-<section id="revenda" class="resale" data-secao="revenda">
-  <div class="glow glow--resale"></div>
-  <div class="wrap">
-    <header class="head">
-      <p class="eyebrow">Para revendedores</p>
-      <h2>Mais possibilidades <span class="mute">para o seu negócio.</span></h2>
-      <p class="lede lede--center">Planos de créditos com melhores condições para você revender e aumentar seus lucros.<br>Mesmo sistema, mais vantagens.</p>
-      <ul class="traits traits--center">
-        <li><svg viewBox="0 0 24 24"><use href="#i-bolt"/></svg><span><b>Ativação imediata</b><br>Comece a usar agora</span></li>
-        <li><svg viewBox="0 0 24 24"><use href="#i-bars"/></svg><span><b>Mais margem</b><br>Preços especiais</span></li>
-        <li><svg viewBox="0 0 24 24"><use href="#i-users"/></svg><span><b>Suporte prioritário</b><br>Para revendedores</span></li>
-      </ul>
-    </header>
+<!-- REVENDA -->
+<section id="revenda" class="resale">
+  <div class="glow resale__glow"></div>
+  <div class="wrap resale__inner">
+    <div class="resale__top">
+      <div class="resale__pitch">
+        <div class="resale__eyebrow">Para quem tem audiência · Planos Elite</div>
+        <h2>Seu público já pergunta. Agora ele pode assinar com você.</h2>
+        <p>Existem dois caminhos na AX: assinar um agente para usar, ou comprar créditos para revendê-lo. Cada crédito ativa um mês de assinatura de um cliente seu. A assinatura ao cliente final custa R$ 30 por mês; no atacado o crédito sai a partir de R$ 4,00, conforme o agente e o volume. A diferença é sua.</p>
+        <ol class="steps">
+          <li><b>1</b><span>Compre os créditos. Cada um ativa um mês de um cliente.</span></li>
+          <li><b>2</b><span>Ative o cliente. Ele recebe o acesso em minutos.</span></li>
+          <li><b>3</b><span>Cobre como quiser e fique com a diferença.</span></li>
+        </ol>
+        <p class="resale__fit"><strong>Funciona para</strong> quem já responde as mesmas perguntas todo dia, de graça: página de cinema, canal de torcida, grupo de card, dono de academia. <strong>Não funciona para</strong> quem espera que o produto se venda sozinho ou quer vender palpite de aposta.</p>
+      </div>
 
-    <!-- As faixas são montadas pelo app.js a partir de uma tabela única, para
-         que preço na tela e quantidade no checkout nunca saiam de sincronia. -->
-    <div class="resale__grid">
-      <article class="ptable t-oscar">
-        <header class="ptable__top">
-          <img src="./assets/ax-logo.png" alt="" width="30" height="30">
-          <span class="ptable__name">Oscar</span>
-          <span class="badge">Entretenimento</span>
-        </header>
-        <p class="ptable__desc">Filmes, séries, animes e doramas.<br>Seu público sempre conectado.</p>
-        <p class="ptable__label"><svg viewBox="0 0 24 24"><use href="#i-coins"/></svg>Pacotes de créditos (revenda)</p>
-        <div class="ptable__rows" data-tabela="oscar"></div>
-        <p class="ptable__margem" data-margem="oscar"></p>
-        <a href="#planos" class="btn btn--tint btn--full" data-comprar="oscar">Quero revender o Oscar <svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
-      </article>
-
-      <article class="ptable t-scout">
-        <header class="ptable__top">
-          <img src="./assets/ax-logo.png" alt="" width="30" height="30">
-          <span class="ptable__name">Scout</span>
-          <span class="badge">Futebol</span>
-        </header>
-        <p class="ptable__desc">Análises, estatísticas e mercado.<br>Informação para quem vive futebol.</p>
-        <p class="ptable__label"><svg viewBox="0 0 24 24"><use href="#i-coins"/></svg>Pacotes de créditos (revenda)</p>
-        <div class="ptable__rows" data-tabela="scout"></div>
-        <p class="ptable__margem" data-margem="scout"></p>
-        <a href="#planos" class="btn btn--tint btn--full" data-comprar="scout">Quero revender o Scout <svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
-      </article>
-
-      <article class="ptable t-combat">
-        <header class="ptable__top">
-          <img src="./assets/ax-logo.png" alt="" width="30" height="30">
-          <span class="ptable__name">Combat</span>
-          <span class="badge">Lutas</span>
-        </header>
-        <p class="ptable__desc">MMA, UFC, boxe e artes marciais.<br>Análises, eventos e tudo sobre o mundo das lutas.</p>
-        <p class="ptable__label"><svg viewBox="0 0 24 24"><use href="#i-coins"/></svg>Pacotes de créditos (revenda)</p>
-        <div class="ptable__rows" data-tabela="combat"></div>
-        <p class="ptable__margem" data-margem="combat"></p>
-        <a href="#planos" class="btn btn--tint btn--full" data-comprar="combat">Quero revender o Combat <svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
-      </article>
     </div>
 
-    <div class="resale__foot">
-      <ul>
-        <li><svg viewBox="0 0 24 24"><use href="#i-lock"/></svg>Sistema seguro e estável</li>
-        <li><svg viewBox="0 0 24 24"><use href="#i-infinity"/></svg>Sem prazo de validade</li>
-        <li><svg viewBox="0 0 24 24"><use href="#i-headset"/></svg>Suporte para revendedores</li>
-      </ul>
-      <span class="agent__sign">Mesmo sistema. Mais lucro para você.</span>
+    <div id="tabelas" class="tables">
+      <div class="tables__head">
+        <div class="tables__headline">
+          <div class="tables__badge"><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>Tabela de atacado</div>
+          <h3>Cada agente tem a sua <span>tabela de atacado.</span></h3>
+          <p class="tables__lead">Compre em maior quantidade, pague menos por crédito e aumente sua margem.</p>
+        </div>
+        <div class="tables__copy">
+          <p>O valor mostrado é o preço unitário do crédito dentro daquela faixa de quantidade. Um crédito = um mês de assinatura de um cliente. Quanto maior o pedido, menor o unitário — e maior a sua margem sobre os R$ 30.</p>
+          <div class="perks">
+            <div class="perk"><span class="perk__icon perk__icon--green" aria-hidden="true">⚡</span><div><b>Mais lucro</b><span>em grandes volumes</span></div></div>
+            <div class="perk"><span class="perk__icon perk__icon--cyan" aria-hidden="true">●●</span><div><b>Atenda mais clientes</b><span>com melhor preço</span></div></div>
+            <div class="perk"><span class="perk__icon perk__icon--violet" aria-hidden="true"><span class="bars bars--lg"><i></i><i></i><i></i></span></span><div><b>Escale seu negócio</b><span>com previsibilidade</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Faixas e preços: mesma fonte de dados usada pelo simulador (app.js → TABELAS). -->
+      <div class="tables__grid">
+
+        <div class="ptable t-oscar">
+          <div class="ptable__head"><img src="./assets/card-oscar.webp" alt="AX Oscar — margem até 87%" loading="lazy"></div>
+          <div class="ptable__body">
+            <div class="ptable__titulo">Tabela de preços<span>Clique na faixa que você quer comprar</span></div>
+            <div class="ptable__rows" data-tabela="oscar"></div>
+          </div>
+          <div class="ptable__note"><i aria-hidden="true">✦</i><p>A tabela mais escalonada da linha: começa em 5 créditos e chega ao menor unitário da AX. Boa para quem quer testar pequeno e para quem opera em grande volume.</p></div>
+          <a class="ptable__cta" data-comprar="oscar" href="#planos">Comprar créditos do Oscar</a>
+        </div>
+
+        <div class="ptable t-scout">
+          <div class="ptable__head"><img src="./assets/card-scout.webp" alt="AX Scout — margem até 82%" loading="lazy"></div>
+          <div class="ptable__body">
+            <div class="ptable__titulo">Tabela de preços<span>Clique na faixa que você quer comprar</span></div>
+            <div class="ptable__rows" data-tabela="scout"></div>
+          </div>
+          <div class="ptable__note"><i aria-hidden="true">✦</i><p>Pedido mínimo de 10 créditos. Audiência de torcida é grande e conversa todos os dias do ano, o que ajuda a girar o estoque de crédito.</p></div>
+          <a class="ptable__cta" data-comprar="scout" href="#planos">Comprar créditos do Scout</a>
+        </div>
+
+        <div class="ptable t-combat">
+          <div class="ptable__head"><img src="./assets/card-combat.webp" alt="AX Combat — margem até 80%" class="is-combat" loading="lazy"></div>
+          <div class="ptable__body">
+            <div class="ptable__titulo">Tabela de preços<span>Clique na faixa que você quer comprar</span></div>
+            <div class="ptable__rows" data-tabela="combat"></div>
+          </div>
+          <div class="ptable__note"><i aria-hidden="true">✦</i><p>Pedido mínimo de 10 créditos. Funciona bem em academia, onde o aluno já paga mensalidade, e em grupo de card, com pico a cada evento.</p></div>
+          <a class="ptable__cta" data-comprar="combat" href="#planos">Comprar créditos do Combat</a>
+        </div>
+
+      </div>
+
+      <div class="tables__rule">
+        <span aria-hidden="true"></span>
+        <b>Três agentes. Um mesmo objetivo: mais resultados para você.</b>
+        <span aria-hidden="true"></span>
+      </div>
+
+      <div class="tables__fine">Margem calculada sobre o preço sugerido de R$ 30 por cliente/mês. Você pode cobrar mais ou menos que isso — a margem acompanha o seu preço.</div>
+
+      <div class="resale__faq">
+        <div><b>Assinar não é pré-requisito</b><p>A AX vende a assinatura direto ao cliente final e vende créditos a quem quer revender. Você pode ter sido assinante e virado parceiro depois, ou entrar direto na revenda por reconhecer a demanda no seu público.</p></div>
+        <div><b>O que fica do nosso lado</b><p>IA, infraestrutura, manutenção e evolução do agente. Do seu lado ficam a audiência, o preço que você cobra e o relacionamento com o cliente.</p></div>
+        <div><b>Sem meta mínima</b><p>Comece pela menor faixa do agente que combina com o seu público, teste com gente real e só aumente o pedido depois de vender.</p></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ======================================================= VOZES ======== -->
+<!-- VOZES: perguntas de exemplo em faixa, sem cards -->
 <section id="vozes" class="voices">
-  <div class="wrap">
-    <header class="head">
-      <p class="eyebrow">Exemplos de uso</p>
-      <h2>O tipo de pergunta que chega <span class="mute">para cada agente.</span></h2>
-    </header>
-    <div class="voices__grid">
-      <article class="voice t-oscar">
-        <span class="voice__icon"><svg viewBox="0 0 24 24"><use href="#i-spark"/></svg></span>
-        <blockquote>“Terminei uma série que me destruiu e não quero nada barulhento agora.”</blockquote>
-        <p class="voice__by"><b>AX Oscar</b> devolve duas opções e <em>o motivo de cada uma</em></p>
-      </article>
-      <article class="voice t-scout">
-        <span class="voice__icon"><svg viewBox="0 0 24 24"><use href="#i-ball"/></svg></span>
-        <blockquote>“Perdemos com 64% de posse de bola. Como é que isso acontece?”</blockquote>
-        <p class="voice__by"><b>AX Scout</b> explica o bloco baixo em <em>três linhas</em></p>
-      </article>
-      <article class="voice t-combat">
-        <span class="voice__icon"><svg viewBox="0 0 24 24"><use href="#i-fist"/></svg></span>
-        <blockquote>“Comecei no jiu-jitsu e tem termo que eu finjo entender.”</blockquote>
-        <p class="voice__by"><b>AX Combat</b> responde às 3h, <em>depois do card</em></p>
-      </article>
+  <div class="wrap voices__head">
+    <p class="eyebrow">Exemplos de uso</p>
+    <p>O tipo de pergunta que chega para cada agente — e o que ele faz com ela.</p>
+  </div>
+  <div class="wrap voices__grid">
+    <div class="voice t-oscar">
+      <blockquote>“Terminei uma série que me destruiu e não quero nada barulhento agora.”</blockquote>
+      <div class="voice__by">
+        <span class="voice__avatar" aria-hidden="true">✦</span>
+        <div><b>AX Oscar</b> <span>· devolve duas opções e </span><em>o motivo de cada uma</em></div>
+      </div>
+    </div>
+    <div class="voice t-scout">
+      <blockquote>“Perdemos com 64% de posse de bola. Como é que isso acontece?”</blockquote>
+      <div class="voice__by">
+        <span class="voice__avatar" aria-hidden="true">✦</span>
+        <div><b>AX Scout</b> <span>· explica o bloco baixo em </span><em>três linhas</em></div>
+      </div>
+    </div>
+    <div class="voice t-combat">
+      <blockquote>“Comecei no jiu-jitsu e tem termo que eu finjo entender.”</blockquote>
+      <div class="voice__by">
+        <span class="voice__avatar" aria-hidden="true">✦</span>
+        <div><b>AX Combat</b> <span>· responde às 3h, </span><em>depois do card</em></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ========================================================= FAQ ======== -->
-<section id="faq" class="faq" data-secao="faq">
-  <div class="wrap">
-    <header class="head">
-      <p class="eyebrow">Dúvidas</p>
-      <h2>O que perguntam <span class="mute">antes da primeira mensagem.</span></h2>
-    </header>
+<!-- FAQ: grade aberta, sem sanfona -->
+<section id="faq" class="faq">
+  <div class="wrap faq__inner">
+    <h2>O que perguntam antes da primeira mensagem.</h2>
     <dl class="faq__grid">
       <div class="faq__item"><dt>Como eu converso com o agente?</dt><dd>Assim que a assinatura é confirmada você recebe seu link de acesso. Abre no celular ou no computador e já começa a conversar, do jeito que fala com um amigo.</dd></div>
       <div class="faq__item"><dt>É uma IA genérica com nome bonito?</dt><dd>Não. Cada agente domina um único assunto e responde no nível de quem acompanha aquilo há anos. Pergunte de futebol pro Oscar e ele te manda pro Scout.</dd></div>
       <div class="faq__item"><dt>O Oscar dá spoiler?</dt><dd>Só se você pedir. Ele pergunta até onde você viu antes de explicar qualquer coisa.</dd></div>
-      <div class="faq__item"><dt>O Scout e o Combat dão palpite?</dt><dd>Eles fazem leitura esportiva — tática, técnica, estatística e histórico — e a partir disso comentam os cenários mais prováveis de uma partida ou de uma luta. Não é orientação de aposta: não trabalham com cotas nem garantem resultado. A decisão e o risco continuam sendo seus.</dd></div>
+      <div class="faq__item"><dt>O Scout ou o Combat dão palpite de aposta?</dt><dd>Não, e não vão dar. Eles analisam o esporte: tática, técnica, estatística, história. Prognóstico e cota estão fora do produto.</dd></div>
       <div class="faq__item"><dt>Posso assinar mais de um agente?</dt><dd>Sim. Cada agente é uma assinatura de R$ 30/mês, independente das outras.</dd></div>
       <div class="faq__item"><dt>Posso cancelar?</dt><dd>Quando quiser, sem burocracia. Você mantém o acesso até o fim do período pago.</dd></div>
     </dl>
   </div>
 </section>
 
-<!-- ==================================================== CTA FINAL ======= -->
+<!-- CTA FINAL -->
 <section class="cta">
-  <div class="glow glow--cta"></div>
+  <div class="glow cta__glow"></div>
   <div class="wrap cta__inner">
-    <img src="./assets/ax-logo.png" alt="AX" width="72" height="72">
-    <h2>Sobre o que você quer conversar hoje?</h2>
-    <p class="lede lede--center">R$ 30/mês · acesso em minutos · cancela quando quiser</p>
+    <div class="cta__text">
+      <img src="./assets/ax-logo.png" alt="AX" width="72" height="72">
+      <h2>Sobre o que você quer conversar hoje?</h2>
+      <span>R$ 30/mês · acesso em minutos · cancela quando quiser</span>
+    </div>
     <div class="cta__picks">
-      <a href="#oscar" class="cta__pick t-oscar" data-buy="oscar"><span class="cta__icon"><svg viewBox="0 0 24 24"><use href="#i-spark"/></svg></span><b>Oscar</b><em>Filmes, séries, animes</em><svg class="cta__go" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
-      <a href="#scout" class="cta__pick t-scout" data-buy="scout"><span class="cta__icon"><svg viewBox="0 0 24 24"><use href="#i-ball"/></svg></span><b>Scout</b><em>Futebol</em><svg class="cta__go" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
-      <a href="#combat" class="cta__pick t-combat" data-buy="combat"><span class="cta__icon"><svg viewBox="0 0 24 24"><use href="#i-fist"/></svg></span><b>Combat</b><em>MMA, UFC, boxe</em><svg class="cta__go" viewBox="0 0 24 24"><use href="#i-arrow"/></svg></a>
+      <a href="#oscar" class="cta__pick t-oscar" data-buy="oscar"><b>Oscar</b><span>Filmes, séries, animes →</span></a>
+      <a href="#scout" class="cta__pick t-scout" data-buy="scout"><b>Scout</b><span>Futebol →</span></a>
+      <a href="#combat" class="cta__pick t-combat" data-buy="combat"><b>Combat</b><span>MMA, UFC, boxe →</span></a>
     </div>
   </div>
 </section>
@@ -511,18 +475,14 @@
 
 <footer class="footer">
   <div class="wrap footer__inner">
-    <a href="#topo" class="brand">
-      <img src="./assets/ax-logo.png" alt="" width="34" height="34">
-      <span class="brand__claim">Inteligência<br>especializada<br>sempre com você</span>
-    </a>
-    <nav class="footer__links" aria-label="Rodapé">
+    <div class="footer__brand"><img src="./assets/ax-logo.png" alt="AX" width="26" height="26"><span>AX — um especialista para cada assunto</span></div>
+    <div class="footer__links">
       <a href="#oscar">Oscar</a>
       <a href="#scout">Scout</a>
       <a href="#combat">Combat</a>
       <a href="#planos">Planos</a>
       <a href="#revenda">Revenda</a>
-      <a href="#faq">Dúvidas</a>
-    </nav>
+    </div>
   </div>
 </footer>
 
