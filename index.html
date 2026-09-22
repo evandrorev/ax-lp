@@ -12,480 +12,297 @@
 <link rel="icon" href="./assets/ax-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
 
-<!-- NAV: uma linha, âncoras à esquerda, ações à direita -->
-<header class="nav">
-  <div class="wrap nav__inner">
-    <a href="#topo" class="nav__logo" aria-label="AX — início"><img src="./assets/ax-logo.png" alt="AX" width="40" height="40"></a>
-    <nav class="nav__links" aria-label="Seções">
-      <a href="#oscar" class="t-oscar">Oscar</a>
-      <a href="#scout" class="t-scout">Scout</a>
-      <a href="#combat" class="t-combat">Combat</a>
-      <a href="#planos">Planos</a>
-      <a href="#revenda">Revenda</a>
-      <a href="#faq">Dúvidas</a>
-    </nav>
-    <a href="#planos" class="nav__cta">Assinar</a>
-  </div>
-</header>
+<div style="background:#08090A;color:#F2F4F5;font-family:Manrope,system-ui,sans-serif;position:relative;overflow-x:clip">
 
-<main>
-
-<!-- HERO: centrado, três conversas ao vivo lado a lado -->
-<section id="topo" class="hero">
-  <div class="glow hero__glow"></div>
-  <div class="wrap hero__inner">
-    <p class="eyebrow hero__eyebrow">Três especialistas · Um assunto cada · Português, no seu nível</p>
-    <h1>Um especialista à sua disposição, <span>24 horas por dia.</span></h1>
-    <p class="hero__sub">Uma IA que só entende de uma coisa — filmes e séries, futebol ou luta — e responde como quem acompanha aquilo há anos. Sem lista, sem grito, sem esperar o grupo acordar.</p>
-    <div class="hero__actions">
-      <a href="#planos" class="btn-light">Ver os planos</a>
-      <a href="#oscar" class="btn-ghost">Conhecer os agentes ↓</a>
-    </div>
-  </div>
-  <div class="wrap hero__cards">
-
-    <a href="#oscar" class="chat t-oscar">
-      <div class="chat__head">
-        <div class="chat__name"><span class="chat__spark" aria-hidden="true">✦</span><span>AX Oscar</span></div>
-        <span class="chat__role">entretenimento</span>
-      </div>
-      <div class="chat__body">
-        <p class="chat__you">terminei uma série que me destruiu e não quero nada barulhento agora</p>
-        <p class="chat__them"><span data-typing>Então você quer o mesmo ritmo, não o mesmo gênero. Me diz: o que te incomodaria mais hoje, um filme triste ou um filme longo?</span><span class="chat__cursor" aria-hidden="true">▍</span></p>
-      </div>
-    </a>
-
-    <a href="#scout" class="chat t-scout">
-      <div class="chat__head">
-        <div class="chat__name"><span class="chat__spark" aria-hidden="true">✦</span><span>AX Scout</span></div>
-        <span class="chat__role">futebol</span>
-      </div>
-      <div class="chat__body">
-        <p class="chat__you">como funciona a fase de grupos da Copa? quantos se classificam?</p>
-        <p class="chat__them"><span data-typing>São 12 grupos de 4. Passam os dois primeiros de cada grupo mais os 8 melhores terceiros — 32 times no mata-mata. Quer que eu monte o caminho possível da Seleção até a final?</span><span class="chat__cursor" aria-hidden="true">▍</span></p>
-      </div>
-    </a>
-
-    <a href="#combat" class="chat t-combat">
-      <div class="chat__head">
-        <div class="chat__name"><span class="chat__spark" aria-hidden="true">✦</span><span>AX Combat</span></div>
-        <span class="chat__role">esportes de combate</span>
-      </div>
-      <div class="chat__body">
-        <p class="chat__you">por que o canhoto deu tanto trabalho hoje?</p>
-        <p class="chat__them"><span data-typing>Porque contra um canhoto o pé da frente muda de lado, e quem manda é quem pisa por fora do pé do outro. Repare: toda vez que ele circulou pra própria direita, tomou.</span><span class="chat__cursor" aria-hidden="true">▍</span></p>
-      </div>
-    </a>
-
-  </div>
-</section>
-
-<!-- FAIXA MARQUEE -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee__track">
-    <span>Final explicado</span><span style="color:#FF8095">✦</span><span>Por que o técnico mudou no intervalo</span><span style="color:#5DE3A5">✦</span><span>O que abriu a guarda</span><span style="color:#B99BFF">✦</span><span>Por onde começar em anime</span><span style="color:#FF8095">✦</span><span>O que é xG</span><span style="color:#5DE3A5">✦</span><span>Vale acordar pro card?</span><span style="color:#B99BFF">✦</span>
-    <span>Final explicado</span><span style="color:#FF8095">✦</span><span>Por que o técnico mudou no intervalo</span><span style="color:#5DE3A5">✦</span><span>O que abriu a guarda</span><span style="color:#B99BFF">✦</span><span>Por onde começar em anime</span><span style="color:#FF8095">✦</span><span>O que é xG</span><span style="color:#5DE3A5">✦</span><span>Vale acordar pro card?</span><span style="color:#B99BFF">✦</span>
-  </div>
+<header style="position:sticky;top:0;z-index:50;background:rgba(8,9,10,0.86);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,0.07)">
+<div style="max-width:1280px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+<a href="#topo" style="display:flex;align-items:center;gap:12px"><img src="./assets/ax-logo.png" alt="AX" style="width:42px;height:42px;mix-blend-mode:screen;display:block"><span style="display:flex;flex-direction:column;gap:2px;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(242,244,245,0.55);font-weight:700;line-height:1.35;border-left:1px solid rgba(255,255,255,0.14);padding-left:12px"><span>Inteligência</span><span>especializada</span><span>sempre com você</span></span></a>
+<nav style="display:flex;gap:26px;align-items:center;overflow-x:auto;scrollbar-width:none">
+<a href="#oscar" class="h1" style="font-size:15px;font-weight:600;color:rgba(242,244,245,0.8);padding:6px 0;border-bottom:2px solid transparent;white-space:nowrap">Oscar</a>
+<a href="#scout" class="h2" style="font-size:15px;font-weight:600;color:rgba(242,244,245,0.8);padding:6px 0;border-bottom:2px solid transparent;white-space:nowrap">Scout</a>
+<a href="#combat" class="h3" style="font-size:15px;font-weight:600;color:rgba(242,244,245,0.8);padding:6px 0;border-bottom:2px solid transparent;white-space:nowrap">Combat</a>
+<a href="#planos" class="h4" style="font-size:15px;font-weight:600;color:rgba(242,244,245,0.8);padding:6px 0;border-bottom:2px solid transparent;white-space:nowrap">Planos</a>
+<a href="#revenda" class="h4" style="font-size:15px;font-weight:600;color:rgba(242,244,245,0.8);padding:6px 0;border-bottom:2px solid transparent;white-space:nowrap">Revenda</a>
+<a href="#faq" class="h4" style="font-size:15px;font-weight:600;color:rgba(242,244,245,0.8);padding:6px 0;border-bottom:2px solid transparent;white-space:nowrap">Dúvidas</a>
+</nav>
+<a href="#planos" class="h5" style="font-size:14px;font-weight:700;padding:13px 22px;background:linear-gradient(90deg,#004AFB,#8A18FD);color:#fff;border-radius:10px;white-space:nowrap">Assinar por R$ 30 →</a>
+</div></header>
+<section id="topo" style="position:relative;overflow:hidden">
+<div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(760px 480px at 80% -5%, rgba(123,63,242,0.28), transparent 70%), radial-gradient(620px 420px at 20% 10%, rgba(0,74,251,0.14), transparent 70%)"></div>
+<div style="position:relative;max-width:1280px;margin:0 auto;padding:88px 32px 56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:56px;align-items:center">
+<div style="display:flex;flex-direction:column;gap:26px;animation:axIn 420ms ease-out both">
+<div style="font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(242,244,245,0.5);font-weight:700">Mais que IA. Especialistas reais.</div>
+<h1 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(42px,5.6vw,72px);line-height:0.98;letter-spacing:-0.04em;margin:0;max-width:11ch;text-wrap:balance">IA especializada para aquilo que <span style="color:#2F6BFF">você</span> <span style="color:#8A18FD">realmente gosta.</span></h1>
+<p style="font-size:18px;line-height:1.6;color:rgba(242,244,245,0.68);margin:0;max-width:520px;text-wrap:pretty">Acesse especialistas em entretenimento, futebol e lutas, disponíveis 24 horas por dia, prontos para responder, analisar e conversar com você.</p>
+<div style="display:flex;gap:14px;flex-wrap:wrap"><a href="#oscar" class="h6" style="display:inline-flex;align-items:center;gap:10px;padding:17px 28px;border-radius:12px;background:#F2F4F5;color:#08090A;font-weight:700;font-size:15px">Conhecer especialistas →</a><a href="#planos" class="h7" style="display:inline-flex;align-items:center;gap:10px;padding:17px 28px;border-radius:12px;border:1px solid rgba(255,255,255,0.18);color:#F2F4F5;font-weight:600;font-size:15px">Ver planos →</a></div>
+<div style="display:flex;gap:34px;flex-wrap:wrap;padding-top:6px"><div style="display:flex;align-items:center;gap:11px"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#8FA6FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M13 2.5 4.8 13H11l-1 8.5L18.2 11H12l1-8.5z"></path></svg><div style="font-size:14px;line-height:1.35;color:rgba(242,244,245,0.8)">Respostas<br><span style="color:rgba(242,244,245,0.5)">em segundos</span></div></div><div style="display:flex;align-items:center;gap:11px"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#8FA6FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 7.5V12l3 2"></path></svg><div style="font-size:14px;line-height:1.35;color:rgba(242,244,245,0.8)">Disponível<br><span style="color:rgba(242,244,245,0.5)">24 horas</span></div></div><div style="display:flex;align-items:center;gap:11px"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#8FA6FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M12 3l7 3v5.4c0 4.3-3 7.7-7 8.6-4-0.9-7-4.3-7-8.6V6l7-3z"></path></svg><div style="font-size:14px;line-height:1.35;color:rgba(242,244,245,0.8)">Informações<br><span style="color:rgba(242,244,245,0.5)">confiáveis</span></div></div></div>
 </div>
-
-<!-- OSCAR: número gigante à esquerda, "pergunte assim" e sem/com à direita -->
-<section id="oscar" class="agent t-oscar">
-  <div class="glow agent__glow--right"></div>
-  <div class="wrap agent__inner">
-    <div class="agent__intro">
-      <div class="agent__id">
-        <span class="agent__num">01</span>
-        <div>
-          <div class="agent__name">AX Oscar</div>
-          <div class="agent__scope">Filmes · Séries · Animes · Doramas · Documentários</div>
-        </div>
-      </div>
-      <h2>Você não precisa de mais catálogo. Precisa de alguém que assistiu.</h2>
-      <p class="agent__lead">Terça, 23h. A série acabou e ninguém do grupo viu. O Oscar viu. Ele pergunta o que você sentiu antes de indicar, explica o final que ficou aberto e acha o próximo a partir do que você já amou — em filme, série, anime ou dorama.</p>
-      <div class="agent__cta">
-        <a href="#planos" class="btn-agent">Ativar o Oscar · R$ 30/mês</a>
-        <span class="agent__note">cancela quando quiser</span>
-      </div>
-    </div>
-
-    <div class="agent__panels">
-      <div class="uses">
-        <div class="glow uses__glow--left"></div>
-        <div class="uses__head">
-          <div class="uses__label">Pergunte assim</div>
-          <div class="uses__hint">e ele já sabe o que fazer</div>
-        </div>
-        <div class="uses__list">
-          <div class="uses__row"><div class="uses__q">“um filme bom pra hoje à noite, até 1h40”</div><div class="uses__tag">indicação</div></div>
-          <div class="uses__row"><div class="uses__q">“gostei muito dessa série. o que vejo depois?”</div><div class="uses__tag">parecido</div></div>
-          <div class="uses__row"><div class="uses__q">“não entendi o final. me explica?”</div><div class="uses__tag">final explicado</div></div>
-          <div class="uses__row"><div class="uses__q">“vale a pena continuar na 2ª temporada?”</div><div class="uses__tag">vale ou não</div></div>
-          <div class="uses__row"><div class="uses__q">“quero começar em anime. por onde?”</div><div class="uses__tag">porta de entrada</div></div>
-        </div>
-        <div class="uses__foot">Filme, série, anime, dorama ou documentário. Sem spoiler, a não ser que você peça.</div>
-      </div>
-
-      <div class="compare">
-        <div class="compare__head"><span>Sem o Oscar</span><span>Com o Oscar</span></div>
-        <div class="compare__row"><span>40 minutos rolando três aplicativos.</span><span>Uma pergunta, duas opções e o motivo de cada.</span></div>
-        <div class="compare__row"><span>Vídeo de 20 min "final explicado" com spoiler de outra série.</span><span>As leituras possíveis e as pistas na ordem em que aparecem.</span></div>
-        <div class="compare__row"><span>"Quero começar em anime" e 300 episódios de sugestão.</span><span>A porta certa, a partir de uma série que você já gostou.</span></div>
-        <div class="compare__row"><span>O algoritmo devolvendo o mesmo de sempre.</span><span>Indicação que parte do que você sentiu, não do que clicou.</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SCOUT: invertido, campo animado -->
-<section id="scout" class="agent t-scout">
-  <div class="glow agent__glow--left"></div>
-  <div class="wrap agent__inner">
-    <div class="agent__panels">
-      <div class="field" id="campo">
-        <svg viewBox="0 0 360 240" role="img" aria-label="Campo de futebol com a formação tática trocando de linha de quatro para linha de três">
-          <rect x="8" y="8" width="344" height="224" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1"></rect>
-          <line x1="180" y1="8" x2="180" y2="232" stroke="rgba(255,255,255,0.14)" stroke-width="1"></line>
-          <circle cx="180" cy="120" r="30" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1"></circle>
-          <rect x="8" y="70" width="50" height="100" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1"></rect>
-          <rect x="302" y="70" width="50" height="100" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1"></rect>
-          <g id="jogadores">
-            <circle class="player" cx="30" cy="120" r="9"></circle>
-            <circle class="player" cx="100" cy="40" r="9"></circle>
-            <circle class="player" cx="100" cy="95" r="9"></circle>
-            <circle class="player" cx="100" cy="145" r="9"></circle>
-            <circle class="player" cx="100" cy="200" r="9"></circle>
-            <circle class="player" cx="190" cy="40" r="9"></circle>
-            <circle class="player" cx="190" cy="95" r="9"></circle>
-            <circle class="player" cx="190" cy="145" r="9"></circle>
-            <circle class="player" cx="190" cy="200" r="9"></circle>
-            <circle class="player" cx="280" cy="90" r="9"></circle>
-            <circle class="player" cx="280" cy="150" r="9"></circle>
-          </g>
-        </svg>
-        <div class="field__foot">
-          <span class="field__label" id="formacao">Linha de quatro — campo largo</span>
-          <button type="button" class="field__replay" id="replay">Ver a troca de novo</button>
-        </div>
-      </div>
-
-      <div class="compare">
-        <div class="compare__head"><span>Sem o Scout</span><span>Com o Scout</span></div>
-        <div class="compare__row"><span>"Faltou vontade" e a mesma discussão de sempre.</span><span>Três coisas concretas para observar quando rever o jogo.</span></div>
-        <div class="compare__row"><span>O narrador cita xG e você finge que sabe.</span><span>Você sabe o que é — e quando ele importa.</span></div>
-        <div class="compare__row"><span>Análise no grupo vira briga de rival.</span><span>Um interlocutor que não torce e responde às 2h.</span></div>
-      </div>
-    </div>
-
-    <div class="agent__intro">
-      <div class="agent__id">
-        <span class="agent__num">02</span>
-        <div>
-          <div class="agent__name">AX Scout</div>
-          <div class="agent__scope">Partidas · Tática · Estatística · Mercado</div>
-        </div>
-      </div>
-      <h2>Seu time perdeu. "Faltou vontade" não é uma explicação.</h2>
-      <p class="agent__lead">Domingo, 18h20. Seu time perdeu com 64% de posse e 17 finalizações e o programa de debate está gritando. O Scout não torce para ninguém: explica o bloco baixo, traduz o número e lê a mudança do intervalo — e faz o mesmo com o time do seu amigo.</p>
-      <div class="agent__cta">
-        <a href="#planos" class="btn-agent">Ativar o Scout · R$ 30/mês</a>
-        <span class="agent__note">análise, não palpite</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- COMBAT -->
-<section id="combat" class="agent t-combat">
-  <div class="glow agent__glow--combat"></div>
-  <div class="wrap agent__inner">
-    <div class="agent__intro">
-      <div class="agent__id">
-        <span class="agent__num">03</span>
-        <div>
-          <div class="agent__name">AX Combat</div>
-          <div class="agent__scope">MMA · UFC · Boxe · Artes marciais</div>
-        </div>
-      </div>
-      <h2>O card acabou às 3h. Ele ainda está acordado.</h2>
-      <p class="agent__lead">Sábado, 3h07. A luta acabou por finalização em quatro segundos e você rebobinou três vezes. O Combat é o córner que senta na sua frente entre um round e outro: explica a técnica, compara estilos, levanta cartel e ensina o fundamento que o professor não teve tempo de explicar.</p>
-      <div class="agent__cta">
-        <a href="#planos" class="btn-agent">Ativar o Combat · R$ 30/mês</a>
-        <span class="agent__note">sem palpite, sem aposta</span>
-      </div>
-    </div>
-
-    <div class="agent__panels">
-      <div class="uses">
-        <div class="glow uses__glow--right"></div>
-        <div class="uses__head">
-          <div class="uses__label">Pergunte assim</div>
-          <div class="uses__hint">e ele já sabe o que fazer</div>
-        </div>
-        <div class="uses__list">
-          <div class="uses__row"><div class="uses__q">“o que aconteceu naquela finalização? não entendi”</div><div class="uses__tag">técnica explicada</div></div>
-          <div class="uses__row"><div class="uses__q">“vale a pena acordar pro card de sábado?”</div><div class="uses__tag">card do fim de semana</div></div>
-          <div class="uses__row"><div class="uses__q">“quem leva: o wrestler ou o striker?”</div><div class="uses__tag">confronto de estilos</div></div>
-          <div class="uses__row"><div class="uses__q">“quantas lutas ele já perdeu e pra quem?”</div><div class="uses__tag">cartel e trajetória</div></div>
-          <div class="uses__row"><div class="uses__q">“comecei no jiu-jitsu. o que é passagem de guarda?”</div><div class="uses__tag">pra quem treina</div></div>
-        </div>
-        <div class="uses__foot">MMA, UFC, boxe, jiu-jitsu, muay thai, judô e karatê. Análise e técnica — nunca palpite de aposta.</div>
-      </div>
-
-      <div class="compare">
-        <div class="compare__head"><span>Sem o Combat</span><span>Com o Combat</span></div>
-        <div class="compare__row"><span>Rebobinar o round três vezes sem entender.</span><span>Uma pergunta e a sequência inteira explicada.</span></div>
-        <div class="compare__row"><span>40 minutos em seis abas em inglês pra ver um cartel.</span><span>Uma mensagem.</span></div>
-        <div class="compare__row"><span>3h07, mensagem no grupo, resposta às 11h.</span><span>3h07, resposta na hora.</span></div>
-        <div class="compare__row"><span>"Foi roubo" contra "não foi roubo".</span><span>Critério de round e histórico na mão.</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PLANOS: lista horizontal, um agente por linha -->
-<section id="planos" class="plans">
-  <div class="wrap plans__inner">
-    <div class="plans__head">
-      <h2>Um preço. Escolha só o assunto.</h2>
-      <p>Cada agente é uma assinatura de R$ 30 por mês, independente. Acesso liberado em minutos, cancela quando quiser. Assine um, dois ou os três.</p>
-    </div>
-    <div class="plans__list">
-
-      <div class="plan t-oscar">
-        <div class="plan__id">
-          <span class="plan__num">01</span>
-          <div class="plan__title">
-            <div class="plan__name">Oscar</div>
-            <div class="plan__tagline">o amigo que assistiu e sabe falar sobre</div>
-          </div>
-        </div>
-        <ul class="plan__features">
-          <li>Recomendação a partir do que você sentiu</li>
-          <li>Final explicado, com as pistas em ordem</li>
-          <li>Anime e dorama pela porta certa</li>
-          <li>Conversas ilimitadas, 24h</li>
-        </ul>
-        <div class="plan__buy">
-          <div class="plan__price"><b>R$ 30</b><span>/mês</span></div>
-          <a href="#oscar" class="plan__cta" data-buy="oscar">Ativar o Oscar</a>
-        </div>
-      </div>
-
-      <div class="plan t-scout">
-        <div class="plan__id">
-          <span class="plan__num">02</span>
-          <div class="plan__title">
-            <div class="plan__name">Scout</div>
-            <div class="plan__tagline">o analista que não torce pra ninguém</div>
-          </div>
-        </div>
-        <ul class="plan__features">
-          <li>A derrota explicada em três pontos</li>
-          <li>xG e estatística avançada traduzidos</li>
-          <li>Leitura tática, elenco e mercado</li>
-          <li>Conversas ilimitadas, 24h</li>
-        </ul>
-        <div class="plan__buy">
-          <div class="plan__price"><b>R$ 30</b><span>/mês</span></div>
-          <a href="#scout" class="plan__cta" data-buy="scout">Ativar o Scout</a>
-        </div>
-      </div>
-
-      <div class="plan t-combat">
-        <div class="plan__id">
-          <span class="plan__num">03</span>
-          <div class="plan__title">
-            <div class="plan__name">Combat</div>
-            <div class="plan__tagline">o córner que explica entre um round e outro</div>
-          </div>
-        </div>
-        <ul class="plan__features">
-          <li>A técnica que decidiu a luta, passo a passo</li>
-          <li>Cartel, trajetória e rivalidades</li>
-          <li>Vale acordar pro card? Qual luta ver?</li>
-          <li>Conversas ilimitadas, 24h</li>
-        </ul>
-        <div class="plan__buy">
-          <div class="plan__price"><b>R$ 30</b><span>/mês</span></div>
-          <a href="#combat" class="plan__cta" data-buy="combat">Ativar o Combat</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- REVENDA -->
-<section id="revenda" class="resale">
-  <div class="glow resale__glow"></div>
-  <div class="wrap resale__inner">
-    <div class="resale__top">
-      <div class="resale__pitch">
-        <div class="resale__eyebrow">Para quem tem audiência · Planos Elite</div>
-        <h2>Seu público já pergunta. Agora ele pode assinar com você.</h2>
-        <p>Existem dois caminhos na AX: assinar um agente para usar, ou comprar créditos para revendê-lo. Cada crédito ativa um mês de assinatura de um cliente seu. A assinatura ao cliente final custa R$ 30 por mês; no atacado o crédito sai a partir de R$ 4,00, conforme o agente e o volume. A diferença é sua.</p>
-        <ol class="steps">
-          <li><b>1</b><span>Compre os créditos. Cada um ativa um mês de um cliente.</span></li>
-          <li><b>2</b><span>Ative o cliente. Ele recebe o acesso em minutos.</span></li>
-          <li><b>3</b><span>Cobre como quiser e fique com a diferença.</span></li>
-        </ol>
-        <p class="resale__fit"><strong>Funciona para</strong> quem já responde as mesmas perguntas todo dia, de graça: página de cinema, canal de torcida, grupo de card, dono de academia. <strong>Não funciona para</strong> quem espera que o produto se venda sozinho ou quer vender palpite de aposta.</p>
-      </div>
-
-    </div>
-
-    <div id="tabelas" class="tables">
-      <div class="tables__head">
-        <div class="tables__headline">
-          <div class="tables__badge"><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>Tabela de atacado</div>
-          <h3>Cada agente tem a sua <span>tabela de atacado.</span></h3>
-          <p class="tables__lead">Compre em maior quantidade, pague menos por crédito e aumente sua margem.</p>
-        </div>
-        <div class="tables__copy">
-          <p>O valor mostrado é o preço unitário do crédito dentro daquela faixa de quantidade. Um crédito = um mês de assinatura de um cliente. Quanto maior o pedido, menor o unitário — e maior a sua margem sobre os R$ 30.</p>
-          <div class="perks">
-            <div class="perk"><span class="perk__icon perk__icon--green" aria-hidden="true">⚡</span><div><b>Mais lucro</b><span>em grandes volumes</span></div></div>
-            <div class="perk"><span class="perk__icon perk__icon--cyan" aria-hidden="true">●●</span><div><b>Atenda mais clientes</b><span>com melhor preço</span></div></div>
-            <div class="perk"><span class="perk__icon perk__icon--violet" aria-hidden="true"><span class="bars bars--lg"><i></i><i></i><i></i></span></span><div><b>Escale seu negócio</b><span>com previsibilidade</span></div></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Faixas e preços: mesma fonte de dados usada pelo simulador (app.js → TABELAS). -->
-      <div class="tables__grid">
-
-        <div class="ptable t-oscar">
-          <div class="ptable__head"><img src="./assets/card-oscar.webp" alt="AX Oscar — margem até 87%" loading="lazy"></div>
-          <div class="ptable__body">
-            <div class="ptable__titulo">Tabela de preços<span>Clique na faixa que você quer comprar</span></div>
-            <div class="ptable__rows" data-tabela="oscar"></div>
-          </div>
-          <div class="ptable__note"><i aria-hidden="true">✦</i><p>A tabela mais escalonada da linha: começa em 5 créditos e chega ao menor unitário da AX. Boa para quem quer testar pequeno e para quem opera em grande volume.</p></div>
-          <a class="ptable__cta" data-comprar="oscar" href="#planos">Comprar créditos do Oscar</a>
-        </div>
-
-        <div class="ptable t-scout">
-          <div class="ptable__head"><img src="./assets/card-scout.webp" alt="AX Scout — margem até 82%" loading="lazy"></div>
-          <div class="ptable__body">
-            <div class="ptable__titulo">Tabela de preços<span>Clique na faixa que você quer comprar</span></div>
-            <div class="ptable__rows" data-tabela="scout"></div>
-          </div>
-          <div class="ptable__note"><i aria-hidden="true">✦</i><p>Pedido mínimo de 10 créditos. Audiência de torcida é grande e conversa todos os dias do ano, o que ajuda a girar o estoque de crédito.</p></div>
-          <a class="ptable__cta" data-comprar="scout" href="#planos">Comprar créditos do Scout</a>
-        </div>
-
-        <div class="ptable t-combat">
-          <div class="ptable__head"><img src="./assets/card-combat.webp" alt="AX Combat — margem até 80%" class="is-combat" loading="lazy"></div>
-          <div class="ptable__body">
-            <div class="ptable__titulo">Tabela de preços<span>Clique na faixa que você quer comprar</span></div>
-            <div class="ptable__rows" data-tabela="combat"></div>
-          </div>
-          <div class="ptable__note"><i aria-hidden="true">✦</i><p>Pedido mínimo de 10 créditos. Funciona bem em academia, onde o aluno já paga mensalidade, e em grupo de card, com pico a cada evento.</p></div>
-          <a class="ptable__cta" data-comprar="combat" href="#planos">Comprar créditos do Combat</a>
-        </div>
-
-      </div>
-
-      <div class="tables__rule">
-        <span aria-hidden="true"></span>
-        <b>Três agentes. Um mesmo objetivo: mais resultados para você.</b>
-        <span aria-hidden="true"></span>
-      </div>
-
-      <div class="tables__fine">Margem calculada sobre o preço sugerido de R$ 30 por cliente/mês. Você pode cobrar mais ou menos que isso — a margem acompanha o seu preço.</div>
-
-      <div class="resale__faq">
-        <div><b>Assinar não é pré-requisito</b><p>A AX vende a assinatura direto ao cliente final e vende créditos a quem quer revender. Você pode ter sido assinante e virado parceiro depois, ou entrar direto na revenda por reconhecer a demanda no seu público.</p></div>
-        <div><b>O que fica do nosso lado</b><p>IA, infraestrutura, manutenção e evolução do agente. Do seu lado ficam a audiência, o preço que você cobra e o relacionamento com o cliente.</p></div>
-        <div><b>Sem meta mínima</b><p>Comece pela menor faixa do agente que combina com o seu público, teste com gente real e só aumente o pedido depois de vender.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- VOZES: perguntas de exemplo em faixa, sem cards -->
-<section id="vozes" class="voices">
-  <div class="wrap voices__head">
-    <p class="eyebrow">Exemplos de uso</p>
-    <p>O tipo de pergunta que chega para cada agente — e o que ele faz com ela.</p>
-  </div>
-  <div class="wrap voices__grid">
-    <div class="voice t-oscar">
-      <blockquote>“Terminei uma série que me destruiu e não quero nada barulhento agora.”</blockquote>
-      <div class="voice__by">
-        <span class="voice__avatar" aria-hidden="true">✦</span>
-        <div><b>AX Oscar</b> <span>· devolve duas opções e </span><em>o motivo de cada uma</em></div>
-      </div>
-    </div>
-    <div class="voice t-scout">
-      <blockquote>“Perdemos com 64% de posse de bola. Como é que isso acontece?”</blockquote>
-      <div class="voice__by">
-        <span class="voice__avatar" aria-hidden="true">✦</span>
-        <div><b>AX Scout</b> <span>· explica o bloco baixo em </span><em>três linhas</em></div>
-      </div>
-    </div>
-    <div class="voice t-combat">
-      <blockquote>“Comecei no jiu-jitsu e tem termo que eu finjo entender.”</blockquote>
-      <div class="voice__by">
-        <span class="voice__avatar" aria-hidden="true">✦</span>
-        <div><b>AX Combat</b> <span>· responde às 3h, </span><em>depois do card</em></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ: grade aberta, sem sanfona -->
-<section id="faq" class="faq">
-  <div class="wrap faq__inner">
-    <h2>O que perguntam antes da primeira mensagem.</h2>
-    <dl class="faq__grid">
-      <div class="faq__item"><dt>Como eu converso com o agente?</dt><dd>Assim que a assinatura é confirmada você recebe seu link de acesso. Abre no celular ou no computador e já começa a conversar, do jeito que fala com um amigo.</dd></div>
-      <div class="faq__item"><dt>É uma IA genérica com nome bonito?</dt><dd>Não. Cada agente domina um único assunto e responde no nível de quem acompanha aquilo há anos. Pergunte de futebol pro Oscar e ele te manda pro Scout.</dd></div>
-      <div class="faq__item"><dt>O Oscar dá spoiler?</dt><dd>Só se você pedir. Ele pergunta até onde você viu antes de explicar qualquer coisa.</dd></div>
-      <div class="faq__item"><dt>O Scout ou o Combat dão palpite de aposta?</dt><dd>Não, e não vão dar. Eles analisam o esporte: tática, técnica, estatística, história. Prognóstico e cota estão fora do produto.</dd></div>
-      <div class="faq__item"><dt>Posso assinar mais de um agente?</dt><dd>Sim. Cada agente é uma assinatura de R$ 30/mês, independente das outras.</dd></div>
-      <div class="faq__item"><dt>Posso cancelar?</dt><dd>Quando quiser, sem burocracia. Você mantém o acesso até o fim do período pago.</dd></div>
-    </dl>
-  </div>
-</section>
-
-<!-- CTA FINAL -->
-<section class="cta">
-  <div class="glow cta__glow"></div>
-  <div class="wrap cta__inner">
-    <div class="cta__text">
-      <img src="./assets/ax-logo.png" alt="AX" width="72" height="72">
-      <h2>Sobre o que você quer conversar hoje?</h2>
-      <span>R$ 30/mês · acesso em minutos · cancela quando quiser</span>
-    </div>
-    <div class="cta__picks">
-      <a href="#oscar" class="cta__pick t-oscar" data-buy="oscar"><b>Oscar</b><span>Filmes, séries, animes →</span></a>
-      <a href="#scout" class="cta__pick t-scout" data-buy="scout"><b>Scout</b><span>Futebol →</span></a>
-      <a href="#combat" class="cta__pick t-combat" data-buy="combat"><b>Combat</b><span>MMA, UFC, boxe →</span></a>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<footer class="footer">
-  <div class="wrap footer__inner">
-    <div class="footer__brand"><img src="./assets/ax-logo.png" alt="AX" width="26" height="26"><span>AX — um especialista para cada assunto</span></div>
-    <div class="footer__links">
-      <a href="#oscar">Oscar</a>
-      <a href="#scout">Scout</a>
-      <a href="#combat">Combat</a>
-      <a href="#planos">Planos</a>
-      <a href="#revenda">Revenda</a>
-    </div>
-  </div>
-</footer>
-
+<div style="position:relative;animation:axIn 460ms ease-out 120ms both">
+<div style="position:absolute;top:-34px;right:6px;display:flex;align-items:center;gap:10px"><div style="text-align:right;font-size:11px;line-height:1.4;color:rgba(242,244,245,0.55)">Sempre aprendendo<br>para você ir além</div><span style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#004AFB,#8A18FD);display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;color:#fff">E</span></div>
+<div style="display:grid;grid-template-columns:150px minmax(0,1fr);background:#0D0F11;border:1px solid rgba(255,255,255,0.1);border-radius:18px;overflow:hidden;box-shadow:0 40px 120px -60px rgba(138,24,253,0.8)">
+<div style="border-right:1px solid rgba(255,255,255,0.07);padding:16px 14px;display:flex;flex-direction:column;gap:14px;background:#0A0B0D"><img src="./assets/ax-logo.png" alt="AX" style="width:26px;height:26px;mix-blend-mode:screen"><div style="display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;background:rgba(255,255,255,0.06);font-size:11px;font-weight:600">＋ Novo chat</div><div style="display:flex;flex-direction:column;gap:10px;font-size:11px;color:rgba(242,244,245,0.55)"><span>Especialistas</span><span>Histórico</span><span>Favoritos</span></div><div style="font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(242,244,245,0.35);font-weight:700;margin-top:6px">Seus agentes</div><div style="display:flex;flex-direction:column;gap:9px;font-size:11px;color:rgba(242,244,245,0.75)"><span style="display:flex;align-items:center;gap:8px"><span style="width:7px;height:7px;border-radius:50%;background:#E01F3D;flex:none"></span>AX Oscar</span><span style="display:flex;align-items:center;gap:8px"><span style="width:7px;height:7px;border-radius:50%;background:#12D18A;flex:none"></span>AX Scout</span><span style="display:flex;align-items:center;gap:8px"><span style="width:7px;height:7px;border-radius:50%;background:#9B5CFF;flex:none"></span>AX Combat</span></div></div>
+<div style="display:flex;flex-direction:column;min-width:0">
+<div style="display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,0.07)"><span style="width:26px;height:26px;border-radius:8px;background:rgba(224,31,61,0.18);border:1px solid rgba(224,31,61,0.5);display:inline-flex;align-items:center;justify-content:center;flex:none"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#FF6E8C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M3 5h18v14H3zM7 5v14M17 5v14M3 12h18"></path></svg></span><div><div style="font-size:13px;font-weight:700;line-height:1.2">AX Oscar</div><div style="font-size:10px;color:rgba(242,244,245,0.45)">Entretenimento</div></div></div>
+<div style="padding:18px;display:flex;flex-direction:column;gap:14px;min-width:0">
+<div style="align-self:flex-end;max-width:86%;background:rgba(255,255,255,0.08);border-radius:12px 12px 4px 12px;padding:10px 13px;font-size:12px;line-height:1.5">Quais são as melhores séries para maratonar em 2026?<div style="font-size:9px;color:rgba(242,244,245,0.4);text-align:right;margin-top:4px">10:24</div></div>
+<div style="align-self:flex-start;max-width:94%;background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.07);border-radius:12px 12px 12px 4px;padding:12px 14px;font-size:12px;line-height:1.7;display:flex;flex-direction:column;gap:5px">
+<span style="color:rgba(242,244,245,0.75)">Aqui estão algumas das séries mais comentadas e bem avaliadas para maratonar em 2026:</span>
+<span><span style="color:rgba(242,244,245,0.45)">1.</span> <em style="font-style:italic;font-weight:700">Silo</em> <span style="color:rgba(242,244,245,0.6)">(Apple TV+) – ficção científica envolvente</span></span>
+<span><span style="color:rgba(242,244,245,0.45)">2.</span> <em style="font-style:italic;font-weight:700">The Last of Us</em> <span style="color:rgba(242,244,245,0.6)">(HBO) – drama e emoção</span></span>
+<span><span style="color:rgba(242,244,245,0.45)">3.</span> <em style="font-style:italic;font-weight:700">Fallout</em> <span style="color:rgba(242,244,245,0.6)">(Prime Video) – aventura e mundo imersivo</span></span>
+<span><span style="color:rgba(242,244,245,0.45)">4.</span> <em style="font-style:italic;font-weight:700">Black Mirror</em> <span style="color:rgba(242,244,245,0.6)">– tecnologia e dilemas reais</span></span>
+<span><span style="color:rgba(242,244,245,0.45)">5.</span> <em style="font-style:italic;font-weight:700">O Problema dos 3 Corpos</em> <span style="color:rgba(242,244,245,0.6)">(Netflix) – ficção científica épica</span></span>
+<span style="color:rgba(242,244,245,0.6)">Se quiser, posso montar uma lista personalizada de acordo com o seu estilo. 🎬</span>
+</div>
+<div style="display:flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,0.09);border-radius:10px;padding:10px 12px;font-size:11px;color:rgba(242,244,245,0.4)">Pergunte ao AX Oscar...<span style="margin-left:auto;color:rgba(242,244,245,0.7)">→</span></div>
+</div></div></div></div></div>
+<div style="position:relative;max-width:1280px;margin:0 auto;padding:24px 32px 96px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px">
+<a href="#oscar" class="h8" style="display:flex;flex-direction:column;gap:16px;background:linear-gradient(160deg, #E01F3D1F, rgba(13,15,17,0.9) 55%);border:1px solid #E01F3D66;border-radius:18px;padding:22px;transition:transform 220ms;color:#F2F4F5">
+<div style="display:flex;align-items:center;gap:14px"><span style="width:42px;height:42px;border-radius:12px;flex:none;display:inline-flex;align-items:center;justify-content:center;background:#E01F3D26;border:1px solid #E01F3D80"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#FF4D76" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M3 5h18v14H3zM7 5v14M17 5v14M3 12h18"></path></svg></span><div style="flex:1;min-width:0"><div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px;letter-spacing:-0.02em">AX Oscar</div><div style="font-size:13px;color:rgba(242,244,245,0.5);margin-top:2px">Entretenimento</div></div><span style="width:34px;height:34px;border-radius:50%;flex:none;display:inline-flex;align-items:center;justify-content:center;border:1px solid #E01F3D;color:#FF4D76;font-size:15px">→</span></div>
+<div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:13px 15px;font-size:13.5px;line-height:1.5;color:rgba(242,244,245,0.82)">Quais são os lançamentos de filmes este mês?<div style="font-size:10px;color:rgba(242,244,245,0.35);text-align:right;margin-top:6px">10:24</div></div>
+<div style="font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(242,244,245,0.42);font-weight:700">Filmes · Séries · Curiosidades · Recomendações</div>
+</a>
+<a href="#scout" class="h8" style="display:flex;flex-direction:column;gap:16px;background:linear-gradient(160deg, #12D18A1F, rgba(13,15,17,0.9) 55%);border:1px solid #12D18A66;border-radius:18px;padding:22px;transition:transform 220ms;color:#F2F4F5">
+<div style="display:flex;align-items:center;gap:14px"><span style="width:42px;height:42px;border-radius:12px;flex:none;display:inline-flex;align-items:center;justify-content:center;background:#12D18A26;border:1px solid #12D18A80"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#3BE8A6" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 7.5l4.3 3.1-1.6 5h-5.4l-1.6-5z"></path></svg></span><div style="flex:1;min-width:0"><div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px;letter-spacing:-0.02em">AX Scout</div><div style="font-size:13px;color:rgba(242,244,245,0.5);margin-top:2px">Futebol</div></div><span style="width:34px;height:34px;border-radius:50%;flex:none;display:inline-flex;align-items:center;justify-content:center;border:1px solid #12D18A;color:#3BE8A6;font-size:15px">→</span></div>
+<div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:13px 15px;font-size:13.5px;line-height:1.5;color:rgba(242,244,245,0.82)">Quais são os destaques da próxima rodada da Champions?<div style="font-size:10px;color:rgba(242,244,245,0.35);text-align:right;margin-top:6px">10:24</div></div>
+<div style="font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(242,244,245,0.42);font-weight:700">Análises · Estatísticas · Táticas · Mercado</div>
+</a>
+<a href="#combat" class="h8" style="display:flex;flex-direction:column;gap:16px;background:linear-gradient(160deg, #9B5CFF1F, rgba(13,15,17,0.9) 55%);border:1px solid #9B5CFF66;border-radius:18px;padding:22px;transition:transform 220ms;color:#F2F4F5">
+<div style="display:flex;align-items:center;gap:14px"><span style="width:42px;height:42px;border-radius:12px;flex:none;display:inline-flex;align-items:center;justify-content:center;background:#9B5CFF26;border:1px solid #9B5CFF80"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#B98BFF" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M8 21v-3M8 18H6.5A2.5 2.5 0 0 1 4 15.5V11a2 2 0 0 1 4 0V6a2 2 0 1 1 4 0v4h4.5A2.5 2.5 0 0 1 19 12.5V15a6 6 0 0 1-6 6H8z"></path></svg></span><div style="flex:1;min-width:0"><div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px;letter-spacing:-0.02em">AX Combat</div><div style="font-size:13px;color:rgba(242,244,245,0.5);margin-top:2px">Esportes de combate</div></div><span style="width:34px;height:34px;border-radius:50%;flex:none;display:inline-flex;align-items:center;justify-content:center;border:1px solid #9B5CFF;color:#B98BFF;font-size:15px">→</span></div>
+<div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:13px 15px;font-size:13.5px;line-height:1.5;color:rgba(242,244,245,0.82)">Qual é a análise da luta principal deste final de semana?<div style="font-size:10px;color:rgba(242,244,245,0.35);text-align:right;margin-top:6px">10:24</div></div>
+<div style="font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(242,244,245,0.42);font-weight:700">Análises · Lutadores · Eventos · Estratégias</div>
+</a>
+</div></section>
+<section id="oscar" style="position:relative;overflow:hidden;border-top:1px solid rgba(255,255,255,0.06)">
+<div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(760px 480px at 100% 0%, #E01F3D2E, transparent 70%)"></div>
+<div style="position:relative;max-width:1280px;margin:0 auto;padding:104px 32px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:60px;align-items:center">
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;gap:10px;flex-wrap:wrap"><span style="display:inline-flex;align-items:center;gap:9px;padding:9px 16px;border-radius:999px;border:1px solid #E01F3D99;background:#E01F3D1A;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#FF4D76"><span style="width:7px;height:7px;border-radius:50%;background:#E01F3D;flex:none"></span>AX Oscar</span><span style="display:inline-flex;align-items:center;padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,0.14);font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(242,244,245,0.6);font-weight:700">Filmes · Séries · Animes · Doramas · Documentários</span></div>
+<h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(38px,4.6vw,60px);line-height:1;letter-spacing:-0.04em;margin:0;max-width:14ch;text-wrap:balance">Tudo sobre o que você assiste, <span style="color:#FF4D76">quando você quiser.</span></h2>
+<p style="font-size:17px;line-height:1.65;color:rgba(242,244,245,0.68);margin:0;max-width:540px;text-wrap:pretty">O AX Oscar é o seu especialista em filmes e séries. Ele responde, indica, analisa e conversa com você sobre lançamentos, clássicos, curiosidades, teorias e muito mais — em qualquer hora do dia.</p>
+<div style="display:flex;gap:14px;flex-wrap:wrap"><a href="#planos" data-buy="oscar" class="h5" style="display:inline-flex;align-items:center;padding:17px 28px;border-radius:12px;background:#E01F3D;color:#fff;font-weight:800;font-size:15px;box-shadow:0 20px 50px -28px #E01F3D">Assinar o Oscar por R$ 30/mês →</a><a href="#planos" class="h7" style="display:inline-flex;align-items:center;padding:17px 28px;border-radius:12px;border:1px solid rgba(255,255,255,0.16);color:#F2F4F5;font-weight:600;font-size:15px">Ver planos</a></div>
+<div style="display:flex;gap:32px;flex-wrap:wrap;padding-top:4px"><div style="display:flex;align-items:center;gap:11px"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#FF4D76" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M13 2.5 4.8 13H11l-1 8.5L18.2 11H12l1-8.5z"></path></svg><div style="font-size:14px;line-height:1.35;color:rgba(242,244,245,0.8)">Respostas<br><span style="color:rgba(242,244,245,0.5)">em segundos</span></div></div><div style="display:flex;align-items:center;gap:11px"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#FF4D76" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 7.5V12l3 2"></path></svg><div style="font-size:14px;line-height:1.35;color:rgba(242,244,245,0.8)">Disponível<br><span style="color:rgba(242,244,245,0.5)">24 horas</span></div></div><div style="display:flex;align-items:center;gap:11px"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#FF4D76" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M12 3l7 3v5.4c0 4.3-3 7.7-7 8.6-4-0.9-7-4.3-7-8.6V6l7-3z"></path></svg><div style="font-size:14px;line-height:1.35;color:rgba(242,244,245,0.8)">Sem spoilers<br><span style="color:rgba(242,244,245,0.5)">(se você preferir)</span></div></div></div>
+</div>
+<div style="display:flex;flex-direction:column;background:#0C0E10;border:1px solid #E01F3D55;border-radius:20px;overflow:hidden;box-shadow:0 40px 120px -60px #E01F3D">
+<div style="display:flex;align-items:center;gap:12px;padding:18px 20px;border-bottom:1px solid rgba(255,255,255,0.07)"><span style="width:38px;height:38px;border-radius:11px;flex:none;display:inline-flex;align-items:center;justify-content:center;background:#E01F3D26;border:1px solid #E01F3D80"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="#FF4D76" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M3 5h18v14H3zM7 5v14M17 5v14M3 12h18"></path></svg></span><div style="flex:1;min-width:0"><div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:17px;letter-spacing:-0.02em">AX Oscar</div><div style="display:flex;align-items:center;gap:6px;font-size:11.5px;color:rgba(242,244,245,0.5);margin-top:2px"><span style="width:7px;height:7px;border-radius:50%;background:#12D18A;flex:none"></span>Online agora</div></div><span style="font-size:11px;color:rgba(242,244,245,0.4);white-space:nowrap">Especialista em filmes e séries</span><span style="color:rgba(242,244,245,0.35);font-size:16px">⋮</span></div>
+<div style="padding:20px;display:flex;flex-direction:column;gap:16px;min-width:0">
+<div style="align-self:flex-end;max-width:82%;background:#E01F3D;color:#fff;border-radius:14px 14px 4px 14px;padding:12px 15px;font-size:13.5px;line-height:1.5">Qual a melhor série pra assistir hoje à noite?<div style="font-size:10px;opacity:0.7;text-align:right;margin-top:5px">20:14</div></div>
+<div style="display:flex;gap:12px;align-items:flex-start"><span style="width:30px;height:30px;border-radius:9px;flex:none;display:inline-flex;align-items:center;justify-content:center;background:#E01F3D26;border:1px solid #E01F3D80"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#FF4D76" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M3 5h18v14H3zM7 5v14M17 5v14M3 12h18"></path></svg></span>
+<div style="flex:1;min-width:0;background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.07);border-radius:14px 14px 14px 4px;padding:15px 17px;font-size:13.5px;line-height:1.7;display:flex;flex-direction:column;gap:6px">
+<span style="color:rgba(242,244,245,0.78)">Depende do que você está procurando! Aqui vão algumas ótimas opções de acordo com o seu perfil:</span>
+<span style="display:flex;gap:8px"><span style="color:#FF4D76;font-weight:700;flex:none;font-variant-numeric:tabular-nums">1.</span><span><strong style="font-weight:700">Fallout</strong> <span style="color:rgba(242,244,245,0.65)">(Prime Video) – aventura e mundo imersivo</span></span></span>
+<span style="display:flex;gap:8px"><span style="color:#FF4D76;font-weight:700;flex:none;font-variant-numeric:tabular-nums">2.</span><span><strong style="font-weight:700">The Last of Us</strong> <span style="color:rgba(242,244,245,0.65)">(HBO) – drama e emoção</span></span></span>
+<span style="display:flex;gap:8px"><span style="color:#FF4D76;font-weight:700;flex:none;font-variant-numeric:tabular-nums">3.</span><span><strong style="font-weight:700">Dark</strong> <span style="color:rgba(242,244,245,0.65)">(Netflix) – mistério e viagem no tempo</span></span></span>
+<span style="display:flex;gap:8px"><span style="color:#FF4D76;font-weight:700;flex:none;font-variant-numeric:tabular-nums">4.</span><span><strong style="font-weight:700">O Problema dos 3 Corpos</strong> <span style="color:rgba(242,244,245,0.65)">(Netflix) – ficção científica</span></span></span>
+<span style="display:flex;gap:8px"><span style="color:#FF4D76;font-weight:700;flex:none;font-variant-numeric:tabular-nums">5.</span><span><strong style="font-weight:700">Better Call Saul</strong> <span style="color:rgba(242,244,245,0.65)">(Netflix) – roteiro impecável</span></span></span>
+<span style="color:rgba(242,244,245,0.65)">Se quiser, posso te dar mais opções específicas com base no seu gosto. O que você prefere ver hoje?</span>
+<div style="font-size:10px;color:rgba(242,244,245,0.35);text-align:right">20:14</div>
+</div></div>
+<div style="display:flex;gap:9px;flex-wrap:wrap"><span style="padding:9px 15px;border-radius:9px;border:1px solid rgba(255,255,255,0.12);font-size:12.5px;color:rgba(242,244,245,0.75)">Lançamentos</span><span style="padding:9px 15px;border-radius:9px;border:1px solid rgba(255,255,255,0.12);font-size:12.5px;color:rgba(242,244,245,0.75)">Séries parecidas</span><span style="padding:9px 15px;border-radius:9px;border:1px solid rgba(255,255,255,0.12);font-size:12.5px;color:rgba(242,244,245,0.75)">Filmes por gênero</span><span style="padding:9px 15px;border-radius:9px;border:1px solid rgba(255,255,255,0.12);font-size:12.5px;color:rgba(242,244,245,0.75)">Detalhes da trama</span></div>
+<div style="display:flex;align-items:center;gap:12px;border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:13px 14px;font-size:13px;color:rgba(242,244,245,0.4)"><span style="color:rgba(242,244,245,0.3)">📎</span>Digite sua pergunta...<span style="margin-left:auto;width:32px;height:32px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:#E01F3D;color:#fff;font-size:13px">➤</span></div>
+</div></div></div>
+<div style="position:relative;max-width:1280px;margin:0 auto;padding:56px 32px 0"><div style="display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-top:26px;border-top:1px solid rgba(255,255,255,0.08);font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;font-weight:700;color:rgba(242,244,245,0.45)"><span style="display:flex;align-items:center;gap:14px"><span style="width:34px;height:2px;background:#E01F3D;display:inline-block"></span>Histórias que te acompanham.</span><span>AX Oscar · faz parte do seu dia.</span></div></div>
+<div style="height:104px"></div></section>
+<section id="scout" style="position:relative;overflow:hidden;border-top:1px solid rgba(255,255,255,0.06)">
+<div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(760px 480px at 0% 0%, #12D18A2E, transparent 70%)"></div>
+<div style="position:relative;max-width:1280px;margin:0 auto;padding:104px 32px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:60px;align-items:center">
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;gap:10px;flex-wrap:wrap"><span style="display:inline-flex;align-items:center;gap:9px;padding:9px 16px;border-radius:999px;border:1px solid #12D18A99;background:#12D18A1A;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#3BE8A6"><span style="width:7px;height:7px;border-radius:50%;background:#12D18A;flex:none"></span>AX Scout</span><span style="display:inline-flex;align-items:center;padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,0.14);font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(242,244,245,0.6);font-weight:700">Futebol · Análises · Estatísticas · Táticas · Mercado</span></div>
+<h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(38px,4.6vw,60px);line-height:1;letter-spacing:-0.04em;margin:0;max-width:14ch;text-wrap:balance">Mais futebol. Mais informação, <span style="color:#3BE8A6">melhores decisões.</span></h2>
+<p style="font-size:17px;line-height:1.65;color:rgba(242,244,245,0.68);margin:0;max-width:540px;text-wrap:pretty">O AX Scout analisa jogos, times, jogadores e competições. Ele traz estatísticas, táticas, análises e insights em tempo real para você acompanhar o futebol de um jeito mais inteligente.</p>
+<div style="display:flex;gap:14px;flex-wrap:wrap"><a href="#planos" data-buy="scout" class="h5" style="display:inline-flex;align-items:center;padding:17px 28px;border-radius:12px;background:#12D18A;color:#06130D;font-weight:800;font-size:15px;box-shadow:0 20px 50px -28px #12D18A">Assinar o Scout por R$ 30/mês →</a><a href="#planos" class="h7" style="display:inline-flex;align-items:center;padding:17px 28px;border-radius:12px;border:1px solid rgba(255,255,255,0.16);color:#F2F4F5;font-weight:600;font-size:15px">Ver planos</a></div>
+<div style="display:flex;gap:32px;flex-wrap:wrap;padding-top:4px"><div style="display:flex;align-items:center;gap:11px"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#3BE8A6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M13 2.5 4.8 13H11l-1 8.5L18.2 11H12l1-8.5z"></path></svg><div style="font-size:14px;line-height:1.35;color:rgba(242,244,245,0.8)">Respostas<br><span style="color:rgba(242,244,245,0.5)">em segundos</span></div></div><div style="display:flex;align-items:center;gap:11px"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#3BE8A6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 7.5V12l3 2"></path></svg><div style="font-size:14px;line-height:1.35;color:rgba(242,244,245,0.8)">Disponível<br><span style="color:rgba(242,244,245,0.5)">24 horas</span></div></div><div style="display:flex;align-items:center;gap:11px"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#3BE8A6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M12 3l7 3v5.4c0 4.3-3 7.7-7 8.6-4-0.9-7-4.3-7-8.6V6l7-3z"></path></svg><div style="font-size:14px;line-height:1.35;color:rgba(242,244,245,0.8)">Análises confiáveis<br><span style="color:rgba(242,244,245,0.5)">e atualizadas</span></div></div></div>
+</div>
+<div style="display:flex;flex-direction:column;background:#0C0E10;border:1px solid #12D18A55;border-radius:20px;overflow:hidden;box-shadow:0 40px 120px -60px #12D18A">
+<div style="display:flex;align-items:center;gap:12px;padding:18px 20px;border-bottom:1px solid rgba(255,255,255,0.07)"><span style="width:38px;height:38px;border-radius:11px;flex:none;display:inline-flex;align-items:center;justify-content:center;background:#12D18A26;border:1px solid #12D18A80"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="#3BE8A6" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 7.5l4.3 3.1-1.6 5h-5.4l-1.6-5z"></path></svg></span><div style="flex:1;min-width:0"><div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:17px;letter-spacing:-0.02em">AX Scout</div><div style="display:flex;align-items:center;gap:6px;font-size:11.5px;color:rgba(242,244,245,0.5);margin-top:2px"><span style="width:7px;height:7px;border-radius:50%;background:#12D18A;flex:none"></span>Online agora</div></div><span style="font-size:11px;color:rgba(242,244,245,0.4);white-space:nowrap">Seu analista de futebol 24/7</span><span style="color:rgba(242,244,245,0.35);font-size:16px">⋮</span></div>
+<div style="padding:20px;display:flex;flex-direction:column;gap:16px;min-width:0">
+<div style="align-self:flex-end;max-width:82%;background:#12D18A;color:#06130D;border-radius:14px 14px 4px 14px;padding:12px 15px;font-size:13.5px;line-height:1.5">Quais são os jogos de hoje na Champions?<div style="font-size:10px;opacity:0.7;text-align:right;margin-top:5px">20:14</div></div>
+<div style="display:flex;gap:12px;align-items:flex-start"><span style="width:30px;height:30px;border-radius:9px;flex:none;display:inline-flex;align-items:center;justify-content:center;background:#12D18A26;border:1px solid #12D18A80"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#3BE8A6" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 7.5l4.3 3.1-1.6 5h-5.4l-1.6-5z"></path></svg></span>
+<div style="flex:1;min-width:0;background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.07);border-radius:14px 14px 14px 4px;padding:15px 17px;font-size:13.5px;line-height:1.7;display:flex;flex-direction:column;gap:6px">
+<span style="color:rgba(242,244,245,0.78)">Claro! Hoje temos os seguintes jogos da Champions League:</span>
+<span style="display:flex;gap:8px"><span style="color:#3BE8A6;font-weight:700;flex:none;font-variant-numeric:tabular-nums">16:00</span><span><strong style="font-weight:700">Real Madrid x Manchester City</strong> <span style="color:rgba(242,244,245,0.65)"></span></span></span>
+<span style="display:flex;gap:8px"><span style="color:#3BE8A6;font-weight:700;flex:none;font-variant-numeric:tabular-nums">16:00</span><span><strong style="font-weight:700">Bayern de Munique x Arsenal</strong> <span style="color:rgba(242,244,245,0.65)"></span></span></span>
+<span style="display:flex;gap:8px"><span style="color:#3BE8A6;font-weight:700;flex:none;font-variant-numeric:tabular-nums">19:00</span><span><strong style="font-weight:700">Barcelona x PSG</strong> <span style="color:rgba(242,244,245,0.65)"></span></span></span>
+<span style="display:flex;gap:8px"><span style="color:#3BE8A6;font-weight:700;flex:none;font-variant-numeric:tabular-nums">19:00</span><span><strong style="font-weight:700">Borussia Dortmund x Atlético de Madrid</strong> <span style="color:rgba(242,244,245,0.65)"></span></span></span>
+<span style="color:rgba(242,244,245,0.65)">Se quiser, posso trazer as prováveis escalações, estatísticas e análises de cada jogo. Qual deles você quer analisar primeiro?</span>
+<div style="font-size:10px;color:rgba(242,244,245,0.35);text-align:right">20:14</div>
+</div></div>
+<div style="display:flex;gap:9px;flex-wrap:wrap"><span style="padding:9px 15px;border-radius:9px;border:1px solid rgba(255,255,255,0.12);font-size:12.5px;color:rgba(242,244,245,0.75)">Jogos de hoje</span><span style="padding:9px 15px;border-radius:9px;border:1px solid rgba(255,255,255,0.12);font-size:12.5px;color:rgba(242,244,245,0.75)">Classificação</span><span style="padding:9px 15px;border-radius:9px;border:1px solid rgba(255,255,255,0.12);font-size:12.5px;color:rgba(242,244,245,0.75)">Análise de jogo</span><span style="padding:9px 15px;border-radius:9px;border:1px solid rgba(255,255,255,0.12);font-size:12.5px;color:rgba(242,244,245,0.75)">Mercado da bola</span></div>
+<div style="display:flex;align-items:center;gap:12px;border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:13px 14px;font-size:13px;color:rgba(242,244,245,0.4)"><span style="color:rgba(242,244,245,0.3)">📎</span>Digite sua pergunta...<span style="margin-left:auto;width:32px;height:32px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:#12D18A;color:#06130D;font-size:13px">➤</span></div>
+</div></div></div>
+<div style="position:relative;max-width:1280px;margin:0 auto;padding:56px 32px 0"><div style="display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-top:26px;border-top:1px solid rgba(255,255,255,0.08);font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;font-weight:700;color:rgba(242,244,245,0.45)"><span style="display:flex;align-items:center;gap:14px"><span style="width:34px;height:2px;background:#12D18A;display:inline-block"></span>Futebol em outro nível.</span><span>AX Scout · faz parte do seu dia.</span></div></div>
+<div style="height:104px"></div></section>
+<section id="combat" style="position:relative;overflow:hidden;border-top:1px solid rgba(255,255,255,0.06)">
+<div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(760px 480px at 100% 0%, #9B5CFF2E, transparent 70%)"></div>
+<div style="position:relative;max-width:1280px;margin:0 auto;padding:104px 32px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:60px;align-items:center">
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;gap:10px;flex-wrap:wrap"><span style="display:inline-flex;align-items:center;gap:9px;padding:9px 16px;border-radius:999px;border:1px solid #9B5CFF99;background:#9B5CFF1A;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:#B98BFF"><span style="width:7px;height:7px;border-radius:50%;background:#9B5CFF;flex:none"></span>AX Combat</span><span style="display:inline-flex;align-items:center;padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,0.14);font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(242,244,245,0.6);font-weight:700">Lutas · Eventos · Lutadores · Estratégias · Análises</span></div>
+<h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(38px,4.6vw,60px);line-height:1;letter-spacing:-0.04em;margin:0;max-width:14ch;text-wrap:balance">Lutas em outro nível. <span style="color:#B98BFF">Informação que te coloca mais perto da ação.</span></h2>
+<p style="font-size:17px;line-height:1.65;color:rgba(242,244,245,0.68);margin:0;max-width:540px;text-wrap:pretty">O AX Combat traz análises, notícias, eventos, lutadores e estratégias do mundo das lutas. UFC, boxe, MMA, jiu-jitsu e muito mais — tudo em um só lugar, com respostas rápidas e precisas.</p>
+<div style="display:flex;gap:14px;flex-wrap:wrap"><a href="#planos" data-buy="combat" class="h5" style="display:inline-flex;align-items:center;padding:17px 28px;border-radius:12px;background:#9B5CFF;color:#fff;font-weight:800;font-size:15px;box-shadow:0 20px 50px -28px #9B5CFF">Assinar o Combat por R$ 30/mês →</a><a href="#planos" class="h7" style="display:inline-flex;align-items:center;padding:17px 28px;border-radius:12px;border:1px solid rgba(255,255,255,0.16);color:#F2F4F5;font-weight:600;font-size:15px">Ver planos</a></div>
+<div style="display:flex;gap:32px;flex-wrap:wrap;padding-top:4px"><div style="display:flex;align-items:center;gap:11px"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#B98BFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M13 2.5 4.8 13H11l-1 8.5L18.2 11H12l1-8.5z"></path></svg><div style="font-size:14px;line-height:1.35;color:rgba(242,244,245,0.8)">Respostas<br><span style="color:rgba(242,244,245,0.5)">em segundos</span></div></div><div style="display:flex;align-items:center;gap:11px"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#B98BFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 7.5V12l3 2"></path></svg><div style="font-size:14px;line-height:1.35;color:rgba(242,244,245,0.8)">Disponível<br><span style="color:rgba(242,244,245,0.5)">24 horas</span></div></div><div style="display:flex;align-items:center;gap:11px"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#B98BFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M12 3l7 3v5.4c0 4.3-3 7.7-7 8.6-4-0.9-7-4.3-7-8.6V6l7-3z"></path></svg><div style="font-size:14px;line-height:1.35;color:rgba(242,244,245,0.8)">Conteúdo confiável<br><span style="color:rgba(242,244,245,0.5)">e atualizado</span></div></div></div>
+</div>
+<div style="display:flex;flex-direction:column;background:#0C0E10;border:1px solid #9B5CFF55;border-radius:20px;overflow:hidden;box-shadow:0 40px 120px -60px #9B5CFF">
+<div style="display:flex;align-items:center;gap:12px;padding:18px 20px;border-bottom:1px solid rgba(255,255,255,0.07)"><span style="width:38px;height:38px;border-radius:11px;flex:none;display:inline-flex;align-items:center;justify-content:center;background:#9B5CFF26;border:1px solid #9B5CFF80"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="#B98BFF" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M8 21v-3M8 18H6.5A2.5 2.5 0 0 1 4 15.5V11a2 2 0 0 1 4 0V6a2 2 0 1 1 4 0v4h4.5A2.5 2.5 0 0 1 19 12.5V15a6 6 0 0 1-6 6H8z"></path></svg></span><div style="flex:1;min-width:0"><div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:17px;letter-spacing:-0.02em">AX Combat</div><div style="display:flex;align-items:center;gap:6px;font-size:11.5px;color:rgba(242,244,245,0.5);margin-top:2px"><span style="width:7px;height:7px;border-radius:50%;background:#12D18A;flex:none"></span>Online agora</div></div><span style="font-size:11px;color:rgba(242,244,245,0.4);white-space:nowrap">Especialista em lutas 24/7</span><span style="color:rgba(242,244,245,0.35);font-size:16px">⋮</span></div>
+<div style="padding:20px;display:flex;flex-direction:column;gap:16px;min-width:0">
+<div style="align-self:flex-end;max-width:82%;background:#9B5CFF;color:#fff;border-radius:14px 14px 4px 14px;padding:12px 15px;font-size:13.5px;line-height:1.5">Qual a análise da luta principal do UFC deste final de semana?<div style="font-size:10px;opacity:0.7;text-align:right;margin-top:5px">20:14</div></div>
+<div style="display:flex;gap:12px;align-items:flex-start"><span style="width:30px;height:30px;border-radius:9px;flex:none;display:inline-flex;align-items:center;justify-content:center;background:#9B5CFF26;border:1px solid #9B5CFF80"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#B98BFF" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M8 21v-3M8 18H6.5A2.5 2.5 0 0 1 4 15.5V11a2 2 0 0 1 4 0V6a2 2 0 1 1 4 0v4h4.5A2.5 2.5 0 0 1 19 12.5V15a6 6 0 0 1-6 6H8z"></path></svg></span>
+<div style="flex:1;min-width:0;background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.07);border-radius:14px 14px 14px 4px;padding:15px 17px;font-size:13.5px;line-height:1.7;display:flex;flex-direction:column;gap:6px">
+<span style="color:rgba(242,244,245,0.78)">Aqui está a análise da luta principal do UFC deste final de semana — Alex Pereira vs. Jamahal Hill, meio-pesado (93 kg):</span>
+<span style="display:flex;gap:8px"><span style="color:#B98BFF;font-weight:700;flex:none;font-variant-numeric:tabular-nums">•</span><span><strong style="font-weight:700">Alex Pereira:</strong> <span style="color:rgba(242,244,245,0.65)">excelente no striking, alto poder de nocaute, defesa de quedas evoluiu.</span></span></span>
+<span style="display:flex;gap:8px"><span style="color:#B98BFF;font-weight:700;flex:none;font-variant-numeric:tabular-nums">•</span><span><strong style="font-weight:700">Jamahal Hill:</strong> <span style="color:rgba(242,244,245,0.65)">forte no jogo de média distância, bom volume de golpes e resistência.</span></span></span>
+<span style="display:flex;gap:8px"><span style="color:#B98BFF;font-weight:700;flex:none;font-variant-numeric:tabular-nums">•</span><span><strong style="font-weight:700">Leitura:</strong> <span style="color:rgba(242,244,245,0.65)">luta equilibrada, com vantagem para quem controlar a distância e evitar a grade.</span></span></span>
+<span style="color:rgba(242,244,245,0.65)">Posso detalhar o cartel dos dois, o histórico recente ou os próximos eventos do card.</span>
+<div style="font-size:10px;color:rgba(242,244,245,0.35);text-align:right">20:14</div>
+</div></div>
+<div style="display:flex;gap:9px;flex-wrap:wrap"><span style="padding:9px 15px;border-radius:9px;border:1px solid rgba(255,255,255,0.12);font-size:12.5px;color:rgba(242,244,245,0.75)">Próximos eventos</span><span style="padding:9px 15px;border-radius:9px;border:1px solid rgba(255,255,255,0.12);font-size:12.5px;color:rgba(242,244,245,0.75)">Perfil de lutadores</span><span style="padding:9px 15px;border-radius:9px;border:1px solid rgba(255,255,255,0.12);font-size:12.5px;color:rgba(242,244,245,0.75)">Análise de luta</span><span style="padding:9px 15px;border-radius:9px;border:1px solid rgba(255,255,255,0.12);font-size:12.5px;color:rgba(242,244,245,0.75)">Rankings</span></div>
+<div style="display:flex;align-items:center;gap:12px;border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:13px 14px;font-size:13px;color:rgba(242,244,245,0.4)"><span style="color:rgba(242,244,245,0.3)">📎</span>Digite sua pergunta...<span style="margin-left:auto;width:32px;height:32px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:#9B5CFF;color:#fff;font-size:13px">➤</span></div>
+</div></div></div>
+<div style="position:relative;max-width:1280px;margin:0 auto;padding:56px 32px 0"><div style="display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-top:26px;border-top:1px solid rgba(255,255,255,0.08);font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;font-weight:700;color:rgba(242,244,245,0.45)"><span style="display:flex;align-items:center;gap:14px"><span style="width:34px;height:2px;background:#9B5CFF;display:inline-block"></span>Lutas que movem o mundo.</span><span>AX Combat · disciplina. informação. evolução.</span></div></div>
+<div style="height:104px"></div></section>
+<section id="planos" style="border-top:1px solid rgba(255,255,255,0.06)">
+<div style="max-width:1280px;margin:0 auto;padding:110px 32px;display:flex;flex-direction:column;gap:40px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px;align-items:end"><h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(38px,5vw,68px);line-height:0.95;letter-spacing:-0.04em;margin:0;text-wrap:balance">Um preço. Escolha só o assunto.</h2><p style="font-size:17px;line-height:1.55;color:rgba(242,244,245,0.66);margin:0;max-width:480px">Cada agente é uma assinatura de R$ 30 por mês, independente. Acesso liberado em minutos, cancela quando quiser. Assine um, dois ou os três.</p></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px">
+<div style="display:flex;flex-direction:column;gap:20px;background:#0C0E10;border:1px solid #E01F3D59;border-radius:18px;padding:30px 28px;box-shadow:0 40px 100px -70px #E01F3D">
+<div style="display:flex;justify-content:space-between;align-items:center"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:14px;letter-spacing:0.08em;padding:6px 12px;border-radius:7px;background:#E01F3D;color:#fff">01</span><span style="font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(242,244,245,0.42);font-weight:700">Entretenimento</span></div>
+<div><div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:32px;letter-spacing:-0.03em;line-height:1">AX Oscar</div><div style="font-size:14px;color:rgba(242,244,245,0.55);margin-top:8px">o amigo que assistiu e sabe falar sobre</div></div>
+<div style="display:flex;align-items:baseline;gap:6px"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:46px;letter-spacing:-0.035em;line-height:1">R$ 30</span><span style="color:rgba(242,244,245,0.45)">/mês</span></div>
+<div style="display:flex;flex-direction:column;gap:12px;flex:1"><div style="display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.45;color:rgba(242,244,245,0.85)"><span style="color:#FF4D76;flex:none">—</span><span>Recomendação a partir do que você sentiu</span></div><div style="display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.45;color:rgba(242,244,245,0.85)"><span style="color:#FF4D76;flex:none">—</span><span>Final explicado, com as pistas em ordem</span></div><div style="display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.45;color:rgba(242,244,245,0.85)"><span style="color:#FF4D76;flex:none">—</span><span>Anime e dorama pela porta certa</span></div><div style="display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.45;color:rgba(242,244,245,0.85)"><span style="color:#FF4D76;flex:none">—</span><span>Conversas ilimitadas, 24h</span></div></div>
+<a href="#oscar" data-buy="oscar" class="h9" style="display:flex;justify-content:center;padding:16px;border-radius:11px;background:#E01F3D;color:#fff;font-weight:800;font-size:14.5px">Assinar o Oscar</a>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px;background:#0C0E10;border:1px solid #12D18A59;border-radius:18px;padding:30px 28px;box-shadow:0 40px 100px -70px #12D18A">
+<div style="display:flex;justify-content:space-between;align-items:center"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:14px;letter-spacing:0.08em;padding:6px 12px;border-radius:7px;background:#12D18A;color:#06130D">02</span><span style="font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(242,244,245,0.42);font-weight:700">Futebol</span></div>
+<div><div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:32px;letter-spacing:-0.03em;line-height:1">AX Scout</div><div style="font-size:14px;color:rgba(242,244,245,0.55);margin-top:8px">o analista que não torce pra ninguém</div></div>
+<div style="display:flex;align-items:baseline;gap:6px"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:46px;letter-spacing:-0.035em;line-height:1">R$ 30</span><span style="color:rgba(242,244,245,0.45)">/mês</span></div>
+<div style="display:flex;flex-direction:column;gap:12px;flex:1"><div style="display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.45;color:rgba(242,244,245,0.85)"><span style="color:#3BE8A6;flex:none">—</span><span>A derrota explicada em três pontos</span></div><div style="display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.45;color:rgba(242,244,245,0.85)"><span style="color:#3BE8A6;flex:none">—</span><span>xG e estatística avançada traduzidos</span></div><div style="display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.45;color:rgba(242,244,245,0.85)"><span style="color:#3BE8A6;flex:none">—</span><span>Leitura tática, elenco e mercado</span></div><div style="display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.45;color:rgba(242,244,245,0.85)"><span style="color:#3BE8A6;flex:none">—</span><span>Conversas ilimitadas, 24h</span></div></div>
+<a href="#scout" data-buy="scout" class="h9" style="display:flex;justify-content:center;padding:16px;border-radius:11px;background:#12D18A;color:#06130D;font-weight:800;font-size:14.5px">Assinar o Scout</a>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px;background:#0C0E10;border:1px solid #9B5CFF59;border-radius:18px;padding:30px 28px;box-shadow:0 40px 100px -70px #9B5CFF">
+<div style="display:flex;justify-content:space-between;align-items:center"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:14px;letter-spacing:0.08em;padding:6px 12px;border-radius:7px;background:#9B5CFF;color:#fff">03</span><span style="font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(242,244,245,0.42);font-weight:700">Lutas</span></div>
+<div><div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:32px;letter-spacing:-0.03em;line-height:1">AX Combat</div><div style="font-size:14px;color:rgba(242,244,245,0.55);margin-top:8px">o córner que explica entre um round e outro</div></div>
+<div style="display:flex;align-items:baseline;gap:6px"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:46px;letter-spacing:-0.035em;line-height:1">R$ 30</span><span style="color:rgba(242,244,245,0.45)">/mês</span></div>
+<div style="display:flex;flex-direction:column;gap:12px;flex:1"><div style="display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.45;color:rgba(242,244,245,0.85)"><span style="color:#B98BFF;flex:none">—</span><span>A técnica que decidiu a luta, passo a passo</span></div><div style="display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.45;color:rgba(242,244,245,0.85)"><span style="color:#B98BFF;flex:none">—</span><span>Cartel, trajetória e rivalidades</span></div><div style="display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.45;color:rgba(242,244,245,0.85)"><span style="color:#B98BFF;flex:none">—</span><span>Vale acordar pro card? Qual luta ver?</span></div><div style="display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.45;color:rgba(242,244,245,0.85)"><span style="color:#B98BFF;flex:none">—</span><span>Conversas ilimitadas, 24h</span></div></div>
+<a href="#combat" data-buy="combat" class="h9" style="display:flex;justify-content:center;padding:16px;border-radius:11px;background:#9B5CFF;color:#fff;font-weight:800;font-size:14.5px">Assinar o Combat</a>
+</div>
+</div></div></section>
+<section id="revenda" style="position:relative;overflow:hidden;border-top:1px solid rgba(255,255,255,0.06)">
+<div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(900px 480px at 50% 0%, rgba(123,63,242,0.22), transparent 70%)"></div>
+<div style="position:relative;max-width:1280px;margin:0 auto;padding:110px 32px;display:flex;flex-direction:column;gap:44px">
+<div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px"><div style="font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(242,244,245,0.5);font-weight:700">Para revendedores</div><h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(36px,4.8vw,62px);line-height:1;letter-spacing:-0.04em;margin:0;max-width:20ch;text-wrap:balance">Mais possibilidades <span style="color:rgba(242,244,245,0.42)">para o seu negócio.</span></h2><p style="font-size:17px;color:rgba(242,244,245,0.6);margin:0">Mesmo sistema, mais vantagens.</p><div style="display:flex;gap:40px;flex-wrap:wrap;justify-content:center;padding-top:10px"><div style="display:flex;align-items:center;gap:11px"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#8FA6FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M13 2.5 4.8 13H11l-1 8.5L18.2 11H12l1-8.5z"></path></svg><div style="text-align:left;font-size:14px;line-height:1.35"><span style="font-weight:700">Ativação imediata</span><br><span style="color:rgba(242,244,245,0.5)">Comece a usar agora</span></div></div><div style="display:flex;align-items:center;gap:11px"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#8FA6FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M4 20V11M10 20V4M16 20v-6M2 20h20"></path></svg><div style="text-align:left;font-size:14px;line-height:1.35"><span style="font-weight:700">Mais margem</span><br><span style="color:rgba(242,244,245,0.5)">Preços especiais</span></div></div><div style="display:flex;align-items:center;gap:11px"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#8FA6FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M16 20v-1.8a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4V20M9 10.2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM22 20v-1.8a4 4 0 0 0-3-3.9"></path></svg><div style="text-align:left;font-size:14px;line-height:1.35"><span style="font-weight:700">Suporte prioritário</span><br><span style="color:rgba(242,244,245,0.5)">Para revendedores</span></div></div></div></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;align-items:start">
+<div data-pacote="oscar" style="display:flex;flex-direction:column;gap:18px;background:#0B0C0E;border:1px solid #E01F3D80;border-radius:20px;padding:26px 24px;box-shadow:0 0 70px -30px #E01F3DAA">
+<div style="display:flex;align-items:center;gap:12px"><img src="./assets/ax-logo.png" alt="AX" style="width:30px;height:30px;mix-blend-mode:screen;flex:none"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:27px;letter-spacing:-0.03em;color:#FF4D76">Oscar</span><span style="margin-left:auto;padding:6px 12px;border-radius:999px;border:1px solid #E01F3DAA;color:#FF4D76;font-size:9.5px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;white-space:nowrap">Entretenimento</span></div>
+<div style="font-size:14.5px;line-height:1.55;color:rgba(242,244,245,0.72)">Filmes, séries, animes e doramas.<br><span style="color:rgba(242,244,245,0.5)">Seu público sempre conectado.</span></div>
+<div style="display:flex;align-items:center;gap:9px;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:rgba(242,244,245,0.6)"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#FF4D76" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M12 7c4.4 0 8-1.1 8-2.5S16.4 2 12 2 4 3.1 4 4.5 7.6 7 12 7zM4 4.5v15C4 20.9 7.6 22 12 22s8-1.1 8-2.5v-15M4 12c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5"></path></svg>Pacotes de créditos (revenda)</div>
+<div style="display:flex;flex-direction:column;gap:7px">
+<button type="button" data-faixa="0" data-qtd="5" style="position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;text-align:left;padding:13px 15px;border-radius:10px;cursor:pointer;font-size:13.5px;font-variant-numeric:tabular-nums;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);color:#F2F4F5">
+<span data-marca hidden style="position:absolute;inset:-1px;border-radius:10px;pointer-events:none;background:#E01F3D2E;border:1px solid #E01F3D"></span>
+<span style="position:relative;font-weight:600">5 créditos</span><span style="position:relative;font-weight:700;white-space:nowrap">R$ 10,00</span></button>
+<button type="button" data-faixa="1" data-qtd="10" style="position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;text-align:left;padding:13px 15px;border-radius:10px;cursor:pointer;font-size:13.5px;font-variant-numeric:tabular-nums;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);color:#F2F4F5">
+<span data-marca hidden style="position:absolute;inset:-1px;border-radius:10px;pointer-events:none;background:#E01F3D2E;border:1px solid #E01F3D"></span>
+<span style="position:relative;font-weight:600">10 créditos</span><span style="position:relative;font-weight:700;white-space:nowrap">R$ 8,00</span></button>
+<button type="button" data-faixa="2" data-qtd="30" style="position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;text-align:left;padding:13px 15px;border-radius:10px;cursor:pointer;font-size:13.5px;font-variant-numeric:tabular-nums;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);color:#F2F4F5">
+<span data-marca hidden style="position:absolute;inset:-1px;border-radius:10px;pointer-events:none;background:#E01F3D2E;border:1px solid #E01F3D"></span>
+<span style="position:relative;font-weight:600">30 créditos</span><span style="position:relative;font-weight:700;white-space:nowrap">R$ 7,50</span></button>
+<button type="button" data-faixa="3" data-qtd="100" style="position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;text-align:left;padding:13px 15px;border-radius:10px;cursor:pointer;font-size:13.5px;font-variant-numeric:tabular-nums;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);color:#F2F4F5">
+<span data-marca hidden style="position:absolute;inset:-1px;border-radius:10px;pointer-events:none;background:#E01F3D2E;border:1px solid #E01F3D"></span>
+<span style="position:relative;font-weight:600">100 créditos</span><span style="position:relative;font-weight:700;white-space:nowrap">R$ 6,00</span></button>
+<button type="button" data-faixa="4" data-qtd="250" style="position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;text-align:left;padding:13px 15px;border-radius:10px;cursor:pointer;font-size:13.5px;font-variant-numeric:tabular-nums;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);color:#F2F4F5">
+<span data-marca hidden style="position:absolute;inset:-1px;border-radius:10px;pointer-events:none;background:#E01F3D2E;border:1px solid #E01F3D"></span>
+<span style="position:relative;font-weight:600">250 créditos</span><span style="position:relative;font-weight:700;white-space:nowrap">R$ 5,50</span></button>
+<button type="button" data-faixa="5" data-qtd="500" style="position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;text-align:left;padding:13px 15px;border-radius:10px;cursor:pointer;font-size:13.5px;font-variant-numeric:tabular-nums;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);color:#F2F4F5">
+<span data-marca hidden style="position:absolute;inset:-1px;border-radius:10px;pointer-events:none;background:#E01F3D2E;border:1px solid #E01F3D"></span>
+<span style="position:relative;font-weight:600">500 créditos</span><span style="position:relative;font-weight:700;white-space:nowrap">R$ 5,00</span></button>
+<button type="button" data-faixa="6" data-qtd="1000" style="position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;text-align:left;padding:13px 15px;border-radius:10px;cursor:pointer;font-size:13.5px;font-variant-numeric:tabular-nums;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);color:#F2F4F5">
+<span data-marca hidden style="position:absolute;inset:-1px;border-radius:10px;pointer-events:none;background:#E01F3D2E;border:1px solid #E01F3D"></span>
+<span style="position:relative;font-weight:600">1.000 créditos</span><span style="position:relative;font-weight:700;white-space:nowrap">R$ 4,50</span></button>
+<button type="button" data-faixa="7" data-qtd="2500" style="position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;text-align:left;padding:13px 15px;border-radius:10px;cursor:pointer;font-size:13.5px;font-variant-numeric:tabular-nums;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);color:#F2F4F5">
+<span data-marca hidden style="position:absolute;inset:-1px;border-radius:10px;pointer-events:none;background:#E01F3D2E;border:1px solid #E01F3D"></span>
+<span style="position:relative;font-weight:600">2.500 créditos</span><span style="position:relative;font-weight:700;white-space:nowrap">R$ 4,00</span></button>
+</div>
+<div style="font-size:12px;line-height:1.6;color:rgba(242,244,245,0.5);margin-top:auto">Preço por crédito. Cada crédito ativa um mês de um cliente seu, que paga <strong style="color:rgba(242,244,245,0.8)">R$ 30,00/mês</strong>. Sua margem vai de <strong style="color:rgba(242,244,245,0.8)">67%</strong> a <strong style="color:rgba(242,244,245,0.8)">87%</strong>.</div>
+<div data-resumo style="padding:13px 15px;border-radius:11px;background:#E01F3D1A;border:1px solid #E01F3D66;font-size:13px;line-height:1.5;color:#F2F4F5"></div>
+<a href="#planos" data-comprar="oscar" class="h10" style="display:flex;justify-content:center;padding:16px;border-radius:11px;background:#E01F3D;color:#fff;font-weight:800;font-size:14.5px">Quero revender o Oscar →</a>
+</div>
+<div data-pacote="scout" style="display:flex;flex-direction:column;gap:18px;background:#0B0C0E;border:1px solid #12D18A80;border-radius:20px;padding:26px 24px;box-shadow:0 0 70px -30px #12D18AAA">
+<div style="display:flex;align-items:center;gap:12px"><img src="./assets/ax-logo.png" alt="AX" style="width:30px;height:30px;mix-blend-mode:screen;flex:none"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:27px;letter-spacing:-0.03em;color:#3BE8A6">Scout</span><span style="margin-left:auto;padding:6px 12px;border-radius:999px;border:1px solid #12D18AAA;color:#3BE8A6;font-size:9.5px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;white-space:nowrap">Futebol</span></div>
+<div style="font-size:14.5px;line-height:1.55;color:rgba(242,244,245,0.72)">Análises, estatísticas e mercado.<br><span style="color:rgba(242,244,245,0.5)">Informação para quem vive futebol.</span></div>
+<div style="display:flex;align-items:center;gap:9px;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:rgba(242,244,245,0.6)"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#3BE8A6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M12 7c4.4 0 8-1.1 8-2.5S16.4 2 12 2 4 3.1 4 4.5 7.6 7 12 7zM4 4.5v15C4 20.9 7.6 22 12 22s8-1.1 8-2.5v-15M4 12c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5"></path></svg>Pacotes de créditos (revenda)</div>
+<div style="display:flex;flex-direction:column;gap:7px">
+<button type="button" data-faixa="0" data-qtd="10" style="position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;text-align:left;padding:13px 15px;border-radius:10px;cursor:pointer;font-size:13.5px;font-variant-numeric:tabular-nums;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);color:#F2F4F5">
+<span data-marca hidden style="position:absolute;inset:-1px;border-radius:10px;pointer-events:none;background:#12D18A2E;border:1px solid #12D18A"></span>
+<span style="position:relative;font-weight:600">10 créditos</span><span style="position:relative;font-weight:700;white-space:nowrap">R$ 11,00</span></button>
+<button type="button" data-faixa="1" data-qtd="30" style="position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;text-align:left;padding:13px 15px;border-radius:10px;cursor:pointer;font-size:13.5px;font-variant-numeric:tabular-nums;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);color:#F2F4F5">
+<span data-marca hidden style="position:absolute;inset:-1px;border-radius:10px;pointer-events:none;background:#12D18A2E;border:1px solid #12D18A"></span>
+<span style="position:relative;font-weight:600">30 créditos</span><span style="position:relative;font-weight:700;white-space:nowrap">R$ 10,00</span></button>
+<button type="button" data-faixa="2" data-qtd="50" style="position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;text-align:left;padding:13px 15px;border-radius:10px;cursor:pointer;font-size:13.5px;font-variant-numeric:tabular-nums;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);color:#F2F4F5">
+<span data-marca hidden style="position:absolute;inset:-1px;border-radius:10px;pointer-events:none;background:#12D18A2E;border:1px solid #12D18A"></span>
+<span style="position:relative;font-weight:600">50 créditos</span><span style="position:relative;font-weight:700;white-space:nowrap">R$ 8,00</span></button>
+<button type="button" data-faixa="3" data-qtd="100" style="position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;text-align:left;padding:13px 15px;border-radius:10px;cursor:pointer;font-size:13.5px;font-variant-numeric:tabular-nums;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);color:#F2F4F5">
+<span data-marca hidden style="position:absolute;inset:-1px;border-radius:10px;pointer-events:none;background:#12D18A2E;border:1px solid #12D18A"></span>
+<span style="position:relative;font-weight:600">100 créditos</span><span style="position:relative;font-weight:700;white-space:nowrap">R$ 7,00</span></button>
+<button type="button" data-faixa="4" data-qtd="500" style="position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;text-align:left;padding:13px 15px;border-radius:10px;cursor:pointer;font-size:13.5px;font-variant-numeric:tabular-nums;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);color:#F2F4F5">
+<span data-marca hidden style="position:absolute;inset:-1px;border-radius:10px;pointer-events:none;background:#12D18A2E;border:1px solid #12D18A"></span>
+<span style="position:relative;font-weight:600">500 créditos</span><span style="position:relative;font-weight:700;white-space:nowrap">R$ 6,00</span></button>
+<button type="button" data-faixa="5" data-qtd="1000" style="position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;text-align:left;padding:13px 15px;border-radius:10px;cursor:pointer;font-size:13.5px;font-variant-numeric:tabular-nums;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);color:#F2F4F5">
+<span data-marca hidden style="position:absolute;inset:-1px;border-radius:10px;pointer-events:none;background:#12D18A2E;border:1px solid #12D18A"></span>
+<span style="position:relative;font-weight:600">1.000 créditos</span><span style="position:relative;font-weight:700;white-space:nowrap">R$ 5,50</span></button>
+</div>
+<div style="font-size:12px;line-height:1.6;color:rgba(242,244,245,0.5);margin-top:auto">Preço por crédito. Cada crédito ativa um mês de um cliente seu, que paga <strong style="color:rgba(242,244,245,0.8)">R$ 30,00/mês</strong>. Sua margem vai de <strong style="color:rgba(242,244,245,0.8)">63%</strong> a <strong style="color:rgba(242,244,245,0.8)">82%</strong>.</div>
+<div data-resumo style="padding:13px 15px;border-radius:11px;background:#12D18A1A;border:1px solid #12D18A66;font-size:13px;line-height:1.5;color:#F2F4F5"></div>
+<a href="#planos" data-comprar="scout" class="h10" style="display:flex;justify-content:center;padding:16px;border-radius:11px;background:#12D18A;color:#06130D;font-weight:800;font-size:14.5px">Quero revender o Scout →</a>
+</div>
+<div data-pacote="combat" style="display:flex;flex-direction:column;gap:18px;background:#0B0C0E;border:1px solid #9B5CFF80;border-radius:20px;padding:26px 24px;box-shadow:0 0 70px -30px #9B5CFFAA">
+<div style="display:flex;align-items:center;gap:12px"><img src="./assets/ax-logo.png" alt="AX" style="width:30px;height:30px;mix-blend-mode:screen;flex:none"><span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:27px;letter-spacing:-0.03em;color:#B98BFF">Combat</span><span style="margin-left:auto;padding:6px 12px;border-radius:999px;border:1px solid #9B5CFFAA;color:#B98BFF;font-size:9.5px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;white-space:nowrap">Lutas</span></div>
+<div style="font-size:14.5px;line-height:1.55;color:rgba(242,244,245,0.72)">MMA, UFC, boxe e artes marciais.<br><span style="color:rgba(242,244,245,0.5)">Análises, eventos e tudo sobre o mundo das lutas.</span></div>
+<div style="display:flex;align-items:center;gap:9px;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;color:rgba(242,244,245,0.6)"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#B98BFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M12 7c4.4 0 8-1.1 8-2.5S16.4 2 12 2 4 3.1 4 4.5 7.6 7 12 7zM4 4.5v15C4 20.9 7.6 22 12 22s8-1.1 8-2.5v-15M4 12c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5"></path></svg>Pacotes de créditos (revenda)</div>
+<div style="display:flex;flex-direction:column;gap:7px">
+<button type="button" data-faixa="0" data-qtd="10" style="position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;text-align:left;padding:13px 15px;border-radius:10px;cursor:pointer;font-size:13.5px;font-variant-numeric:tabular-nums;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);color:#F2F4F5">
+<span data-marca hidden style="position:absolute;inset:-1px;border-radius:10px;pointer-events:none;background:#9B5CFF2E;border:1px solid #9B5CFF"></span>
+<span style="position:relative;font-weight:600">10 créditos</span><span style="position:relative;font-weight:700;white-space:nowrap">R$ 12,00</span></button>
+<button type="button" data-faixa="1" data-qtd="50" style="position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;text-align:left;padding:13px 15px;border-radius:10px;cursor:pointer;font-size:13.5px;font-variant-numeric:tabular-nums;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);color:#F2F4F5">
+<span data-marca hidden style="position:absolute;inset:-1px;border-radius:10px;pointer-events:none;background:#9B5CFF2E;border:1px solid #9B5CFF"></span>
+<span style="position:relative;font-weight:600">50 créditos</span><span style="position:relative;font-weight:700;white-space:nowrap">R$ 10,00</span></button>
+<button type="button" data-faixa="2" data-qtd="100" style="position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;text-align:left;padding:13px 15px;border-radius:10px;cursor:pointer;font-size:13.5px;font-variant-numeric:tabular-nums;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);color:#F2F4F5">
+<span data-marca hidden style="position:absolute;inset:-1px;border-radius:10px;pointer-events:none;background:#9B5CFF2E;border:1px solid #9B5CFF"></span>
+<span style="position:relative;font-weight:600">100 créditos</span><span style="position:relative;font-weight:700;white-space:nowrap">R$ 8,00</span></button>
+<button type="button" data-faixa="3" data-qtd="500" style="position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;text-align:left;padding:13px 15px;border-radius:10px;cursor:pointer;font-size:13.5px;font-variant-numeric:tabular-nums;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);color:#F2F4F5">
+<span data-marca hidden style="position:absolute;inset:-1px;border-radius:10px;pointer-events:none;background:#9B5CFF2E;border:1px solid #9B5CFF"></span>
+<span style="position:relative;font-weight:600">500 créditos</span><span style="position:relative;font-weight:700;white-space:nowrap">R$ 7,00</span></button>
+<button type="button" data-faixa="4" data-qtd="1000" style="position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;text-align:left;padding:13px 15px;border-radius:10px;cursor:pointer;font-size:13.5px;font-variant-numeric:tabular-nums;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);color:#F2F4F5">
+<span data-marca hidden style="position:absolute;inset:-1px;border-radius:10px;pointer-events:none;background:#9B5CFF2E;border:1px solid #9B5CFF"></span>
+<span style="position:relative;font-weight:600">1.000 créditos</span><span style="position:relative;font-weight:700;white-space:nowrap">R$ 6,00</span></button>
+</div>
+<div style="font-size:12px;line-height:1.6;color:rgba(242,244,245,0.5);margin-top:auto">Preço por crédito. Cada crédito ativa um mês de um cliente seu, que paga <strong style="color:rgba(242,244,245,0.8)">R$ 30,00/mês</strong>. Sua margem vai de <strong style="color:rgba(242,244,245,0.8)">60%</strong> a <strong style="color:rgba(242,244,245,0.8)">80%</strong>.</div>
+<div data-resumo style="padding:13px 15px;border-radius:11px;background:#9B5CFF1A;border:1px solid #9B5CFF66;font-size:13px;line-height:1.5;color:#F2F4F5"></div>
+<a href="#planos" data-comprar="combat" class="h10" style="display:flex;justify-content:center;padding:16px;border-radius:11px;background:#9B5CFF;color:#fff;font-weight:800;font-size:14.5px">Quero revender o Combat →</a>
+</div>
+</div>
+<div style="display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-top:26px;border-top:1px solid rgba(255,255,255,0.08)"><div style="display:flex;gap:30px;flex-wrap:wrap"><span style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:rgba(242,244,245,0.65)"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="rgba(242,244,245,0.5)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M6 10.5V8a6 6 0 1 1 12 0v2.5M5 10.5h14v10H5z"></path></svg>Sistema seguro e estável</span><span style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:rgba(242,244,245,0.65)"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="rgba(242,244,245,0.5)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M7.5 9a3 3 0 1 0 0 6c3.2 0 5.8-6 9-6a3 3 0 1 1 0 6c-3.2 0-5.8-6-9-6z"></path></svg>Sem prazo de validade</span><span style="display:flex;align-items:center;gap:10px;font-size:13.5px;color:rgba(242,244,245,0.65)"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="rgba(242,244,245,0.5)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M4 13v-1a8 8 0 1 1 16 0v1M4 13a2 2 0 0 1 2 2v2a2 2 0 1 1-4 0v-2a2 2 0 0 1 2-2zM20 13a2 2 0 0 1 2 2v2a2 2 0 1 1-4 0v-2a2 2 0 0 1 2-2z"></path></svg>Suporte para revendedores</span></div><span style="font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;font-weight:700;color:rgba(242,244,245,0.4)">Mesmo sistema. Mais lucro para você.</span></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;padding-top:12px"><div><div style="font-weight:700;margin-bottom:8px">Assinar não é pré-requisito</div><div style="font-size:15px;line-height:1.6;color:rgba(242,244,245,0.6)">A AX vende a assinatura direto ao cliente final e vende créditos a quem quer revender. Você pode ter sido assinante e virado parceiro depois, ou entrar direto na revenda por reconhecer a demanda no seu público.</div></div><div><div style="font-weight:700;margin-bottom:8px">O que fica do nosso lado</div><div style="font-size:15px;line-height:1.6;color:rgba(242,244,245,0.6)">IA, infraestrutura, manutenção e evolução do agente. Do seu lado ficam a audiência, o preço que você cobra e o relacionamento com o cliente.</div></div><div><div style="font-weight:700;margin-bottom:8px">Sem meta mínima</div><div style="font-size:15px;line-height:1.6;color:rgba(242,244,245,0.6)">Comece pela menor faixa do agente que combina com o seu público, teste com gente real e só aumente o pedido depois de vender.</div></div></div>
+</div></section>
+<section id="faq" style="border-top:1px solid rgba(255,255,255,0.06)">
+<div style="max-width:1280px;margin:0 auto;padding:110px 32px;display:flex;flex-direction:column;gap:44px">
+<h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(34px,4.4vw,62px);line-height:0.95;letter-spacing:-0.04em;margin:0;max-width:760px;text-wrap:balance">O que perguntam antes da primeira mensagem.</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:1px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.1);border-radius:20px;overflow:hidden"><div style="background:#08090A;padding:28px;display:flex;flex-direction:column;gap:12px"><div style="font-weight:700;font-size:17px">Como eu converso com o agente?</div><div style="font-size:15px;line-height:1.6;color:rgba(242,244,245,0.65)">Assim que a assinatura é confirmada você recebe seu link de acesso. Abre no celular ou no computador e já começa a conversar, do jeito que fala com um amigo.</div></div><div style="background:#08090A;padding:28px;display:flex;flex-direction:column;gap:12px"><div style="font-weight:700;font-size:17px">É uma IA genérica com nome bonito?</div><div style="font-size:15px;line-height:1.6;color:rgba(242,244,245,0.65)">Não. Cada agente domina um único assunto e responde no nível de quem acompanha aquilo há anos. Pergunte de futebol pro Oscar e ele te manda pro Scout.</div></div><div style="background:#08090A;padding:28px;display:flex;flex-direction:column;gap:12px"><div style="font-weight:700;font-size:17px">O Oscar dá spoiler?</div><div style="font-size:15px;line-height:1.6;color:rgba(242,244,245,0.65)">Só se você pedir. Ele pergunta até onde você viu antes de explicar qualquer coisa.</div></div><div style="background:#08090A;padding:28px;display:flex;flex-direction:column;gap:12px"><div style="font-weight:700;font-size:17px">O Scout ou o Combat dão palpite de aposta?</div><div style="font-size:15px;line-height:1.6;color:rgba(242,244,245,0.65)">Não, e não vão dar. Eles analisam o esporte: tática, técnica, estatística, história. Prognóstico e cota estão fora do produto.</div></div><div style="background:#08090A;padding:28px;display:flex;flex-direction:column;gap:12px"><div style="font-weight:700;font-size:17px">Posso assinar mais de um agente?</div><div style="font-size:15px;line-height:1.6;color:rgba(242,244,245,0.65)">Sim. Cada agente é uma assinatura de R$ 30/mês, independente das outras.</div></div><div style="background:#08090A;padding:28px;display:flex;flex-direction:column;gap:12px"><div style="font-weight:700;font-size:17px">Como funciona a revenda?</div><div style="font-size:15px;line-height:1.6;color:rgba(242,244,245,0.65)">Você compra créditos no atacado e ativa clientes seus. Cada crédito vale um mês de assinatura de um cliente. Não é preciso ser assinante para revender.</div></div></div>
+</div></section>
+<section style="position:relative;overflow:hidden;border-top:1px solid rgba(255,255,255,0.06)">
+<div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(900px 500px at 50% 120%, rgba(0,74,251,0.28), transparent 70%)"></div>
+<div style="position:relative;max-width:1280px;margin:0 auto;padding:130px 32px 140px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;align-items:center">
+<div style="display:flex;flex-direction:column;gap:20px"><img src="./assets/ax-logo.png" alt="AX" style="width:72px;height:72px;mix-blend-mode:screen"><h2 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(38px,5.2vw,76px);line-height:0.94;letter-spacing:-0.04em;margin:0;text-wrap:balance">Sobre o que você quer conversar hoje?</h2><span style="font-size:15px;color:rgba(242,244,245,0.55)">R$ 30/mês · acesso em minutos · cancela quando quiser</span></div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<a href="#oscar" data-buy="oscar" class="h5" style="display:flex;justify-content:space-between;align-items:center;padding:22px 26px;border-radius:14px;background:#E01F3D;color:#fff;font-weight:800;font-size:18px"><span>Oscar</span><span style="font-weight:500;font-size:14px;opacity:0.85">Filmes, séries, animes →</span></a>
+<a href="#scout" data-buy="scout" class="h11" style="display:flex;justify-content:space-between;align-items:center;padding:22px 26px;border-radius:14px;background:#12D18A;color:#06130D;font-weight:800;font-size:18px"><span>Scout</span><span style="font-weight:500;font-size:14px;opacity:0.85">Futebol →</span></a>
+<a href="#combat" data-buy="combat" class="h5" style="display:flex;justify-content:space-between;align-items:center;padding:22px 26px;border-radius:14px;background:#9B5CFF;color:#fff;font-weight:800;font-size:18px"><span>Combat</span><span style="font-weight:500;font-size:14px;opacity:0.85">MMA, UFC, boxe →</span></a>
+</div></div></section>
+<footer style="border-top:1px solid rgba(255,255,255,0.08)"><div style="max-width:1280px;margin:0 auto;padding:28px 32px;display:flex;flex-wrap:wrap;gap:20px 32px;align-items:center;justify-content:space-between;font-size:13px;color:rgba(242,244,245,0.5)"><div style="display:flex;align-items:center;gap:10px"><img src="./assets/ax-logo.png" alt="AX" style="width:26px;height:26px;mix-blend-mode:screen"><span>AX — um especialista para cada assunto</span></div><div style="display:flex;gap:24px;flex-wrap:wrap"><a href="#oscar" style="color:rgba(242,244,245,0.5)">Oscar</a><a href="#scout" style="color:rgba(242,244,245,0.5)">Scout</a><a href="#combat" style="color:rgba(242,244,245,0.5)">Combat</a><a href="#planos" style="color:rgba(242,244,245,0.5)">Planos</a><a href="#revenda" style="color:rgba(242,244,245,0.5)">Revenda</a></div></div></footer>
+</div>
 <script src="./app.js" defer></script>
 </body>
 </html>
